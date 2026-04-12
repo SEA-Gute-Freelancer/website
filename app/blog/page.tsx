@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Clock, User } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations/FadeIn";
+import { HandWrittenCircle } from "@/components/ui/hand-writing-text";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function BlogPage() {
@@ -24,7 +25,9 @@ export default function BlogPage() {
             <h1 className="font-heading text-3xl sm:text-5xl lg:text-7xl text-charcoal leading-tight mb-6">
               {b.hero.h1a}
               <br />
-              <span className="italic text-gold">{b.hero.h1b}</span>
+              <HandWrittenCircle className="italic text-gold px-4 py-1">
+                {b.hero.h1b}
+              </HandWrittenCircle>
             </h1>
             <p className="text-warm-muted text-base sm:text-xl leading-relaxed max-w-xl">{b.hero.p}</p>
           </FadeIn>
