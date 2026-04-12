@@ -74,6 +74,7 @@ export function Footer() {
                 { label: f.links.services, href: "/leistungen" },
                 { label: f.links.team,    href: "/team" },
                 { label: f.links.cases,   href: "/cases" },
+                { label: f.links.blog,    href: "/blog" },
                 { label: f.links.contact, href: "/kontakt" },
               ].map((link) => (
                 <li key={link.href}>

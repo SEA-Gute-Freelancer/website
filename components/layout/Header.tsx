@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Users, Zap, Mail } from "lucide-react";
+import { Menu, X, Users, Zap, Mail, BookOpen } from "lucide-react";
 import { AnimatedDock } from "@/components/ui/animated-dock";
 import { LanguageToggle } from "@/components/ui/language-toggle";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -16,9 +16,10 @@ export function Header() {
   const { t } = useLanguage();
 
   const navItems = [
-    { label: t.nav.about,    href: "/about",      icon: <Users size={14} /> },
-    { label: t.nav.services, href: "/leistungen",  icon: <Zap  size={14} /> },
-    { label: t.nav.contact,  href: "/kontakt",     icon: <Mail size={14} /> },
+    { label: t.nav.about,    href: "/about",      icon: <Users     size={14} /> },
+    { label: t.nav.services, href: "/leistungen",  icon: <Zap       size={14} /> },
+    { label: t.nav.blog,     href: "/blog",        icon: <BookOpen  size={14} /> },
+    { label: t.nav.contact,  href: "/kontakt",     icon: <Mail      size={14} /> },
   ];
 
   useEffect(() => {

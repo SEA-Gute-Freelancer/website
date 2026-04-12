@@ -38,6 +38,7 @@ const nav = {
     contact: "Kontakt",
     team: "Team",
     cases: "Cases",
+    blog: "Blog",
   },
   en: {
     about: "About us",
@@ -45,6 +46,7 @@ const nav = {
     contact: "Contact",
     team: "Team",
     cases: "Cases",
+    blog: "Blog",
   },
 };
 
@@ -65,6 +67,7 @@ const footer = {
       services: "Leistungen",
       team: "Team",
       cases: "Cases",
+      blog: "Blog",
       contact: "Kontakt",
       imprint: "Impressum",
       privacy: "Datenschutz",
@@ -85,6 +88,7 @@ const footer = {
       services: "Services",
       team: "Team",
       cases: "Cases",
+      blog: "Blog",
       contact: "Contact",
       imprint: "Imprint",
       privacy: "Privacy Policy",
@@ -834,10 +838,130 @@ const kontakt = {
   },
 };
 
+// ─── Blog ─────────────────────────────────────────────────────────────────────
+const blog = {
+  de: {
+    hero: {
+      label: "Wissen & Insights",
+      h1a: "Google Ads",
+      h1b: "Know-how.",
+      p: "Praxisnahe Artikel von echten Spezialisten. Kein Bullshit, keine Theorie – nur das, was wirklich funktioniert.",
+    },
+    cta: {
+      label: "Bereit loszulegen?",
+      h2: "Lass uns über deine Kampagnen reden.",
+      p: "Kostenloses Erstgespräch – kein Vertrag, kein Druck.",
+      btn: "Jetzt anfragen",
+    },
+    readMore: "Artikel lesen",
+    minRead: "Min. Lesezeit",
+    posts: [
+      {
+        slug: "google-ads-qualitaetsfaktor",
+        tag: "Strategie",
+        title: "Qualitätsfaktor verstehen – und damit Kosten senken",
+        excerpt: "Der Qualitätsfaktor ist einer der wichtigsten Hebel in Google Ads. Wer ihn versteht, zahlt weniger pro Klick und rankt trotzdem höher. So funktioniert es.",
+        author: "Robert Miler",
+        date: "10. April 2025",
+        readTime: "6",
+        img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+      },
+      {
+        slug: "smart-bidding-strategien",
+        tag: "Bidding",
+        title: "Smart Bidding: Wann es hilft – und wann es schadet",
+        excerpt: "Automatisches Bieten klingt verlockend. Aber ohne die richtigen Rahmenbedingungen verbrennt Smart Bidding mehr Budget als es spart. Wir zeigen die Dos & Don'ts.",
+        author: "Can Tumani",
+        date: "2. April 2025",
+        readTime: "8",
+        img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+      },
+      {
+        slug: "conversion-tracking-richtig-aufsetzen",
+        tag: "Tracking",
+        title: "Conversion Tracking richtig aufsetzen – der komplette Guide",
+        excerpt: "Falsches Tracking ist das #1 Problem in Google Ads Konten. Doppelte Conversions, fehlende Signale, falsche Attribution – wir erklären wie du es sauber aufsetzt.",
+        author: "Dave Moritz",
+        date: "25. März 2025",
+        readTime: "10",
+        img: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80",
+      },
+      {
+        slug: "google-ads-audit-checkliste",
+        tag: "Audit",
+        title: "Google Ads Audit: Die 15-Punkte Checkliste",
+        excerpt: "Ein sauberer Audit ist der erste Schritt zu besserem Performance. Diese 15 Punkte prüfen wir in jedem neuen Kundenkonto – jetzt kostenlos für dich.",
+        author: "Larrisa Kock",
+        date: "18. März 2025",
+        readTime: "7",
+        img: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80",
+      },
+    ],
+  },
+  en: {
+    hero: {
+      label: "Knowledge & Insights",
+      h1a: "Google Ads",
+      h1b: "Know-how.",
+      p: "Hands-on articles from real specialists. No fluff, no theory – just what actually works.",
+    },
+    cta: {
+      label: "Ready to grow?",
+      h2: "Let's talk about your campaigns.",
+      p: "Free intro call – no contract, no pressure.",
+      btn: "Get in touch",
+    },
+    readMore: "Read article",
+    minRead: "min read",
+    posts: [
+      {
+        slug: "google-ads-quality-score",
+        tag: "Strategy",
+        title: "Understanding Quality Score – and using it to cut costs",
+        excerpt: "Quality Score is one of the most powerful levers in Google Ads. Master it and you pay less per click while ranking higher. Here's how it works.",
+        author: "Robert Miler",
+        date: "April 10, 2025",
+        readTime: "6",
+        img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+      },
+      {
+        slug: "smart-bidding-strategies",
+        tag: "Bidding",
+        title: "Smart Bidding: When it helps – and when it hurts",
+        excerpt: "Automated bidding sounds great. But without the right conditions, Smart Bidding burns more budget than it saves. Here are the dos and don'ts.",
+        author: "Can Tumani",
+        date: "April 2, 2025",
+        readTime: "8",
+        img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+      },
+      {
+        slug: "conversion-tracking-setup",
+        tag: "Tracking",
+        title: "Setting up Conversion Tracking correctly – the complete guide",
+        excerpt: "Bad tracking is the #1 problem in Google Ads accounts. Duplicate conversions, missing signals, wrong attribution – here's how to get it right.",
+        author: "Dave Moritz",
+        date: "March 25, 2025",
+        readTime: "10",
+        img: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80",
+      },
+      {
+        slug: "google-ads-audit-checklist",
+        tag: "Audit",
+        title: "Google Ads Audit: The 15-point checklist",
+        excerpt: "A clean audit is the first step to better performance. These are the 15 points we check in every new client account – now free for you.",
+        author: "Larrisa Kock",
+        date: "March 18, 2025",
+        readTime: "7",
+        img: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80",
+      },
+    ],
+  },
+};
+
 // ─── Master export ────────────────────────────────────────────────────────────
 export const i18n = {
-  de: { common: common.de, nav: nav.de, footer: footer.de, home: home.de, about: about.de, leistungen: leistungen.de, team: team.de, cases: cases.de, kontakt: kontakt.de, serviceItems: serviceItems.de, rowA: rowA.de, rowB: rowB.de },
-  en: { common: common.en, nav: nav.en, footer: footer.en, home: home.en, about: about.en, leistungen: leistungen.en, team: team.en, cases: cases.en, kontakt: kontakt.en, serviceItems: serviceItems.en, rowA: rowA.en, rowB: rowB.en },
+  de: { common: common.de, nav: nav.de, footer: footer.de, home: home.de, about: about.de, leistungen: leistungen.de, team: team.de, cases: cases.de, kontakt: kontakt.de, blog: blog.de, serviceItems: serviceItems.de, rowA: rowA.de, rowB: rowB.de },
+  en: { common: common.en, nav: nav.en, footer: footer.en, home: home.en, about: about.en, leistungen: leistungen.en, team: team.en, cases: cases.en, kontakt: kontakt.en, blog: blog.en, serviceItems: serviceItems.en, rowA: rowA.en, rowB: rowB.en },
 };
 
 export type I18n = typeof i18n.de;
