@@ -28,10 +28,56 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SEA Gute Freelancer – Google Ads Kollektiv für den Mittelstand",
+  metadataBase: new URL("https://www.sea-gute-freelancer.de"),
+  title: {
+    default: "SEA Gute Freelancer – Google Ads Kollektiv für den Mittelstand",
+    template: "%s | SEA Gute Freelancer",
+  },
   description:
     "Erfahrene Google Ads Spezialisten für kleine und mittelständische Unternehmen. Präzise Kampagnen, messbare Ergebnisse, persönliche Betreuung.",
-  keywords: "Google Ads, SEA, Freelancer, PPC, Mittelstand, Deutschland",
+  keywords: [
+    "Google Ads", "SEA Freelancer", "PPC Agentur", "Google Ads Spezialist",
+    "Mittelstand Marketing", "Google Ads Deutschland", "Performance Marketing",
+    "Google Ads Kollektiv", "sea-gute-freelancer",
+  ],
+  authors: [{ name: "SEA Gute Freelancer", url: "https://www.sea-gute-freelancer.de" }],
+  creator: "SEA Gute Freelancer",
+  publisher: "SEA Gute Freelancer",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "de_DE",
+    url: "https://www.sea-gute-freelancer.de",
+    siteName: "SEA Gute Freelancer",
+    title: "SEA Gute Freelancer – Google Ads Kollektiv für den Mittelstand",
+    description:
+      "Erfahrene Google Ads Spezialisten für kleine und mittelständische Unternehmen. Präzise Kampagnen, messbare Ergebnisse, persönliche Betreuung.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "SEA Gute Freelancer – Google Ads Kollektiv",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SEA Gute Freelancer – Google Ads Kollektiv für den Mittelstand",
+    description:
+      "Erfahrene Google Ads Spezialisten für kleine und mittelständische Unternehmen. Präzise Kampagnen, messbare Ergebnisse, persönliche Betreuung.",
+    images: ["/og-image.jpg"],
+  },
+  alternates: {
+    canonical: "https://www.sea-gute-freelancer.de",
+  },
 };
 
 export default function RootLayout({
