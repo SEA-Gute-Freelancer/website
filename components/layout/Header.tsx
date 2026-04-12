@@ -59,16 +59,13 @@ export function Header() {
             <Link href="/" className="flex items-center gap-3 group shrink-0">
               <div className="relative">
                 <div className="w-9 h-9 bg-gold rounded-sm flex items-center justify-center">
-                  <span className="text-cream font-heading font-bold text-sm tracking-wider">SG</span>
+                  <span className="text-cream font-heading font-bold text-[11px] tracking-wider">SGF</span>
                 </div>
                 <div className="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-gold-dark rounded-full" />
               </div>
               <div className="leading-none">
-                <span className="block font-heading font-semibold text-charcoal text-[15px] tracking-wide group-hover:text-gold transition-colors duration-300">
-                  SEA Gute
-                </span>
-                <span className="block text-[10px] text-warm-muted tracking-[0.2em] uppercase font-sans">
-                  Freelancer
+                <span className="block font-heading font-semibold text-charcoal text-[13px] tracking-[0.15em] uppercase group-hover:text-gold transition-colors duration-300">
+                  SEA GUTE FREELANCER
                 </span>
               </div>
             </Link>

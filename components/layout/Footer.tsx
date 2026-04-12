@@ -38,14 +38,11 @@ export function Footer() {
           <div className="md:col-span-4">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-9 h-9 bg-gold rounded-sm flex items-center justify-center">
-                <span className="text-charcoal font-heading font-bold text-sm">SG</span>
+                <span className="text-charcoal font-heading font-bold text-[11px] tracking-wider">SGF</span>
               </div>
               <div className="leading-none">
-                <span className="block font-heading font-semibold text-cream text-[15px] tracking-wide">
-                  SEA Gute
-                </span>
-                <span className="block text-[10px] text-cream/40 tracking-[0.2em] uppercase">
-                  Freelancer
+                <span className="block font-heading font-semibold text-cream text-[13px] tracking-[0.15em] uppercase">
+                  SEA GUTE FREELANCER
                 </span>
               </div>
             </div>
