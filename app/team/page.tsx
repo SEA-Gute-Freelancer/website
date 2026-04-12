@@ -46,6 +46,8 @@ export default function TeamPage() {
                   whileHover={{ y: -4, boxShadow: "0 24px 60px -12px rgba(30,26,22,0.12)" }}
                   transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                   className="group bg-white border border-gold/15 rounded-3xl overflow-hidden"
+                  onClick={idx === 0 ? () => window.open("https://www.robertmiler.com", "_blank") : undefined}
+                  style={idx === 0 ? { cursor: "pointer" } : undefined}
                 >
                   <div className="flex flex-col sm:grid sm:grid-cols-[200px_1fr]">
                     {/* Photo */}
