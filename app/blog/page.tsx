@@ -19,8 +19,10 @@ export default function BlogPage() {
       {/* Hero */}
       <section className="relative pt-28 lg:pt-40 pb-12 lg:pb-20 bg-cream overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 rounded-full -translate-y-1/3 translate-x-1/4 blur-3xl pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <FadeIn className="max-w-3xl">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+
+          {/* Left — Text */}
+          <FadeIn>
             <p className="text-gold text-sm font-medium tracking-widest uppercase mb-4">{b.hero.label}</p>
             <h1 className="font-heading text-3xl sm:text-5xl lg:text-7xl text-charcoal leading-tight mb-6">
               {b.hero.h1a}
@@ -31,6 +33,56 @@ export default function BlogPage() {
             </h1>
             <p className="text-warm-muted text-base sm:text-xl leading-relaxed max-w-xl">{b.hero.p}</p>
           </FadeIn>
+
+          {/* Right — Floating Tags */}
+          <div className="relative hidden lg:flex items-center justify-center h-[340px]">
+            {[
+              { label: "Smart Bidding",     top: "8%",  left: "10%", delay: 0,    duration: 3.2 },
+              { label: "Conversion Tracking", top: "5%",  left: "48%", delay: 0.4,  duration: 2.8 },
+              { label: "ROAS",              top: "32%", left: "70%", delay: 0.8,  duration: 3.5 },
+              { label: "Keywords",          top: "52%", left: "5%",  delay: 0.3,  duration: 3.0 },
+              { label: "Performance Max",   top: "58%", left: "38%", delay: 0.6,  duration: 2.6 },
+              { label: "Audit",             top: "78%", left: "65%", delay: 1.0,  duration: 3.3 },
+              { label: "Quality Score",     top: "82%", left: "12%", delay: 0.2,  duration: 2.9 },
+              { label: "A/B Testing",       top: "28%", left: "28%", delay: 0.7,  duration: 3.1 },
+            ].map((tag, i) => (
+              <motion.div
+                key={tag.label}
+                className="absolute"
+                style={{ top: tag.top, left: tag.left }}
+                initial={{ opacity: 0, scale: 0.7 }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: [0, -10, 0],
+                }}
+                transition={{
+                  opacity: { delay: tag.delay + 0.3, duration: 0.5 },
+                  scale:   { delay: tag.delay + 0.3, duration: 0.5 },
+                  y: {
+                    delay: tag.delay,
+                    duration: tag.duration,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut",
+                  },
+                }}
+              >
+                <span className={`
+                  inline-flex items-center px-4 py-2 rounded-full text-[13px] font-medium
+                  border shadow-sm whitespace-nowrap
+                  ${i % 3 === 0
+                    ? "bg-gold text-charcoal border-gold"
+                    : i % 3 === 1
+                    ? "bg-white text-charcoal border-gold/20"
+                    : "bg-charcoal text-cream border-charcoal"}
+                `}>
+                  {tag.label}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+
         </div>
       </section>
 
