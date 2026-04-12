@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { ReactNode } from "react";
 
 interface HandWrittenCircleProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   color?: string;
 }
