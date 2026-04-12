@@ -291,16 +291,6 @@ function MissionStrip() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 to-transparent" />
           </div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute -bottom-6 -right-4 lg:-right-8 bg-gold text-charcoal p-5 rounded-2xl shadow-2xl max-w-[200px]"
-          >
-            <div className="text-3xl font-heading font-bold">€50M+</div>
-            <div className="text-charcoal/70 text-[12px] mt-1 leading-tight">{m.budgetLabel}</div>
-          </motion.div>
         </FadeIn>
 
         <FadeIn direction="right" className="order-1 lg:order-2">
