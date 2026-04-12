@@ -27,36 +27,45 @@ function HandWrittenCircle({
 
   return (
     <span className={`relative inline-block ${className}`}>
-      {/* Animated circle SVG */}
+      {/* Animated hand-drawn circle */}
       <motion.svg
-        className="absolute inset-0 w-full h-full overflow-visible pointer-events-none"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
+        className="absolute pointer-events-none"
+        style={{
+          top: "-18%",
+          left: "-8%",
+          width: "116%",
+          height: "136%",
+          overflow: "visible",
+        }}
+        viewBox="0 0 200 80"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.8 }}
       >
-        <motion.ellipse
-          cx="50"
-          cy="52"
-          rx="56"
-          ry="34"
+        <motion.path
+          d="M 185 20
+             C 195 5, 180 -5, 150 -3
+             C 110 -6, 60 -8, 25 5
+             C -5 18, -5 40, 5 55
+             C 20 72, 60 82, 100 82
+             C 145 82, 190 72, 198 55
+             C 206 38, 195 20, 185 20"
           fill="none"
           stroke={color}
-          strokeWidth="3"
+          strokeWidth="3.5"
           strokeLinecap="round"
+          strokeLinejoin="round"
           variants={draw}
-          style={{ rotate: "-3deg" }}
         />
       </motion.svg>
 
       {/* Text */}
       <motion.span
         className="relative z-10"
-        initial={{ opacity: 0, y: 8 }}
+        initial={{ opacity: 0, y: 6 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.4, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ delay: 0.5, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         {children}
       </motion.span>
