@@ -5,6 +5,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { CookieBanner } from "@/components/ui/CookieBanner";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -44,6 +45,21 @@ export default function RootLayout({
       className={`${playfair.variable} ${jakarta.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-charcoal">
+        {/* Consent Mode v2 — must fire before Google tag */}
+        <Script id="consent-mode-default" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              'ad_storage': 'denied',
+              'ad_user_data': 'denied',
+              'ad_personalization': 'denied',
+              'analytics_storage': 'denied',
+              'wait_for_update': 500
+            });
+          `}
+        </Script>
+
         {/* Google Ads Tag */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-17338599442"
@@ -57,10 +73,12 @@ export default function RootLayout({
             gtag('config', 'AW-17338599442');
           `}
         </Script>
+
         <LanguageProvider>
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
+          <CookieBanner />
         </LanguageProvider>
       </body>
     </html>

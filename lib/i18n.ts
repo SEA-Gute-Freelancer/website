@@ -30,6 +30,24 @@ const common = {
   },
 };
 
+// ─── Cookie Banner ───────────────────────────────────────────────────────────
+const cookie = {
+  de: {
+    title: "Wir nutzen Cookies",
+    text: "Wir setzen Cookies ein, um die Website zu verbessern und Werbeanzeigen zu personalisieren (Google Ads). Du kannst jederzeit ablehnen.",
+    accept: "Alle akzeptieren",
+    decline: "Ablehnen",
+    privacy: "Datenschutz",
+  },
+  en: {
+    title: "We use cookies",
+    text: "We use cookies to improve the website and personalise ads (Google Ads). You can decline at any time.",
+    accept: "Accept all",
+    decline: "Decline",
+    privacy: "Privacy Policy",
+  },
+};
+
 // ─── Navigation ───────────────────────────────────────────────────────────────
 const nav = {
   de: {
@@ -960,8 +978,8 @@ const blog = {
 
 // ─── Master export ────────────────────────────────────────────────────────────
 export const i18n = {
-  de: { common: common.de, nav: nav.de, footer: footer.de, home: home.de, about: about.de, leistungen: leistungen.de, team: team.de, cases: cases.de, kontakt: kontakt.de, blog: blog.de, serviceItems: serviceItems.de, rowA: rowA.de, rowB: rowB.de },
-  en: { common: common.en, nav: nav.en, footer: footer.en, home: home.en, about: about.en, leistungen: leistungen.en, team: team.en, cases: cases.en, kontakt: kontakt.en, blog: blog.en, serviceItems: serviceItems.en, rowA: rowA.en, rowB: rowB.en },
+  de: { common: common.de, nav: nav.de, footer: footer.de, home: home.de, about: about.de, leistungen: leistungen.de, team: team.de, cases: cases.de, kontakt: kontakt.de, blog: blog.de, cookie: cookie.de, serviceItems: serviceItems.de, rowA: rowA.de, rowB: rowB.de },
+  en: { common: common.en, nav: nav.en, footer: footer.en, home: home.en, about: about.en, leistungen: leistungen.en, team: team.en, cases: cases.en, kontakt: kontakt.en, blog: blog.en, cookie: cookie.en, serviceItems: serviceItems.en, rowA: rowA.en, rowB: rowB.en },
 };
 
 export type I18n = typeof i18n.de;
