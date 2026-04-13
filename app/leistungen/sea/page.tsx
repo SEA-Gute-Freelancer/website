@@ -3,10 +3,10 @@
 import { useRef } from "react";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, Search, Youtube, Monitor, Compass, Mail, MapPin, Zap, Target, BarChart3, Clock } from "lucide-react";
+import { ArrowRight, Search, PlayCircle, Monitor, Compass, Mail, MapPin, Zap, Target, BarChart3, Clock } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations/FadeIn";
 
-/* ─── Network Data ─────────────────────────────────────────────────────────── */
+// Network Data
 const CENTER = { x: 400, y: 265 };
 
 const networkNodes = [
@@ -16,7 +16,7 @@ const networkNodes = [
   },
   {
     id: "youtube", label: "YouTube", desc: "Starke Markenwirkung",
-    x: 638, y: 142, delay: 0.15, icon: Youtube,
+    x: 638, y: 142, delay: 0.15, icon: PlayCircle,
   },
   {
     id: "display", label: "Display", desc: "Neue Kunden entdecken",
@@ -36,7 +36,7 @@ const networkNodes = [
   },
 ];
 
-/* ─── Network Visualization ────────────────────────────────────────────────── */
+// Network Visualization
 function NetworkVisualization() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.3 });
@@ -178,7 +178,7 @@ function NetworkVisualization() {
   );
 }
 
-/* ─── Benefits ─────────────────────────────────────────────────────────────── */
+// Benefits
 const benefits = [
   {
     icon: Target,
@@ -197,7 +197,7 @@ const benefits = [
   },
 ];
 
-/* ─── Process ──────────────────────────────────────────────────────────────── */
+// Process
 const steps = [
   { num: "01", title: "Analyse", desc: "Wir prüfen dein Konto, deine Mitbewerber und dein Budget. Ehrlich, ohne Bullshit." },
   { num: "02", title: "Strategie", desc: "Keywords, Kampagnenstruktur, Gebotsstrategien — alles auf dein Ziel ausgerichtet." },
@@ -205,11 +205,11 @@ const steps = [
   { num: "04", title: "Optimierung", desc: "Wöchentliche Anpassungen. Kein Set-and-forget — aktive Betreuung durch Spezialisten." },
 ];
 
-/* ─── Page ─────────────────────────────────────────────────────────────────── */
+// Page
 export default function SeaPage() {
   return (
     <>
-      {/* ── Hero ───────────────────────────────────────────────────────── */}
+      {/* Hero */}
       <section className="relative pt-28 lg:pt-36 pb-12 lg:pb-20 bg-cream overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/4 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -281,7 +281,7 @@ export default function SeaPage() {
         </div>
       </section>
 
-      {/* ── Why SEA ─────────────────────────────────────────────────────── */}
+      {/* Why SEA */}
       <section className="py-20 lg:py-32 bg-charcoal">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <FadeIn className="max-w-xl mb-12 lg:mb-16">
@@ -310,7 +310,7 @@ export default function SeaPage() {
         </div>
       </section>
 
-      {/* ── Process ─────────────────────────────────────────────────────── */}
+      {/* Process */}
       <section className="py-20 lg:py-32 bg-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <FadeIn className="max-w-xl mb-12 lg:mb-16">
@@ -337,7 +337,7 @@ export default function SeaPage() {
         </div>
       </section>
 
-      {/* ── CTA ─────────────────────────────────────────────────────────── */}
+      {/* CTA */}
       <section className="py-24 lg:py-32 bg-charcoal border-t border-gold/20 text-center">
         <FadeIn className="max-w-2xl mx-auto px-6">
           <p className="text-gold text-sm font-medium tracking-widest uppercase mb-4">Bereit?</p>
