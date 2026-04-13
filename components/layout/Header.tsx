@@ -12,7 +12,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const leistungenItems = [
   { label: "SEA",              href: "/leistungen/sea" },
   { label: "SEO + GEO",        href: "/leistungen/seo-geo" },
-  { label: "Audit",            href: "/leistungen" },
+  { label: "Audit",            href: "/leistungen/audit" },
   { label: "Unser KI-Ansatz",  href: "/leistungen" },
   { label: "Landingpages",     href: "/leistungen" },
   { label: "Workshops",        href: "/leistungen" },
