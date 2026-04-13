@@ -162,20 +162,21 @@ export default function SeoGeoPage() {
               </FadeIn>
             </div>
 
-            {/* Right: scramble animation */}
+            {/* Right: scramble animation inside a button-style frame */}
             <FadeIn delay={0.25} className="hidden lg:flex items-center justify-center">
-              <div className="relative text-center select-none">
-                {/* Glow behind text */}
-                <div className="absolute inset-0 bg-gold/6 rounded-3xl blur-3xl pointer-events-none scale-110" />
-                <p className="relative text-[11px] font-medium text-warm-muted tracking-[0.2em] uppercase mb-6">
+              <div
+                className="relative select-none inline-flex flex-col items-center justify-center gap-5 px-12 py-10 rounded-2xl border border-charcoal/15 bg-white shadow-sm"
+                style={{ minWidth: "340px" }}
+              >
+                <p className="text-[11px] font-medium text-warm-muted tracking-[0.2em] uppercase">
                   Hover mal
                 </p>
                 <ScrambleText
                   from="SEO ohne GEO?"
                   to="NO GO!"
-                  className="relative block font-heading text-6xl lg:text-7xl xl:text-8xl italic text-gold cursor-default leading-none"
+                  className="block font-heading text-5xl lg:text-6xl xl:text-7xl italic text-gold cursor-default leading-none whitespace-nowrap"
                 />
-                <p className="relative text-[11px] text-warm-muted/60 mt-6 tracking-wide">
+                <p className="text-[11px] text-warm-muted/60 tracking-wide">
                   — und du weißt Bescheid.
                 </p>
               </div>
