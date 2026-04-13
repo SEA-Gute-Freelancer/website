@@ -10,7 +10,7 @@ import { LanguageToggle } from "@/components/ui/language-toggle";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const leistungenItems = [
-  { label: "SEA",              href: "/leistungen" },
+  { label: "SEA",              href: "/leistungen/sea" },
   { label: "SEO + GEO",        href: "/leistungen" },
   { label: "Audit",            href: "/leistungen" },
   { label: "Unser KI-Ansatz",  href: "/leistungen" },
