@@ -26,28 +26,6 @@ function PuzzleIcon({ className }: { className?: string }) {
   );
 }
 
-// Hero right: BackgroundBoxes in a dark contained card
-function AuditHeroVisual() {
-  return (
-    <div className="relative h-[440px] w-full overflow-hidden rounded-3xl bg-charcoal flex flex-col items-center justify-center">
-      {/* Radial fade mask -- makes boxes bleed into the container edges */}
-      <div className="absolute inset-0 w-full h-full bg-charcoal z-20 [mask-image:radial-gradient(260px_200px_at_center,transparent,white)] pointer-events-none" />
-      <Boxes />
-      {/* Center content */}
-      <div className="relative z-30 text-center px-6">
-        <div className="w-14 h-14 bg-gold/15 border border-gold/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
-          <PuzzleIcon className="w-7 h-7 text-gold" />
-        </div>
-        <p className="text-gold font-heading text-lg italic leading-snug">
-          Das fehlende<br />Puzzlestück.
-        </p>
-        <p className="text-cream/40 text-[11px] tracking-widest uppercase mt-3">
-          Wir finden es.
-        </p>
-      </div>
-    </div>
-  );
-}
 
 // What we analyze
 const auditItems = [
@@ -80,64 +58,61 @@ const deliverables = [
 export default function AuditPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-28 lg:pt-36 pb-16 lg:pb-24 bg-cream overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/4 rounded-full -translate-y-1/3 translate-x-1/3 blur-3xl pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      {/* Hero -- full-width dark section with BackgroundBoxes */}
+      <section className="relative min-h-[80vh] bg-charcoal overflow-hidden flex items-center">
+        {/* Animated grid covers the entire section */}
+        <Boxes />
+
+        {/* Radial vignette: transparent in center, dark at edges */}
+        <div className="absolute inset-0 z-20 bg-charcoal [mask-image:radial-gradient(55%_45%_at_50%_50%,transparent,white)] pointer-events-none" />
+
+        {/* Content sits on top */}
+        <div className="relative z-30 w-full max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-24 lg:pt-40 lg:pb-32">
 
           {/* Breadcrumb */}
-          <FadeIn className="mb-8">
-            <div className="flex items-center gap-2 text-xs text-warm-muted">
+          <FadeIn className="mb-10">
+            <div className="flex items-center gap-2 text-xs text-cream/40">
               <Link href="/leistungen" className="hover:text-gold transition-colors">Leistungen</Link>
               <span>/</span>
               <span className="text-gold font-medium">Audit</span>
             </div>
           </FadeIn>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-
-            {/* Left: text */}
-            <div>
-              <FadeIn>
-                <p className="text-gold text-sm font-medium tracking-widest uppercase mb-5">
-                  Google Ads Audit
-                </p>
-                <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-charcoal leading-tight mb-6">
-                  Das fehlende<br />
-                  <span className="italic text-gold">Puzzlestück.</span>
-                </h1>
-                <p className="text-warm-muted text-[15px] sm:text-base leading-relaxed">
-                  Manchmal liegt das größte Potenzial nicht im Offensichtlichen. Mit unserem Audit finden wir genau das, was deiner Kampagne wirklich fehlt — nicht immer sofort, aber mit vereinten Kräften.
-                </p>
-                <p className="text-warm-muted text-[15px] sm:text-base leading-relaxed mt-4">
-                  Kein Copy-paste-Report. Kein Buzzword-Bingo. Sondern eine ehrliche, tiefe Analyse deines Kontos — mit konkreten nächsten Schritten.
-                </p>
-              </FadeIn>
-
-              <FadeIn delay={0.2} className="mt-8">
-                <div className="flex flex-wrap gap-4">
-                  <Link
-                    href="/kontakt"
-                    className="group inline-flex items-center gap-2.5 px-7 py-4 bg-gold text-charcoal font-semibold rounded-full text-[15px] hover:bg-gold-dark hover:text-cream transition-all duration-300 hover:shadow-xl hover:shadow-gold/20"
-                  >
-                    Audit anfragen
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                  <Link
-                    href="/cases"
-                    className="inline-flex items-center gap-2.5 px-7 py-4 border border-charcoal/20 text-charcoal font-medium rounded-full text-[15px] hover:border-charcoal/50 transition-all duration-300"
-                  >
-                    Ergebnisse ansehen
-                  </Link>
-                </div>
-              </FadeIn>
-            </div>
-
-            {/* Right: background boxes visual */}
-            <FadeIn delay={0.3} className="hidden lg:block">
-              <AuditHeroVisual />
+          {/* Headline block -- centered for full-width hero */}
+          <div className="max-w-3xl mx-auto text-center">
+            <FadeIn>
+              <div className="w-14 h-14 bg-gold/15 border border-gold/25 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <PuzzleIcon className="w-7 h-7 text-gold" />
+              </div>
+              <p className="text-gold text-sm font-medium tracking-widest uppercase mb-5">
+                Google Ads Audit
+              </p>
+              <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl text-cream leading-tight mb-6">
+                Das fehlende<br />
+                <span className="italic text-gold">Puzzlestück.</span>
+              </h1>
+              <p className="text-cream/60 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
+                Manchmal liegt das größte Potenzial nicht im Offensichtlichen. Mit unserem Audit finden wir genau das, was deiner Kampagne wirklich fehlt — nicht immer sofort, aber mit vereinten Kräften.
+              </p>
             </FadeIn>
 
+            <FadeIn delay={0.2} className="mt-10">
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Link
+                  href="/kontakt"
+                  className="group inline-flex items-center gap-2.5 px-7 py-4 bg-gold text-charcoal font-semibold rounded-full text-[15px] hover:bg-gold-dark hover:text-cream transition-all duration-300 hover:shadow-xl hover:shadow-gold/25"
+                >
+                  Audit anfragen
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link
+                  href="/cases"
+                  className="inline-flex items-center gap-2.5 px-7 py-4 border border-cream/20 text-cream font-medium rounded-full text-[15px] hover:border-cream/50 transition-all duration-300"
+                >
+                  Ergebnisse ansehen
+                </Link>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
