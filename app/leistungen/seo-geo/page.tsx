@@ -2,10 +2,9 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import {
   ArrowRight, Search, Brain, Globe, TrendingUp,
-  Layers, BarChart3, Eye, FileText, Zap,
+  Layers, BarChart3, FileText,
 } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations/FadeIn";
 
@@ -70,76 +69,6 @@ function ScrambleText({
   );
 }
 
-// Coverage visual for hero right side
-const searchSources = [
-  { label: "Google Search",       tag: "SEO", icon: Search,     color: "bg-blue-50 border-blue-100 text-blue-600" },
-  { label: "Google AI Overviews", tag: "GEO", icon: Brain,      color: "bg-gold/8 border-gold/20 text-gold" },
-  { label: "ChatGPT Search",      tag: "GEO", icon: Zap,        color: "bg-gold/8 border-gold/20 text-gold" },
-  { label: "Perplexity AI",       tag: "GEO", icon: Globe,      color: "bg-gold/8 border-gold/20 text-gold" },
-  { label: "Bing Copilot",        tag: "GEO", icon: Eye,        color: "bg-gold/8 border-gold/20 text-gold" },
-];
-
-function CoverageVisual() {
-  return (
-    <div className="relative">
-      {/* Outer glow */}
-      <div className="absolute inset-0 bg-gold/4 rounded-3xl blur-2xl pointer-events-none" />
-
-      <div className="relative bg-white border border-gold/15 rounded-3xl p-6 shadow-xl shadow-charcoal/6">
-        <p className="text-[11px] font-medium text-warm-muted tracking-widest uppercase mb-4">
-          Deine Sichtbarkeit
-        </p>
-
-        <div className="flex flex-col gap-2">
-          {searchSources.map((src, i) => {
-            const Icon = src.icon;
-            return (
-              <motion.div
-                key={src.label}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.12 + 0.4, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="flex items-center gap-3"
-              >
-                <div className={`w-8 h-8 rounded-xl border flex items-center justify-center shrink-0 ${src.color}`}>
-                  <Icon size={14} />
-                </div>
-                <span className="text-charcoal text-[13px] font-medium flex-1">{src.label}</span>
-                <span className={`text-[10px] font-bold tracking-wide px-2 py-0.5 rounded-full ${src.tag === "GEO" ? "bg-gold/15 text-gold" : "bg-blue-50 text-blue-500"}`}>
-                  {src.tag}
-                </span>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Coverage bar */}
-        <div className="mt-5 pt-4 border-t border-gold/10">
-          <div className="flex justify-between text-[11px] text-warm-muted mb-2">
-            <span>Abdeckung ohne GEO</span>
-            <span className="text-charcoal font-semibold">20 %</span>
-          </div>
-          <div className="h-1.5 bg-gold/10 rounded-full overflow-hidden mb-3">
-            <div className="h-full w-[20%] bg-charcoal/30 rounded-full" />
-          </div>
-          <div className="flex justify-between text-[11px] text-warm-muted mb-2">
-            <span>Abdeckung mit SEO + GEO</span>
-            <span className="text-gold font-semibold">100 %</span>
-          </div>
-          <div className="h-1.5 bg-gold/10 rounded-full overflow-hidden">
-            <motion.div
-              className="h-full bg-gold rounded-full"
-              initial={{ width: "20%" }}
-              animate={{ width: "100%" }}
-              transition={{ duration: 1.4, delay: 1.0, ease: [0.22, 1, 0.36, 1] }}
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 // Benefits
 const benefits = [
   {
@@ -196,30 +125,21 @@ export default function SeoGeoPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-            {/* Left: text */}
+            {/* Left: new copy */}
             <div>
               <FadeIn>
                 <p className="text-gold text-sm font-medium tracking-widest uppercase mb-5">
                   SEO + GEO
                 </p>
-
-                {/* Scramble heading */}
-                <h1 className="font-heading text-charcoal leading-tight mb-6">
-                  <span className="block text-3xl sm:text-4xl lg:text-[2.6rem] mb-1">
-                    Sichtbarkeit in Suche
-                  </span>
-                  <span className="block text-3xl sm:text-4xl lg:text-[2.6rem] mb-4">
-                    und KI — oder keins von beidem.
-                  </span>
-                  <ScrambleText
-                    from="SEO ohne GEO?"
-                    to="NO GO!"
-                    className="block text-5xl sm:text-6xl lg:text-7xl xl:text-8xl italic text-gold cursor-default select-none leading-none mt-2"
-                  />
+                <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-charcoal leading-tight mb-6">
+                  ADS are coming<br />
+                  <span className="italic text-gold">to AI.</span>
                 </h1>
-
-                <p className="text-warm-muted text-lg leading-relaxed mt-6">
-                  KI-Suchwerkzeuge wie ChatGPT, Perplexity und Google AI Overviews beantworten Fragen direkt — ohne Klick auf eine Website. Klassisches SEO reicht nicht mehr. Du brauchst beides.
+                <p className="text-warm-muted text-[15px] sm:text-base leading-relaxed">
+                  SEO (Search Engine Optimization) optimiert Inhalte für klassische Suchmaschinen, während GEO (Generative Engine Optimization) Inhalte für KI-basierte Suchsysteme wie ChatGPT, Claude oder Gemini optimiert.
+                </p>
+                <p className="text-warm-muted text-[15px] sm:text-base leading-relaxed mt-4">
+                  Der Status quo: GEO steckt noch in den Kinderschuhen. Ob dein Business mit AI Max wirklich in Gemini landet oder ob deine robots.txt-Datei mit den entsprechenden Metadaten einfach falsch ist, entscheidet sich erst noch. Du musst kein Early Adopter sein — es reicht, wenn wir den Trend für dich im Auge behalten.
                 </p>
               </FadeIn>
 
@@ -242,9 +162,23 @@ export default function SeoGeoPage() {
               </FadeIn>
             </div>
 
-            {/* Right: coverage visual */}
-            <FadeIn delay={0.3} className="hidden lg:block">
-              <CoverageVisual />
+            {/* Right: scramble animation */}
+            <FadeIn delay={0.25} className="hidden lg:flex items-center justify-center">
+              <div className="relative text-center select-none">
+                {/* Glow behind text */}
+                <div className="absolute inset-0 bg-gold/6 rounded-3xl blur-3xl pointer-events-none scale-110" />
+                <p className="relative text-[11px] font-medium text-warm-muted tracking-[0.2em] uppercase mb-6">
+                  Hover mal
+                </p>
+                <ScrambleText
+                  from="SEO ohne GEO?"
+                  to="NO GO!"
+                  className="relative block font-heading text-6xl lg:text-7xl xl:text-8xl italic text-gold cursor-default leading-none"
+                />
+                <p className="relative text-[11px] text-warm-muted/60 mt-6 tracking-wide">
+                  — und du weißt Bescheid.
+                </p>
+              </div>
             </FadeIn>
 
           </div>
