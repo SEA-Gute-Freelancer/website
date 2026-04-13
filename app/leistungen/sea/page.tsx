@@ -10,159 +10,172 @@ import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations/F
 // CENTER is the true midpoint of the 800x540 viewBox
 const CENTER = { x: 400, y: 270 };
 
-// 6 nodes at exact 60-degree intervals, radius 188px from center
-// Angle: -90 = top, then clockwise in 60-deg steps
+// Each node routes via an L-shaped circuit-board path to the center.
+// dotWx/dotWy are the 3 keyframe waypoints for the traveling dot.
+// dotTimes maps each waypoint to a fraction of the animation duration.
 const networkNodes = [
   {
     id: "search", label: "Search", desc: "Leute, die jetzt kaufen wollen",
-    x: 400, y: 82,   delay: 0,    icon: Search,
+    x: 400, y: 82,  delay: 0,    icon: Search,
+    path: "M 400,82 L 400,270",
+    dotWx: [400, 400, 400],
+    dotWy: [82, 176, 270],
+    dotTimes: [0, 0.5, 1],
   },
   {
     id: "youtube", label: "YouTube", desc: "Starke Markenwirkung",
-    x: 563, y: 176,  delay: 0.15, icon: PlayCircle,
+    x: 563, y: 176, delay: 0.15, icon: PlayCircle,
+    path: "M 563,176 L 563,270 L 400,270",
+    dotWx: [563, 563, 400],
+    dotWy: [176, 270, 270],
+    dotTimes: [0, 0.366, 1],
   },
   {
     id: "display", label: "Display", desc: "Neue Kunden entdecken",
-    x: 563, y: 364,  delay: 0.3,  icon: Monitor,
+    x: 563, y: 364, delay: 0.3,  icon: Monitor,
+    path: "M 563,364 L 563,270 L 400,270",
+    dotWx: [563, 563, 400],
+    dotWy: [364, 270, 270],
+    dotTimes: [0, 0.366, 1],
   },
   {
     id: "discovery", label: "Discovery", desc: "Interessierte Nutzer finden",
-    x: 400, y: 458,  delay: 0.45, icon: Compass,
+    x: 400, y: 458, delay: 0.45, icon: Compass,
+    path: "M 400,458 L 400,270",
+    dotWx: [400, 400, 400],
+    dotWy: [458, 364, 270],
+    dotTimes: [0, 0.5, 1],
   },
   {
     id: "gmail", label: "Gmail", desc: "Direkt in der Inbox",
-    x: 237, y: 364,  delay: 0.6,  icon: Mail,
+    x: 237, y: 364, delay: 0.6,  icon: Mail,
+    path: "M 237,364 L 237,270 L 400,270",
+    dotWx: [237, 237, 400],
+    dotWy: [364, 270, 270],
+    dotTimes: [0, 0.366, 1],
   },
   {
     id: "maps", label: "Maps", desc: "Unterwegs erreichen",
-    x: 237, y: 176,  delay: 0.75, icon: MapPin,
+    x: 237, y: 176, delay: 0.75, icon: MapPin,
+    path: "M 237,176 L 237,270 L 400,270",
+    dotWx: [237, 237, 400],
+    dotWy: [176, 270, 270],
+    dotTimes: [0, 0.366, 1],
   },
 ];
 
-// Network Visualization
+// Network Visualization -- CPU-architecture style
+// Paths route orthogonally (like circuit board traces), dots flow node -> center
 function NetworkVisualization() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.3 });
 
-  const lineVariants = {
-    hidden: { pathLength: 0, opacity: 0 },
-    visible: (delay: number) => ({
-      pathLength: 1,
-      opacity: 1,
-      transition: {
-        pathLength: { duration: 1.2, delay: delay + 0.4, ease: [0.43, 0.13, 0.23, 0.96] as [number, number, number, number] },
-        opacity: { duration: 0.2, delay: delay + 0.4 },
-      },
-    }),
-  };
-
   return (
     <div ref={ref} className="relative w-full max-w-[800px] mx-auto" style={{ aspectRatio: "800/540" }}>
 
-      {/* SVG Lines + traveling dots */}
+      {/* SVG: circuit paths + traveling dots + corner joints */}
       <svg
         viewBox="0 0 800 540"
         className="absolute inset-0 w-full h-full pointer-events-none"
         preserveAspectRatio="xMidYMid meet"
       >
-        <defs>
-          <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#C9A96E" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#C9A96E" stopOpacity="0.1" />
-          </linearGradient>
-        </defs>
-
         {networkNodes.map((node) => (
           <g key={node.id}>
-            {/* Animated line from center to node */}
-            <motion.line
-              x1={CENTER.x} y1={CENTER.y}
-              x2={node.x} y2={node.y}
+            {/* Trace: draws from node toward center */}
+            <motion.path
+              d={node.path}
+              fill="none"
               stroke="#C9A96E"
-              strokeWidth="1.5"
-              strokeDasharray="4 4"
-              strokeOpacity="0.4"
-              variants={lineVariants}
-              custom={node.delay}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
+              strokeWidth="1"
+              strokeOpacity="0.3"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={inView ? { pathLength: 1, opacity: 1 } : {}}
+              transition={{
+                pathLength: { duration: 1.0, delay: node.delay + 0.3, ease: "easeOut" },
+                opacity:     { duration: 0.15, delay: node.delay + 0.3 },
+              }}
             />
 
-            {/* Traveling dot along each line */}
+            {/* Corner joint dot (only for L-shaped paths) */}
+            {node.dotWx[0] !== node.dotWx[2] && (
+              <motion.circle
+                cx={node.dotWx[1]}
+                cy={node.dotWy[1]}
+                r={2.5}
+                fill="#C9A96E"
+                fillOpacity={0.35}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={inView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ delay: node.delay + 1.1, duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              />
+            )}
+
+            {/* Traveling dot: flows along trace from node to center */}
             {inView && (
               <motion.circle
                 r={3}
                 fill="#C9A96E"
-                initial={{ cx: CENTER.x, cy: CENTER.y, opacity: 0 }}
+                initial={{ cx: node.dotWx[0], cy: node.dotWy[0], opacity: 0 }}
                 animate={{
-                  cx: [CENTER.x, node.x, CENTER.x],
-                  cy: [CENTER.y, node.y, CENTER.y],
-                  opacity: [0, 1, 1, 0],
+                  cx:      node.dotWx,
+                  cy:      node.dotWy,
+                  opacity: [0, 1, 0],
                 }}
                 transition={{
-                  duration: 2,
-                  delay: node.delay + 1.8,
-                  repeat: Infinity,
-                  repeatDelay: 3,
-                  ease: "easeInOut",
+                  duration:    2.0,
+                  delay:       node.delay + 1.4,
+                  times:       node.dotTimes,
+                  ease:        "linear",
+                  repeat:      Infinity,
+                  repeatDelay: 1.5 + node.delay * 0.4,
                 }}
               />
             )}
           </g>
         ))}
 
-        {/* Enclosing circle drawn after all lines finish (~2.8s) */}
+        {/* Subtle center glow */}
         <motion.circle
           cx={CENTER.x}
           cy={CENTER.y}
-          r={242}
-          fill="none"
-          stroke="#C9A96E"
-          strokeWidth="1.5"
-          strokeOpacity="0.5"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={inView ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
-          transition={{
-            pathLength: {
-              duration: 2.0,
-              delay: 2.8,
-              ease: [0.43, 0.13, 0.23, 0.96] as [number, number, number, number],
-            },
-            opacity: { duration: 0.3, delay: 2.8 },
-          }}
+          r={52}
+          fill="#C9A96E"
+          fillOpacity={0}
+          animate={inView ? { fillOpacity: [0, 0.06, 0] } : {}}
+          transition={{ duration: 2.8, delay: 0.8, repeat: Infinity, ease: "easeInOut" }}
         />
       </svg>
 
-      {/* Center card */}
+      {/* Center chip: "Erfolg mit SEA" */}
       <motion.div
         className="absolute z-10"
         style={{
           left: `${(CENTER.x / 800) * 100}%`,
-          top: `${(CENTER.y / 540) * 100}%`,
+          top:  `${(CENTER.y / 540) * 100}%`,
           transform: "translate(-50%, -50%)",
         }}
-        initial={{ opacity: 0, scale: 0.8 }}
+        initial={{ opacity: 0, scale: 0.75 }}
         animate={inView ? { opacity: 1, scale: 1 } : {}}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="relative bg-charcoal border-2 border-gold/60 rounded-2xl px-5 py-4 shadow-2xl shadow-charcoal/30 text-center w-[148px] sm:w-[168px]">
-          {/* Pulse ring */}
+          {/* Outer pulse ring */}
           <motion.div
-            className="absolute inset-0 rounded-2xl border-2 border-gold/30"
-            animate={{ scale: [1, 1.12, 1], opacity: [0.6, 0, 0.6] }}
-            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute inset-0 rounded-2xl border border-gold/25"
+            animate={{ scale: [1, 1.18, 1], opacity: [0.5, 0, 0.5] }}
+            transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
           />
           <div className="w-8 h-8 bg-gold rounded-lg flex items-center justify-center mx-auto mb-2">
             <Zap size={16} className="text-charcoal" />
           </div>
           <p className="text-cream font-heading text-[12px] sm:text-[13px] leading-snug">
-            Google Ads<br />
-            <span className="text-gold italic">voller Power</span>
+            Erfolg<br />
+            <span className="text-gold italic">mit SEA</span>
           </p>
         </div>
       </motion.div>
 
-      {/* Satellite nodes */}
+      {/* Satellite channel nodes */}
       {networkNodes.map((node) => {
         const Icon = node.icon;
         return (
@@ -171,20 +184,14 @@ function NetworkVisualization() {
             className="absolute z-10"
             style={{
               left: `${(node.x / 800) * 100}%`,
-              top: `${(node.y / 540) * 100}%`,
+              top:  `${(node.y / 540) * 100}%`,
               transform: "translate(-50%, -50%)",
             }}
             initial={{ opacity: 0, scale: 0.7 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.5, delay: node.delay + 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.5, delay: node.delay + 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
-            {/* Pulse */}
-            <motion.div
-              className="absolute inset-0 rounded-xl bg-gold/10"
-              animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0, 0.4] }}
-              transition={{ duration: 2.5, delay: node.delay, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <div className="relative bg-white border border-gold/20 rounded-xl px-3 py-2.5 shadow-md shadow-charcoal/6 text-center w-[110px] sm:w-[124px] hover:border-gold/50 hover:shadow-gold/10 transition-all duration-300">
+            <div className="relative bg-white border border-gold/20 rounded-xl px-3 py-2.5 shadow-md shadow-charcoal/6 text-center w-[110px] sm:w-[124px] hover:border-gold/50 transition-all duration-300">
               <div className="w-6 h-6 bg-gold/10 rounded-lg flex items-center justify-center mx-auto mb-1.5">
                 <Icon size={13} className="text-gold" />
               </div>
