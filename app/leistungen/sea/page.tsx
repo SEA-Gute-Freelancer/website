@@ -7,32 +7,35 @@ import { ArrowRight, Search, PlayCircle, Monitor, Compass, Mail, MapPin, Zap, Ta
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations/FadeIn";
 
 // Network Data
-const CENTER = { x: 400, y: 265 };
+// CENTER is the true midpoint of the 800x540 viewBox
+const CENTER = { x: 400, y: 270 };
 
+// 6 nodes at exact 60-degree intervals, radius 188px from center
+// Angle: -90 = top, then clockwise in 60-deg steps
 const networkNodes = [
   {
     id: "search", label: "Search", desc: "Leute, die jetzt kaufen wollen",
-    x: 400, y: 52, delay: 0, icon: Search,
+    x: 400, y: 82,   delay: 0,    icon: Search,
   },
   {
     id: "youtube", label: "YouTube", desc: "Starke Markenwirkung",
-    x: 638, y: 142, delay: 0.15, icon: PlayCircle,
+    x: 563, y: 176,  delay: 0.15, icon: PlayCircle,
   },
   {
     id: "display", label: "Display", desc: "Neue Kunden entdecken",
-    x: 648, y: 378, delay: 0.3, icon: Monitor,
+    x: 563, y: 364,  delay: 0.3,  icon: Monitor,
   },
   {
     id: "discovery", label: "Discovery", desc: "Interessierte Nutzer finden",
-    x: 418, y: 478, delay: 0.45, icon: Compass,
+    x: 400, y: 458,  delay: 0.45, icon: Compass,
   },
   {
     id: "gmail", label: "Gmail", desc: "Direkt in der Inbox",
-    x: 158, y: 380, delay: 0.6, icon: Mail,
+    x: 237, y: 364,  delay: 0.6,  icon: Mail,
   },
   {
     id: "maps", label: "Maps", desc: "Unterwegs erreichen",
-    x: 158, y: 145, delay: 0.75, icon: MapPin,
+    x: 237, y: 176,  delay: 0.75, icon: MapPin,
   },
 ];
 
@@ -71,7 +74,7 @@ function NetworkVisualization() {
 
         {networkNodes.map((node) => (
           <g key={node.id}>
-            {/* Animated line */}
+            {/* Animated line from center to node */}
             <motion.line
               x1={CENTER.x} y1={CENTER.y}
               x2={node.x} y2={node.y}
@@ -85,7 +88,7 @@ function NetworkVisualization() {
               animate={inView ? "visible" : "hidden"}
             />
 
-            {/* Traveling dot */}
+            {/* Traveling dot along each line */}
             {inView && (
               <motion.circle
                 r={3}
@@ -107,6 +110,27 @@ function NetworkVisualization() {
             )}
           </g>
         ))}
+
+        {/* Enclosing circle drawn after all lines finish (~2.8s) */}
+        <motion.circle
+          cx={CENTER.x}
+          cy={CENTER.y}
+          r={242}
+          fill="none"
+          stroke="#C9A96E"
+          strokeWidth="1.5"
+          strokeOpacity="0.5"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={inView ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
+          transition={{
+            pathLength: {
+              duration: 2.0,
+              delay: 2.8,
+              ease: [0.43, 0.13, 0.23, 0.96] as [number, number, number, number],
+            },
+            opacity: { duration: 0.3, delay: 2.8 },
+          }}
+        />
       </svg>
 
       {/* Center card */}
