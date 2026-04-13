@@ -233,8 +233,8 @@ const steps = [
 export default function SeaPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-28 lg:pt-36 pb-12 lg:pb-20 bg-cream overflow-hidden">
+      {/* Hero — 2-col on desktop: text left, network right */}
+      <section className="relative pt-28 lg:pt-36 pb-16 lg:pb-24 bg-cream overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/4 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
@@ -247,61 +247,94 @@ export default function SeaPage() {
             </div>
           </FadeIn>
 
-          {/* Headline */}
-          <FadeIn className="max-w-3xl mb-4">
-            <p className="text-gold text-sm font-medium tracking-widest uppercase mb-4">
-              Search Engine Advertising
-            </p>
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-charcoal leading-tight mb-6">
-              Eine Kampagne.
-              <br />
-              <span className="italic text-gold">Alle Google-Kanäle.</span>
-            </h1>
-            <p className="text-warm-muted text-lg sm:text-xl leading-relaxed max-w-2xl">
-              Maximaler Erfolg mit minimalem Aufwand — wir orchestrieren Search, YouTube, Display, Discovery, Gmail und Maps aus einer Hand.
-            </p>
-          </FadeIn>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
-          <FadeIn delay={0.2} className="mb-14 lg:mb-20">
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/kontakt"
-                className="group inline-flex items-center gap-2.5 px-7 py-4 bg-gold text-charcoal font-semibold rounded-full text-[15px] hover:bg-gold-dark hover:text-cream transition-all duration-300 hover:shadow-xl hover:shadow-gold/20"
-              >
-                Kostenloses Erstgespräch
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                href="/cases"
-                className="inline-flex items-center gap-2.5 px-7 py-4 border border-charcoal/20 text-charcoal font-medium rounded-full text-[15px] hover:border-charcoal/50 transition-all duration-300"
-              >
-                Ergebnisse ansehen
-              </Link>
-            </div>
-          </FadeIn>
+            {/* Left: headline, subline, CTAs */}
+            <div>
+              <FadeIn className="mb-4">
+                <p className="text-gold text-sm font-medium tracking-widest uppercase mb-4">
+                  Search Engine Advertising
+                </p>
+                <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-charcoal leading-tight mb-6">
+                  Eine Kampagne.
+                  <br />
+                  <span className="italic text-gold">Alle Google-Kanäle.</span>
+                </h1>
+                <p className="text-warm-muted text-lg leading-relaxed">
+                  Maximaler Erfolg mit minimalem Aufwand — wir orchestrieren Search, YouTube, Display, Discovery, Gmail und Maps aus einer Hand.
+                </p>
+              </FadeIn>
 
-          {/* Network visualization — desktop */}
-          <FadeIn delay={0.3} className="hidden md:block">
-            <NetworkVisualization />
-          </FadeIn>
-
-          {/* Mobile: simple channel list */}
-          <div className="md:hidden grid grid-cols-2 gap-3 mt-6">
-            {networkNodes.map((node) => {
-              const Icon = node.icon;
-              return (
-                <div key={node.id} className="bg-white border border-gold/15 rounded-xl p-3 flex items-center gap-2.5">
-                  <div className="w-7 h-7 bg-gold/10 rounded-lg flex items-center justify-center shrink-0">
-                    <Icon size={13} className="text-gold" />
-                  </div>
-                  <div>
-                    <p className="text-charcoal text-[12px] font-semibold">{node.label}</p>
-                    <p className="text-warm-muted text-[10px] leading-tight">{node.desc}</p>
-                  </div>
+              <FadeIn delay={0.2} className="mt-8">
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/kontakt"
+                    className="group inline-flex items-center gap-2.5 px-7 py-4 bg-gold text-charcoal font-semibold rounded-full text-[15px] hover:bg-gold-dark hover:text-cream transition-all duration-300 hover:shadow-xl hover:shadow-gold/20"
+                  >
+                    Kostenloses Erstgespräch
+                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <Link
+                    href="/cases"
+                    className="inline-flex items-center gap-2.5 px-7 py-4 border border-charcoal/20 text-charcoal font-medium rounded-full text-[15px] hover:border-charcoal/50 transition-all duration-300"
+                  >
+                    Ergebnisse ansehen
+                  </Link>
                 </div>
-              );
-            })}
+              </FadeIn>
+
+              {/* Mobile: channel list */}
+              <div className="lg:hidden grid grid-cols-2 gap-3 mt-10">
+                {networkNodes.map((node) => {
+                  const Icon = node.icon;
+                  return (
+                    <div key={node.id} className="bg-white border border-gold/15 rounded-xl p-3 flex items-center gap-2.5">
+                      <div className="w-7 h-7 bg-gold/10 rounded-lg flex items-center justify-center shrink-0">
+                        <Icon size={13} className="text-gold" />
+                      </div>
+                      <div>
+                        <p className="text-charcoal text-[12px] font-semibold">{node.label}</p>
+                        <p className="text-warm-muted text-[10px] leading-tight">{node.desc}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Right: network visualization — desktop only */}
+            <FadeIn delay={0.25} className="hidden lg:block">
+              <NetworkVisualization />
+            </FadeIn>
+
           </div>
+        </div>
+      </section>
+
+      {/* Process — first after hero */}
+      <section className="py-20 lg:py-32 bg-cream-dark">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <FadeIn className="max-w-xl mb-12 lg:mb-16">
+            <p className="text-gold text-sm font-medium tracking-widest uppercase mb-4">So arbeiten wir</p>
+            <h2 className="font-heading text-4xl lg:text-5xl text-charcoal leading-tight">
+              Von null auf<br />
+              <span className="italic text-gold">Performance.</span>
+            </h2>
+          </FadeIn>
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.1}>
+            {steps.map((step, i) => (
+              <StaggerItem key={step.num}>
+                <div className="relative bg-white border border-gold/15 rounded-2xl p-6 lg:p-8 h-full">
+                  {i < steps.length - 1 && (
+                    <div className="hidden lg:block absolute top-10 -right-3 w-6 h-px bg-gold/30 z-10" />
+                  )}
+                  <p className="font-heading text-4xl text-gold/20 mb-4">{step.num}</p>
+                  <h3 className="font-heading text-lg text-charcoal mb-2">{step.title}</h3>
+                  <p className="text-warm-muted text-[13px] leading-relaxed">{step.desc}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 
@@ -330,33 +363,6 @@ export default function SeaPage() {
                 </StaggerItem>
               );
             })}
-          </StaggerContainer>
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className="py-20 lg:py-32 bg-cream">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <FadeIn className="max-w-xl mb-12 lg:mb-16">
-            <p className="text-gold text-sm font-medium tracking-widest uppercase mb-4">So arbeiten wir</p>
-            <h2 className="font-heading text-4xl lg:text-5xl text-charcoal leading-tight">
-              Von null auf<br />
-              <span className="italic text-gold">Performance.</span>
-            </h2>
-          </FadeIn>
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.1}>
-            {steps.map((step, i) => (
-              <StaggerItem key={step.num}>
-                <div className="relative bg-white border border-gold/15 rounded-2xl p-6 lg:p-8 h-full">
-                  {i < steps.length - 1 && (
-                    <div className="hidden lg:block absolute top-10 -right-3 w-6 h-px bg-gold/30 z-10" />
-                  )}
-                  <p className="font-heading text-4xl text-gold/20 mb-4">{step.num}</p>
-                  <h3 className="font-heading text-lg text-charcoal mb-2">{step.title}</h3>
-                  <p className="text-warm-muted text-[13px] leading-relaxed">{step.desc}</p>
-                </div>
-              </StaggerItem>
-            ))}
           </StaggerContainer>
         </div>
       </section>
