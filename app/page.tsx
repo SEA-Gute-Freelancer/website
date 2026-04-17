@@ -9,7 +9,7 @@ import {
   ArrowRight, ArrowUpRight,
   Award, Search, BarChart3, Zap, Globe, Layers,
 } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations/FadeIn";
+import { FadeIn } from "@/components/animations/FadeIn";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const RotatingEarth = dynamic(() => import("@/components/ui/wireframe-dotted-globe"), {
@@ -321,53 +321,19 @@ function ServicesSection() {
   const { t } = useLanguage();
   const s = t.home.services;
   return (
-    <section className="py-16 lg:py-40 bg-cream">
+    <section className="py-16 lg:py-28 bg-cream">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <FadeIn className="max-w-2xl mb-10 lg:mb-20">
+        <FadeIn className="max-w-2xl mb-10">
           <p className="text-gold text-sm font-medium tracking-widest uppercase mb-4">{s.label}</p>
-          <h2 className="font-heading text-4xl lg:text-5xl text-charcoal leading-tight mb-6">
+          <h2 className="font-heading text-4xl lg:text-5xl text-charcoal leading-tight mb-5">
             {s.h2a}
             <br />
             <span className="italic text-gold">{s.h2b}</span>
           </h2>
-          {s.p.split("\n\n").map((para, i) => (
-            <p key={i} className="text-warm-muted text-lg leading-relaxed mb-4 last:mb-0">{para}</p>
-          ))}
+          <p className="text-warm-muted text-lg leading-relaxed">{s.p}</p>
         </FadeIn>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6" staggerDelay={0.1}>
-          {t.serviceItems.map((service, idx) => {
-            const Icon = serviceIcons[idx];
-            return (
-              <StaggerItem key={service.title}>
-                <Link href="/leistungen" className="block">
-                  <motion.div
-                    whileHover={{ y: -4, boxShadow: "0 20px 60px -10px rgba(30,26,22,0.12)" }}
-                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                    className={`group p-5 sm:p-8 bg-gradient-to-br ${serviceColors[idx]} border border-gold/15 rounded-3xl`}
-                  >
-                    <div className="flex items-start justify-between mb-6">
-                      <div className="w-12 h-12 bg-gold/10 rounded-2xl flex items-center justify-center group-hover:bg-gold/20 transition-colors">
-                        <Icon size={22} className="text-gold" />
-                      </div>
-                      <span className="text-[11px] font-medium text-gold/80 tracking-wider uppercase border border-gold/20 rounded-full px-3 py-1 bg-gold/5">
-                        {service.tag}
-                      </span>
-                    </div>
-                    <h3 className="font-heading text-xl text-charcoal mb-3">{service.title}</h3>
-                    <p className="text-warm-muted text-[15px] leading-relaxed">{service.desc}</p>
-                    <div className="mt-6 flex items-center gap-2 text-gold text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span>{t.common.learnMore}</span>
-                      <ArrowRight size={14} />
-                    </div>
-                  </motion.div>
-                </Link>
-              </StaggerItem>
-            );
-          })}
-        </StaggerContainer>
-
-        <FadeIn delay={0.3} className="mt-14 text-center">
+        <FadeIn delay={0.2}>
           <Link href="/leistungen" className="group inline-flex items-center gap-2 px-8 py-4 border-2 border-charcoal text-charcoal font-semibold rounded-full hover:bg-charcoal hover:text-cream transition-all duration-300">
             {s.cta}
             <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -550,8 +516,8 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <CertificationsSection />
       <ServicesSection />
+      <CertificationsSection />
       <MissionStrip />
       <TeamTeaser />
       <CasesTeaser />

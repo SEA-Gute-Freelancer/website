@@ -137,8 +137,8 @@ const home = {
       label: "Was wir tun",
       h2a: "You do your Work.",
       h2b: "We do your Google Ads.",
-      p: "Schon mal Geld für Marketing verbrannt? Wahrscheinlich ja. Mit Google Ads, wenn man es selbst macht. Mit Agenturen, die zu langsam sind. Mit Kampagnen, die Klicks, aber keine Leads oder Sales bringen.\n\nDie Wahrheit: Voll normal. Erfolg lässt sich nicht sofort reproduzieren. Erfolg erreicht man mit Baby Steps. Wir bringen dich Schritt für Schritt weiter. Und du zahlst nur den Skill, den du gerade wirklich brauchst.",
-      cta: "Alle Leistungen ansehen",
+      p: "Du fokussierst dich auf dein Business. Wir übernehmen deine Google Ads. Kein Onboarding-Marathon, keine Lernkurve, keine Agentur-Bürokratie — einfach Ergebnisse.",
+      cta: "Alle Leistungen",
     },
     mission: {
       label: "Das Kollektiv",
@@ -193,8 +193,8 @@ const home = {
       label: "What we do",
       h2a: "You do your Work.",
       h2b: "We do your Google Ads.",
-      p: "Ever burned money on marketing? Probably yes. On Google Ads when you ran it yourself. On agencies that moved too slowly. On campaigns that drove clicks but zero leads or sales.\n\nThe truth: totally normal. Success can't be copy-pasted overnight. It's built in baby steps. We move you forward, one step at a time. And you only pay for the skill you actually need right now.",
-      cta: "See all services",
+      p: "You focus on your business. We take care of your Google Ads. No onboarding marathon, no learning curve, no agency bureaucracy — just results.",
+      cta: "All Services",
     },
     mission: {
       label: "The Collective",
