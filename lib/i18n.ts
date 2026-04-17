@@ -143,9 +143,9 @@ const home = {
     mission: {
       label: "Das Kollektiv",
       h2a: "Echte Experten.",
-      h2b: "Kein Overhead.",
-      p1: "SEA Gute Freelancer ist kein klassisches Unternehmen. Wir sind ein Kollektiv von Spezialisten, Experten, Profis – aber in erster Linie von Freunden. Kennengelernt bei Google. Zusammen gereist. Füreinander eingesprungen.",
-      p2: "Du erhältst die Tiefe eines Spezialisten mit der Flexibilität eines Freelancers – und das zu Konditionen, die ein Mittelständler sich leisten kann.",
+      h2b: "Für jedes Gebiet.",
+      p1: "SEA Gute Freelancer ist kein klassisches Unternehmen. Wir sind ein Kollektiv.",
+      p2: "Du erhältst die Tiefe eines Spezialisten mit der Flexibilität eines Freelancers – und das zu Konditionen, die sich ein Mittelständler leisten kann. Diese Preise können wir dir nur bieten, weil wir auf alles verzichten, was überflüssig ist – und alles automatisieren, was sich automatisieren lässt.",
       cta1: "Über uns",
       cta2: "Das Team kennenlernen",
       budgetLabel: "Verwaltetes Google Ads Budget",
