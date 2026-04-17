@@ -1,9 +1,7 @@
 "use client"
 
 import React, { useCallback, useMemo, useRef } from "react"
-import { motion, useAnimationControls } from "framer-motion"
 import { v4 as uuidv4 } from "uuid"
-
 import { cn } from "@/lib/utils"
 import { useDimensions } from "@/components/hooks/use-debounced-dimensions"
 
@@ -63,30 +61,35 @@ interface PixelDotProps {
 }
 
 const PixelDot: React.FC<PixelDotProps> = React.memo(({ id, size, fadeDuration, delay, className }) => {
-  const controls = useAnimationControls()
+  const dotRef = useRef<HTMLDivElement>(null)
 
   const animatePixel = useCallback(() => {
-    controls.start({
-      opacity: [1, 0],
-      transition: { duration: fadeDuration / 1000, delay: delay / 1000 },
+    const el = dotRef.current
+    if (!el) return
+    el.style.transition = "none"
+    el.style.opacity = "1"
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        el.style.transition = `opacity ${fadeDuration}ms ease ${delay}ms`
+        el.style.opacity = "0"
+      })
     })
-  }, [controls, fadeDuration, delay])
+  }, [fadeDuration, delay])
 
-  const ref = useCallback(
+  const setRef = useCallback(
     (node: HTMLDivElement | null) => {
+      (dotRef as React.MutableRefObject<HTMLDivElement | null>).current = node
       if (node) (node as any).__animatePixel = animatePixel
     },
     [animatePixel]
   )
 
   return (
-    <motion.div
+    <div
       id={id}
-      ref={ref}
+      ref={setRef}
       className={cn(className)}
-      style={{ width: `${size}px`, height: `${size}px` }}
-      initial={{ opacity: 0 }}
-      animate={controls}
+      style={{ width: `${size}px`, height: `${size}px`, opacity: 0 }}
     />
   )
 })
