@@ -9,7 +9,7 @@ import {
   ArrowRight, ArrowUpRight,
   Award, Search, BarChart3, Zap, Globe, Layers,
 } from "lucide-react";
-import { FadeIn } from "@/components/animations/FadeIn";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations/FadeIn";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const RotatingEarth = dynamic(() => import("@/components/ui/wireframe-dotted-globe"), {
