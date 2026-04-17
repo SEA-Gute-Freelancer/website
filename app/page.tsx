@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { GooeyFilter } from "@/components/ui/gooey-filter";
 import { PixelTrail } from "@/components/ui/pixel-trail";
 import { useScreenSize } from "@/hooks/use-screen-size";
 import { useRef } from "react";
@@ -369,18 +368,14 @@ function MissionStrip() {
       className="relative py-24 lg:py-40 bg-charcoal overflow-hidden"
       onMouseMove={handleMouseMove}
     >
-      {/* Gooey pixel trail */}
-      <GooeyFilter id="gooey-mission" strength={6} />
-      <div
-        className="absolute inset-0 z-0"
-        style={{ filter: "url(#gooey-mission)" }}
-      >
+      {/* Pixel trail */}
+      <div className="absolute inset-0 z-0">
         <PixelTrail
           id={MISSION_TRAIL_ID}
           pixelSize={pixelSize}
           fadeDuration={600}
           delay={0}
-          pixelClassName="bg-gold/30"
+          pixelClassName="bg-gold/50"
         />
       </div>
 
