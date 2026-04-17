@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import {
-  ArrowRight, ArrowUpRight, TrendingUp,
+  ArrowRight, ArrowUpRight,
   Award, Search, BarChart3, Zap, Globe, Layers,
 } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations/FadeIn";
@@ -143,70 +143,154 @@ function Hero() {
   );
 }
 
-/* ─── Marquee row ────────────────────────────────────────────────────────── */
-type MarqueeItem = { quote: string; name: string; company: string; location: string; result: string; avatar: string };
-
-function MarqueeRow({ items, dir }: { items: MarqueeItem[]; dir: "left" | "right" }) {
-  const doubled = [...items, ...items];
-  return (
-    <div className="marquee-row overflow-hidden">
-      <div className={`flex gap-5 w-max ${dir === "left" ? "marquee-left" : "marquee-right"}`}>
-        {doubled.map((t, i) => (
-          <div
-            key={i}
-            className="w-[340px] shrink-0 bg-white border border-gold/12 rounded-2xl p-6 flex flex-col gap-4 shadow-sm shadow-charcoal/5"
-          >
-            <span className="self-start inline-flex items-center gap-1.5 px-2.5 py-1 bg-gold/10 border border-gold/20 rounded-full text-gold text-[11px] font-semibold tracking-wide">
-              <TrendingUp size={10} />
-              {t.result}
-            </span>
-            <p className="text-warm-muted text-[13.5px] leading-relaxed flex-1">„{t.quote}"</p>
-            <div className="flex items-center gap-3 pt-3 border-t border-gold/10">
-              <img src={t.avatar} alt={t.name} className="w-8 h-8 rounded-full object-cover ring-2 ring-gold/15 shrink-0" />
-              <div>
-                <p className="text-charcoal text-[13px] font-semibold leading-tight">{t.name}</p>
-                <p className="text-warm-muted text-[11px]">{t.company} · {t.location}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-/* ─── Testimonials Marquee section  (LIGHT) ─────────────────────────────── */
-function TestimonialsCarouselSection() {
-  const { t } = useLanguage();
-  const ts = t.home.testimonials;
+/* ─── Certifications Section  (LIGHT) ───────────────────────────────────── */
+function CertificationsSection() {
   return (
     <section className="py-20 lg:py-40 bg-cream overflow-hidden">
-      <FadeIn className="max-w-7xl mx-auto px-6 lg:px-8 mb-10 lg:mb-16">
-        <p className="text-gold text-sm font-medium tracking-widest uppercase mb-4">{ts.label}</p>
-        <h2 className="font-heading text-4xl lg:text-5xl text-charcoal leading-tight">
-          {ts.h2a}{" "}
-          <span className="italic text-gold">{ts.h2b}</span>
-        </h2>
-      </FadeIn>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <FadeIn className="max-w-2xl mb-14 lg:mb-20">
+          <p className="text-gold text-sm font-medium tracking-widest uppercase mb-4">Qualifikationen</p>
+          <h2 className="font-heading text-4xl lg:text-5xl text-charcoal leading-tight">
+            Zertifiziert &{" "}
+            <span className="italic text-gold">geprüft</span>
+          </h2>
+          <p className="text-warm-muted text-lg leading-relaxed mt-4">
+            Nachgewiesene Expertise durch offizielle Zertifizierungen — kein Selbstzweck, sondern Grundlage für bessere Kampagnenergebnisse.
+          </p>
+        </FadeIn>
 
-      <div
-        className="relative"
-        style={{
-          maskImage: "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
-        }}
-      >
-        <div className="flex flex-col gap-5">
-          <MarqueeRow items={t.rowA} dir="left"  />
-          <MarqueeRow items={t.rowB} dir="right" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+
+          {/* ── Google Search Certificate ── */}
+          <FadeIn direction="left" delay={0.1}>
+            <motion.div
+              whileHover={{ y: -6, boxShadow: "0 32px 80px -12px rgba(66,133,244,0.18)" }}
+              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className="relative bg-white border border-gold/15 rounded-3xl p-8 lg:p-10 overflow-hidden group"
+            >
+              {/* Background glow */}
+              <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-500/6 rounded-full blur-3xl pointer-events-none group-hover:bg-blue-500/10 transition-colors duration-700" />
+
+              {/* Google colors bar */}
+              <div className="flex gap-1.5 mb-8">
+                <div className="h-1.5 w-8 rounded-full bg-[#4285F4]" />
+                <div className="h-1.5 w-8 rounded-full bg-[#EA4335]" />
+                <div className="h-1.5 w-8 rounded-full bg-[#FBBC05]" />
+                <div className="h-1.5 w-8 rounded-full bg-[#34A853]" />
+              </div>
+
+              {/* Icon */}
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#4285F4]/15 to-[#34A853]/10 border border-[#4285F4]/20 flex items-center justify-center mb-6"
+              >
+                <svg viewBox="0 0 48 48" className="w-9 h-9">
+                  <path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"/>
+                  <path fill="#34A853" d="M6.3 14.7l7 5.1C15.1 16.1 19.2 13 24 13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 16.3 2 9.7 7.4 6.3 14.7z"/>
+                  <path fill="#FBBC05" d="M24 46c5.5 0 10.5-1.9 14.3-5l-6.6-5.4C29.7 37.3 27 38 24 38c-6 0-10.6-3.9-11.8-9.3l-7 5.3C8.1 41.8 15.5 46 24 46z"/>
+                  <path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-.8 2.9-2.6 5.3-5.2 6.9l6.6 5.4c3.9-3.6 6.3-8.9 6.3-15.8 0-1.3-.2-2.7-.5-4z"/>
+                </svg>
+              </motion.div>
+
+              {/* Text */}
+              <p className="text-[11px] font-semibold tracking-widest uppercase text-[#4285F4]/70 mb-2">
+                Google · Skillshop
+              </p>
+              <h3 className="font-heading text-2xl text-charcoal mb-3 leading-tight">
+                Google Ads Search<br />Certification
+              </h3>
+              <p className="text-warm-muted text-[15px] leading-relaxed mb-7">
+                Offizielle Zertifizierung für Google Ads Suchnetzwerk-Kampagnen — von Kampagnenstruktur über Gebotsstrategien bis hin zu Conversion-Optimierung.
+              </p>
+
+              {/* Badge */}
+              <motion.div
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.35, duration: 0.5 }}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#4285F4]/8 border border-[#4285F4]/20 rounded-full"
+              >
+                <motion.div
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
+                  className="w-2 h-2 rounded-full bg-[#34A853]"
+                />
+                <span className="text-[#4285F4] text-xs font-semibold">Zertifiziert · Google</span>
+              </motion.div>
+            </motion.div>
+          </FadeIn>
+
+          {/* ── Claude 101 Badge ── */}
+          <FadeIn direction="right" delay={0.2}>
+            <motion.div
+              whileHover={{ y: -6, boxShadow: "0 32px 80px -12px rgba(201,169,110,0.2)" }}
+              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className="relative bg-charcoal border border-gold/20 rounded-3xl p-8 lg:p-10 overflow-hidden group"
+            >
+              {/* Background glow */}
+              <div className="absolute -top-20 -right-20 w-64 h-64 bg-gold/8 rounded-full blur-3xl pointer-events-none group-hover:bg-gold/12 transition-colors duration-700" />
+
+              {/* Animated top bar */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.15, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                style={{ originX: 0 }}
+                className="h-0.5 w-full bg-gradient-to-r from-gold via-gold/60 to-transparent mb-8 rounded-full"
+              />
+
+              {/* Icon */}
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.25, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                className="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/25 flex items-center justify-center mb-6"
+              >
+                <svg viewBox="0 0 48 48" className="w-9 h-9" fill="none">
+                  <path d="M24 6L38 36H10L24 6Z" fill="#C9A96E" fillOpacity="0.9" />
+                  <path d="M24 14L33 36H15L24 14Z" fill="#1e1a16" />
+                  <circle cx="24" cy="28" r="4" fill="#C9A96E" />
+                </svg>
+              </motion.div>
+
+              {/* Text */}
+              <p className="text-[11px] font-semibold tracking-widest uppercase text-gold/60 mb-2">
+                Anthropic · Claude AI
+              </p>
+              <h3 className="font-heading text-2xl text-cream mb-3 leading-tight">
+                Claude 101<br />
+                <span className="text-gold">Badge</span>
+              </h3>
+              <p className="text-cream/60 text-[15px] leading-relaxed mb-7">
+                Zertifizierter Kenntnisnachweis im Umgang mit Claude AI — Prompt Engineering, Tool Use und den sicheren, effektiven Einsatz von KI in professionellen Workflows.
+              </p>
+
+              {/* Badge */}
+              <motion.div
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-gold/10 border border-gold/25 rounded-full"
+              >
+                <motion.div
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut", delay: 0.5 }}
+                  className="w-2 h-2 rounded-full bg-gold"
+                />
+                <span className="text-gold text-xs font-semibold">Zertifiziert · Anthropic</span>
+              </motion.div>
+            </motion.div>
+          </FadeIn>
+
         </div>
       </div>
-
-      <FadeIn className="max-w-7xl mx-auto px-6 lg:px-8 mt-14 flex items-center gap-3">
-        <div className="h-px flex-1 bg-gold/15" />
-        <p className="text-warm-muted text-xs tracking-widest uppercase shrink-0">{ts.footer}</p>
-        <div className="h-px flex-1 bg-gold/15" />
-      </FadeIn>
     </section>
   );
 }
@@ -445,7 +529,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <TestimonialsCarouselSection />
+      <CertificationsSection />
       <ServicesSection />
       <MissionStrip />
       <TeamTeaser />
