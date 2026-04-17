@@ -294,7 +294,7 @@ function CertificationsSection() {
               <p className="text-[10px] font-semibold tracking-widest uppercase text-gold/60 mb-1">Webdesign · Nachhaltig</p>
               <h3 className="font-heading text-lg text-charcoal mb-2 leading-tight">Nachhaltige<br />Website</h3>
               <p className="text-warm-muted text-[13px] leading-relaxed mb-5">
-                Diese Website erfüllt die Anforderungen an nachhaltiges Webdesign — performant, ressourcenschonend, zukunftsfähig.
+                Diese Website wurde mit Blick auf nachhaltiges Webdesign entwickelt — optimierte Assets, sparsames CSS und ressourcenbewusster Aufbau.
               </p>
 
               <motion.div
