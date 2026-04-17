@@ -56,9 +56,10 @@ function charColor(len: number, max: number) {
 function CopyBtn({ text }: { text: string }) {
   const [copied, setCopied] = useState(false);
   const handle = () => {
-    navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    }).catch(() => {});
   };
   return (
     <button
@@ -131,7 +132,9 @@ function exportCSV(result: PMaxResult) {
   const a = document.createElement("a");
   a.href = url;
   a.download = "pmax-campaign.csv";
+  document.body.appendChild(a);
   a.click();
+  document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
 

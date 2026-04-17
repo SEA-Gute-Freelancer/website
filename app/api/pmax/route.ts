@@ -1,6 +1,25 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextRequest, NextResponse } from "next/server";
 
+// ─── URL Validation ───────────────────────────────────────────────────────────
+
+function isSafeUrl(raw: string): boolean {
+  let parsed: URL;
+  try {
+    parsed = new URL(raw);
+  } catch {
+    return false;
+  }
+  if (parsed.protocol !== "https:" && parsed.protocol !== "http:") return false;
+  const host = parsed.hostname.toLowerCase();
+  if (host === "localhost") return false;
+  // Block private / link-local IPv4 ranges and IPv6 loopback
+  const privateV4 = /^(10\.|127\.|169\.254\.|172\.(1[6-9]|2\d|3[01])\.|192\.168\.)/;
+  if (privateV4.test(host)) return false;
+  if (host === "::1" || host === "[::1]") return false;
+  return true;
+}
+
 // ─── URL Fetcher via Jina AI Reader ──────────────────────────────────────────
 // jina.ai/reader converts any URL to clean markdown text, bypassing bot protection
 
@@ -204,11 +223,18 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  if (!isSafeUrl(url)) {
+    return NextResponse.json(
+      { error: "Ungültige oder nicht erlaubte URL." },
+      { status: 400 }
+    );
+  }
+
   // Rate limit only applies when using the free default key
   const usingOwnKey = Boolean(userApiKey);
   if (!usingOwnKey && !checkRateLimit(ip)) {
     return NextResponse.json(
-      { error: "Tageslimit erreicht (5/Tag). Eigenen API Key nutzen für unlimitierten Zugriff." },
+      { error: "Tageslimit erreicht (1/Tag). Eigenen API Key nutzen für unlimitierten Zugriff." },
       { status: 429 }
     );
   }
