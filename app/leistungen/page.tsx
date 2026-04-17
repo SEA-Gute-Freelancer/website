@@ -5,7 +5,8 @@ import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import {
   Search, BarChart3, Zap, Globe, Layers,
-  PieChart, ArrowRight, CheckCircle2
+  PieChart, ArrowRight, CheckCircle2,
+  Sparkles, Layout, Users,
 } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations/FadeIn";
 import { Spotlight } from "@/components/ui/spotlight";
@@ -16,13 +17,16 @@ const SplineScene = dynamic(
   { ssr: false, loading: () => <div className="w-full h-full" /> }
 );
 
-const serviceIcons = [Search, BarChart3, Zap, Globe, Layers];
+const serviceIcons = [Search, BarChart3, Zap, Globe, Layers, Sparkles, Layout, Users];
 const serviceColors = [
   "from-gold/20 to-gold/5",
   "from-blue-500/10 to-purple-500/5",
   "from-emerald-500/10 to-teal-500/5",
   "from-violet-500/10 to-indigo-500/5",
   "from-orange-500/10 to-amber-500/5",
+  "from-rose-500/10 to-pink-500/5",
+  "from-cyan-500/10 to-blue-500/5",
+  "from-amber-500/10 to-yellow-500/5",
 ];
 const addonIcons = [Search, BarChart3, PieChart, Globe];
 
