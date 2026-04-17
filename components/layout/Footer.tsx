@@ -92,20 +92,20 @@ export function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="mailto:hallo@sea-gute-freelancer.de"
+                  href="mailto:seoadsrm@gmail.com"
                   className="flex items-center gap-3 text-cream/70 text-sm hover:text-gold transition-colors group"
                 >
                   <Mail size={15} className="text-gold/60 group-hover:text-gold transition-colors shrink-0" />
-                  hallo@sea-gute-freelancer.de
+                  seoadsrm@gmail.com
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+4930000000"
+                  href="tel:+4917626144998"
                   className="flex items-center gap-3 text-cream/70 text-sm hover:text-gold transition-colors group"
                 >
                   <Phone size={15} className="text-gold/60 group-hover:text-gold transition-colors shrink-0" />
-                  +49 30 000 000 00
+                  +49 176 26144998
                 </a>
               </li>
             </ul>
