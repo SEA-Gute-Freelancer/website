@@ -137,7 +137,7 @@ const home = {
       label: "Was wir tun",
       h2a: "You do your Work.",
       h2b: "We do your Google Ads.",
-      p: "Du fokussierst dich auf dein Business. Wir übernehmen deine Google Ads. Kein Onboarding-Marathon, keine Lernkurve, keine Agentur-Bürokratie — einfach Ergebnisse.",
+      p: "Du fokussierst dich auf dein Business. Wir übernehmen deine Google Ads und viele andere Leistungen. Kein Onboarding-Marathon, keine Lernkurve, keine Agentur-Bürokratie — sprich uns an.",
       cta: "Alle Leistungen",
     },
     mission: {
