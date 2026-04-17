@@ -146,48 +146,42 @@ function Hero() {
 /* ─── Certifications Section  (LIGHT) ───────────────────────────────────── */
 function CertificationsSection() {
   return (
-    <section className="py-20 lg:py-40 bg-cream overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <FadeIn className="max-w-2xl mb-14 lg:mb-20">
-          <p className="text-gold text-sm font-medium tracking-widest uppercase mb-4">Qualifikationen</p>
-          <h2 className="font-heading text-4xl lg:text-5xl text-charcoal leading-tight">
+    <section className="py-16 lg:py-24 bg-cream overflow-hidden">
+      <div className="max-w-5xl mx-auto px-6 lg:px-8">
+        <FadeIn className="mb-10 lg:mb-14">
+          <p className="text-gold text-sm font-medium tracking-widest uppercase mb-3">Qualifikationen</p>
+          <h2 className="font-heading text-3xl lg:text-4xl text-charcoal leading-tight">
             Zertifiziert &{" "}
             <span className="italic text-gold">geprüft</span>
           </h2>
-          <p className="text-warm-muted text-lg leading-relaxed mt-4">
-            Nachgewiesene Expertise durch offizielle Zertifizierungen — kein Selbstzweck, sondern Grundlage für bessere Kampagnenergebnisse.
-          </p>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
 
-          {/* ── Google Search Certificate ── */}
-          <FadeIn direction="left" delay={0.1}>
+          {/* ── Google Ads ── */}
+          <FadeIn delay={0.1}>
             <motion.div
-              whileHover={{ y: -6, boxShadow: "0 32px 80px -12px rgba(66,133,244,0.18)" }}
-              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="relative bg-white border border-gold/15 rounded-3xl p-8 lg:p-10 overflow-hidden group"
+              whileHover={{ y: -5, boxShadow: "0 24px 60px -10px rgba(66,133,244,0.15)" }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="relative bg-white border border-gold/15 rounded-2xl p-6 overflow-hidden group h-full"
             >
-              {/* Background glow */}
-              <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-500/6 rounded-full blur-3xl pointer-events-none group-hover:bg-blue-500/10 transition-colors duration-700" />
+              <div className="absolute -top-16 -right-16 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl pointer-events-none group-hover:bg-blue-500/8 transition-colors duration-700" />
 
-              {/* Google colors bar */}
-              <div className="flex gap-1.5 mb-8">
-                <div className="h-1.5 w-8 rounded-full bg-[#4285F4]" />
-                <div className="h-1.5 w-8 rounded-full bg-[#EA4335]" />
-                <div className="h-1.5 w-8 rounded-full bg-[#FBBC05]" />
-                <div className="h-1.5 w-8 rounded-full bg-[#34A853]" />
+              <div className="flex gap-1 mb-5">
+                <div className="h-1 w-5 rounded-full bg-[#4285F4]" />
+                <div className="h-1 w-5 rounded-full bg-[#EA4335]" />
+                <div className="h-1 w-5 rounded-full bg-[#FBBC05]" />
+                <div className="h-1 w-5 rounded-full bg-[#34A853]" />
               </div>
 
-              {/* Icon */}
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.2, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#4285F4]/15 to-[#34A853]/10 border border-[#4285F4]/20 flex items-center justify-center mb-6"
+                transition={{ delay: 0.15, duration: 0.5 }}
+                className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#4285F4]/12 to-[#34A853]/8 border border-[#4285F4]/15 flex items-center justify-center mb-4"
               >
-                <svg viewBox="0 0 48 48" className="w-9 h-9">
+                <svg viewBox="0 0 48 48" className="w-7 h-7">
                   <path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"/>
                   <path fill="#34A853" d="M6.3 14.7l7 5.1C15.1 16.1 19.2 13 24 13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 16.3 2 9.7 7.4 6.3 14.7z"/>
                   <path fill="#FBBC05" d="M24 46c5.5 0 10.5-1.9 14.3-5l-6.6-5.4C29.7 37.3 27 38 24 38c-6 0-10.6-3.9-11.8-9.3l-7 5.3C8.1 41.8 15.5 46 24 46z"/>
@@ -195,96 +189,123 @@ function CertificationsSection() {
                 </svg>
               </motion.div>
 
-              {/* Text */}
-              <p className="text-[11px] font-semibold tracking-widest uppercase text-[#4285F4]/70 mb-2">
-                Google · Skillshop
-              </p>
-              <h3 className="font-heading text-2xl text-charcoal mb-3 leading-tight">
-                Google Ads Search<br />Certification
-              </h3>
-              <p className="text-warm-muted text-[15px] leading-relaxed mb-7">
-                Offizielle Zertifizierung für Google Ads Suchnetzwerk-Kampagnen — von Kampagnenstruktur über Gebotsstrategien bis hin zu Conversion-Optimierung.
+              <p className="text-[10px] font-semibold tracking-widest uppercase text-[#4285F4]/60 mb-1">Google · Skillshop</p>
+              <h3 className="font-heading text-lg text-charcoal mb-2 leading-tight">Google Ads<br />Zertifizierung</h3>
+              <p className="text-warm-muted text-[13px] leading-relaxed mb-5">
+                Kampagnenstruktur, Gebotsstrategien und Conversion-Optimierung nach Google-Standard.
               </p>
 
-              {/* Badge */}
               <motion.div
-                initial={{ opacity: 0, x: -10 }}
+                initial={{ opacity: 0, x: -8 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.35, duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-[#4285F4]/8 border border-[#4285F4]/20 rounded-full"
+                transition={{ delay: 0.3, duration: 0.4 }}
+                className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#4285F4]/6 border border-[#4285F4]/15 rounded-full"
               >
-                <motion.div
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-                  className="w-2 h-2 rounded-full bg-[#34A853]"
-                />
-                <span className="text-[#4285F4] text-xs font-semibold">Zertifiziert · Google</span>
+                <motion.div animate={{ scale: [1, 1.3, 1] }} transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }} className="w-1.5 h-1.5 rounded-full bg-[#34A853]" />
+                <span className="text-[#4285F4] text-[11px] font-semibold">Zertifiziert · Google</span>
               </motion.div>
             </motion.div>
           </FadeIn>
 
-          {/* ── Claude 101 Badge ── */}
-          <FadeIn direction="right" delay={0.2}>
+          {/* ── Claude Badge ── */}
+          <FadeIn delay={0.2}>
             <motion.div
-              whileHover={{ y: -6, boxShadow: "0 32px 80px -12px rgba(201,169,110,0.2)" }}
-              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="relative bg-charcoal border border-gold/20 rounded-3xl p-8 lg:p-10 overflow-hidden group"
+              whileHover={{ y: -5, boxShadow: "0 24px 60px -10px rgba(201,169,110,0.18)" }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="relative bg-charcoal border border-gold/20 rounded-2xl p-6 overflow-hidden group h-full"
             >
-              {/* Background glow */}
-              <div className="absolute -top-20 -right-20 w-64 h-64 bg-gold/8 rounded-full blur-3xl pointer-events-none group-hover:bg-gold/12 transition-colors duration-700" />
+              <div className="absolute -top-16 -right-16 w-48 h-48 bg-gold/8 rounded-full blur-3xl pointer-events-none group-hover:bg-gold/12 transition-colors duration-700" />
 
-              {/* Animated top bar */}
               <motion.div
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.15, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ delay: 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 style={{ originX: 0 }}
-                className="h-0.5 w-full bg-gradient-to-r from-gold via-gold/60 to-transparent mb-8 rounded-full"
+                className="h-px w-full bg-gradient-to-r from-gold via-gold/50 to-transparent mb-5 rounded-full"
               />
 
-              {/* Icon */}
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.25, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                className="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/25 flex items-center justify-center mb-6"
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="w-12 h-12 rounded-xl bg-gold/10 border border-gold/25 flex items-center justify-center mb-4"
               >
-                <svg viewBox="0 0 48 48" className="w-9 h-9" fill="none">
+                <svg viewBox="0 0 48 48" className="w-7 h-7" fill="none">
                   <path d="M24 6L38 36H10L24 6Z" fill="#C9A96E" fillOpacity="0.9" />
                   <path d="M24 14L33 36H15L24 14Z" fill="#1e1a16" />
                   <circle cx="24" cy="28" r="4" fill="#C9A96E" />
                 </svg>
               </motion.div>
 
-              {/* Text */}
-              <p className="text-[11px] font-semibold tracking-widest uppercase text-gold/60 mb-2">
-                Anthropic · Claude AI
-              </p>
-              <h3 className="font-heading text-2xl text-cream mb-3 leading-tight">
-                Claude 101<br />
-                <span className="text-gold">Badge</span>
-              </h3>
-              <p className="text-cream/60 text-[15px] leading-relaxed mb-7">
-                Zertifizierter Kenntnisnachweis im Umgang mit Claude AI — Prompt Engineering, Tool Use und den sicheren, effektiven Einsatz von KI in professionellen Workflows.
+              <p className="text-[10px] font-semibold tracking-widest uppercase text-gold/50 mb-1">Anthropic · Claude AI</p>
+              <h3 className="font-heading text-lg text-cream mb-2 leading-tight">Claude <span className="text-gold">Badge</span></h3>
+              <p className="text-cream/55 text-[13px] leading-relaxed mb-5">
+                Prompt Engineering, Tool Use und KI-Einsatz in professionellen Workflows.
               </p>
 
-              {/* Badge */}
               <motion.div
-                initial={{ opacity: 0, x: -10 }}
+                initial={{ opacity: 0, x: -8 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.4, duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-gold/10 border border-gold/25 rounded-full"
+                transition={{ delay: 0.35, duration: 0.4 }}
+                className="inline-flex items-center gap-2 px-3 py-1.5 bg-gold/10 border border-gold/20 rounded-full"
               >
-                <motion.div
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut", delay: 0.5 }}
-                  className="w-2 h-2 rounded-full bg-gold"
-                />
-                <span className="text-gold text-xs font-semibold">Zertifiziert · Anthropic</span>
+                <motion.div animate={{ scale: [1, 1.3, 1] }} transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut", delay: 0.4 }} className="w-1.5 h-1.5 rounded-full bg-gold" />
+                <span className="text-gold text-[11px] font-semibold">Zertifiziert · Anthropic</span>
+              </motion.div>
+            </motion.div>
+          </FadeIn>
+
+          {/* ── Nachhaltiges Webdesign ── */}
+          <FadeIn delay={0.3}>
+            <motion.div
+              whileHover={{ y: -5, boxShadow: "0 24px 60px -10px rgba(201,169,110,0.12)" }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="relative bg-white border border-gold/15 rounded-2xl p-6 overflow-hidden group h-full"
+            >
+              <div className="absolute -top-16 -right-16 w-48 h-48 bg-gold/6 rounded-full blur-3xl pointer-events-none group-hover:bg-gold/10 transition-colors duration-700" />
+
+              <motion.div
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                style={{ originX: 0 }}
+                className="h-px w-full bg-gradient-to-r from-gold/60 via-gold/30 to-transparent mb-5 rounded-full"
+              />
+
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="w-12 h-12 rounded-xl bg-gold/8 border border-gold/20 flex items-center justify-center mb-4"
+              >
+                <svg viewBox="0 0 48 48" className="w-7 h-7" fill="none">
+                  <path d="M24 4C13 4 4 13 4 24s9 20 20 20 20-9 20-20S35 4 24 4z" stroke="#C9A96E" strokeWidth="2" fill="none"/>
+                  <path d="M24 14c-3 4-8 6-8 12 0 4.4 3.6 8 8 8s8-3.6 8-8c0-6-5-8-8-12z" fill="#C9A96E" fillOpacity="0.7"/>
+                  <path d="M24 22v12M20 30h8" stroke="#f5f0e8" strokeWidth="1.5" strokeLinecap="round"/>
+                </svg>
+              </motion.div>
+
+              <p className="text-[10px] font-semibold tracking-widest uppercase text-gold/60 mb-1">Webdesign · Nachhaltig</p>
+              <h3 className="font-heading text-lg text-charcoal mb-2 leading-tight">Nachhaltige<br />Website</h3>
+              <p className="text-warm-muted text-[13px] leading-relaxed mb-5">
+                Diese Website erfüllt die Anforderungen an nachhaltiges Webdesign — performant, ressourcenschonend, zukunftsfähig.
+              </p>
+
+              <motion.div
+                initial={{ opacity: 0, x: -8 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.4 }}
+                className="inline-flex items-center gap-2 px-3 py-1.5 bg-gold/8 border border-gold/20 rounded-full"
+              >
+                <motion.div animate={{ scale: [1, 1.3, 1] }} transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut", delay: 0.8 }} className="w-1.5 h-1.5 rounded-full bg-gold" />
+                <span className="text-gold/80 text-[11px] font-semibold">Nachhaltig · Verified</span>
               </motion.div>
             </motion.div>
           </FadeIn>
