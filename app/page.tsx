@@ -4,6 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { GooeyFilter } from "@/components/ui/gooey-filter";
+import { PixelTrail } from "@/components/ui/pixel-trail";
+import { useScreenSize } from "@/hooks/use-screen-size";
 import { useRef } from "react";
 import {
   ArrowRight, ArrowUpRight,
@@ -348,37 +351,53 @@ function ServicesSection() {
 function MissionStrip() {
   const { t } = useLanguage();
   const m = t.home.mission;
-  return (
-    <section className="py-16 lg:py-40 bg-charcoal overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-        <FadeIn direction="left" className="relative order-2 lg:order-1">
-          <div className="relative rounded-3xl overflow-hidden aspect-[4/3] ring-1 ring-gold/20">
-            <Image
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=85"
-              alt="Das SEA Gute Team bei der Arbeit"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 to-transparent" />
-          </div>
-        </FadeIn>
+  const screenSize = useScreenSize();
 
-        <FadeIn direction="right" className="order-1 lg:order-2">
-          <p className="text-gold text-sm font-medium tracking-widest uppercase mb-4">{m.label}</p>
-          <h2 className="font-heading text-4xl lg:text-5xl text-cream leading-tight mb-6">
+  return (
+    <section className="relative py-24 lg:py-40 bg-charcoal overflow-hidden">
+      {/* Gooey pixel trail */}
+      <GooeyFilter id="gooey-mission" strength={6} />
+      <div
+        className="absolute inset-0 z-0"
+        style={{ filter: "url(#gooey-mission)" }}
+      >
+        <PixelTrail
+          pixelSize={screenSize.lessThan("md") ? 20 : 28}
+          fadeDuration={600}
+          delay={0}
+          pixelClassName="bg-gold/30"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center">
+        <FadeIn>
+          <p className="text-gold text-sm font-medium tracking-widest uppercase mb-5">
+            {m.label}
+          </p>
+          <h2 className="font-heading text-4xl lg:text-6xl text-cream leading-tight mb-8">
             {m.h2a}
             <br />
             <span className="italic text-gold">{m.h2b}</span>
           </h2>
-          <p className="text-cream/65 text-[17px] leading-relaxed mb-5">{m.p1}</p>
-          <p className="text-cream/65 text-[17px] leading-relaxed mb-8">{m.p2}</p>
-          <div className="flex flex-wrap gap-4">
-            <Link href="/about" className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gold text-charcoal font-semibold rounded-full text-[14px] hover:bg-gold-light transition-all duration-300">
+          <p className="text-cream/70 text-lg lg:text-xl leading-relaxed mb-4 max-w-2xl mx-auto">
+            {m.p1}
+          </p>
+          <p className="text-cream/60 text-[17px] leading-relaxed mb-10 max-w-2xl mx-auto">
+            {m.p2}
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Link
+              href="/about"
+              className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gold text-charcoal font-semibold rounded-full text-[14px] hover:bg-gold-light transition-all duration-300"
+            >
               {m.cta1}
               <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link href="/team" className="group inline-flex items-center gap-2 px-7 py-3.5 border border-cream/20 text-cream font-medium rounded-full text-[14px] hover:border-cream/50 transition-all duration-300">
+            <Link
+              href="/team"
+              className="group inline-flex items-center gap-2 px-7 py-3.5 border border-cream/20 text-cream font-medium rounded-full text-[14px] hover:border-cream/50 transition-all duration-300"
+            >
               {m.cta2}
             </Link>
           </div>
