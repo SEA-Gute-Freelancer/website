@@ -347,14 +347,28 @@ function ServicesSection() {
   );
 }
 
+const MISSION_TRAIL_ID = "mission-trail"
+
 /* ─── Mission Strip  (DARK) ─────────────────────────────────────────────── */
 function MissionStrip() {
   const { t } = useLanguage();
   const m = t.home.mission;
   const screenSize = useScreenSize();
+  const pixelSize = screenSize.lessThan("md") ? 20 : 28;
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = Math.floor((e.clientX - rect.left) / pixelSize);
+    const y = Math.floor((e.clientY - rect.top) / pixelSize);
+    const el = document.getElementById(`${MISSION_TRAIL_ID}-pixel-${x}-${y}`);
+    if (el) (el as any).__animatePixel?.();
+  };
 
   return (
-    <section className="relative py-24 lg:py-40 bg-charcoal overflow-hidden">
+    <section
+      className="relative py-24 lg:py-40 bg-charcoal overflow-hidden"
+      onMouseMove={handleMouseMove}
+    >
       {/* Gooey pixel trail */}
       <GooeyFilter id="gooey-mission" strength={6} />
       <div
@@ -362,7 +376,8 @@ function MissionStrip() {
         style={{ filter: "url(#gooey-mission)" }}
       >
         <PixelTrail
-          pixelSize={screenSize.lessThan("md") ? 20 : 28}
+          id={MISSION_TRAIL_ID}
+          pixelSize={pixelSize}
           fadeDuration={600}
           delay={0}
           pixelClassName="bg-gold/30"

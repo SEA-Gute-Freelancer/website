@@ -13,6 +13,7 @@ interface PixelTrailProps {
   delay?: number
   className?: string
   pixelClassName?: string
+  id?: string
 }
 
 const PixelTrail: React.FC<PixelTrailProps> = ({
@@ -21,25 +22,11 @@ const PixelTrail: React.FC<PixelTrailProps> = ({
   delay = 0,
   className,
   pixelClassName,
+  id,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const dimensions = useDimensions(containerRef)
-  const trailId = useRef(uuidv4())
-
-  const handleMouseMove = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!containerRef.current) return
-      const rect = containerRef.current.getBoundingClientRect()
-      const x = Math.floor((e.clientX - rect.left) / pixelSize)
-      const y = Math.floor((e.clientY - rect.top) / pixelSize)
-      const pixelElement = document.getElementById(`${trailId.current}-pixel-${x}-${y}`)
-      if (pixelElement) {
-        const animatePixel = (pixelElement as any).__animatePixel
-        if (animatePixel) animatePixel()
-      }
-    },
-    [pixelSize]
-  )
+  const trailId = useRef(id ?? uuidv4())
 
   const columns = useMemo(() => Math.ceil(dimensions.width / pixelSize), [dimensions.width, pixelSize])
   const rows = useMemo(() => Math.ceil(dimensions.height / pixelSize), [dimensions.height, pixelSize])
@@ -47,8 +34,7 @@ const PixelTrail: React.FC<PixelTrailProps> = ({
   return (
     <div
       ref={containerRef}
-      className={cn("absolute inset-0 w-full h-full pointer-events-auto", className)}
-      onMouseMove={handleMouseMove}
+      className={cn("absolute inset-0 w-full h-full pointer-events-none", className)}
     >
       {Array.from({ length: rows }).map((_, rowIndex) => (
         <div key={rowIndex} className="flex">
@@ -97,7 +83,7 @@ const PixelDot: React.FC<PixelDotProps> = React.memo(({ id, size, fadeDuration, 
     <motion.div
       id={id}
       ref={ref}
-      className={cn("cursor-none", className)}
+      className={cn(className)}
       style={{ width: `${size}px`, height: `${size}px` }}
       initial={{ opacity: 0 }}
       animate={controls}
