@@ -417,85 +417,34 @@ function MissionStrip() {
   );
 }
 
-/* ─── Team Teaser  (LIGHT) ──────────────────────────────────────────────── */
-function TeamTeaser() {
+/* ─── Founders Teaser  (LIGHT) ──────────────────────────────────────────── */
+function FoundersTeaser() {
   const { t } = useLanguage();
-  const tm = t.home.team;
   return (
-    <section className="py-16 lg:py-40 bg-cream">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10 lg:mb-16">
-          <FadeIn>
-            <p className="text-gold text-sm font-medium tracking-widest uppercase mb-3">{tm.label}</p>
-            <h2 className="font-heading text-4xl lg:text-5xl text-charcoal leading-tight">{tm.h2}</h2>
-          </FadeIn>
-          <FadeIn direction="left">
-            <Link href="/team" className="group inline-flex items-center gap-2 text-charcoal font-medium text-[14px] hover:text-gold transition-colors shrink-0">
-              {tm.cta}
-              <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </Link>
-          </FadeIn>
-        </div>
+    <section className="py-16 lg:py-28 bg-cream">
+      <div className="max-w-3xl mx-auto px-6 lg:px-8">
+        <FadeIn className="mb-10 lg:mb-14 text-center">
+          <p className="text-gold text-sm font-medium tracking-widest uppercase mb-3">Das Kollektiv</p>
+          <h2 className="font-heading text-4xl lg:text-5xl text-charcoal leading-tight">
+            Die <span className="italic text-gold">Gründer.</span>
+          </h2>
+        </FadeIn>
 
-        <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-5" staggerDelay={0.1}>
-          {t.team.members.slice(0, 4).map((member, idx) => (
+        <StaggerContainer className="grid grid-cols-2 gap-6 lg:gap-10" staggerDelay={0.15}>
+          {t.team.members.slice(0, 2).map((member, idx) => (
             <StaggerItem key={member.name}>
               <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }} className="group">
                 <div className="relative rounded-2xl overflow-hidden aspect-[3/4] mb-4">
-                  <Image src={memberImgs[idx]} alt={member.name} fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out" sizes="(max-width: 768px) 50vw, 25vw" />
+                  <Image src={memberImgs[idx]} alt={member.name} fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out" sizes="(max-width: 768px) 50vw, 400px" />
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <h3 className="font-heading text-lg text-charcoal">{member.name}</h3>
+                <h3 className="font-heading text-xl text-charcoal">{member.name}</h3>
                 <p className="text-warm-muted text-[13px]">{member.role}</p>
                 <p className="text-gold/80 text-[12px] mt-0.5 font-medium">{member.years}</p>
               </motion.div>
             </StaggerItem>
           ))}
         </StaggerContainer>
-      </div>
-    </section>
-  );
-}
-
-/* ─── Cases Teaser  (LIGHT) ─────────────────────────────────────────────── */
-function CasesTeaser() {
-  const { t } = useLanguage();
-  const c = t.home.cases;
-  return (
-    <section className="py-16 lg:py-40 bg-cream">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-          <FadeIn>
-            <p className="text-gold text-sm font-medium tracking-widest uppercase mb-4">{c.label}</p>
-            <h2 className="font-heading text-4xl lg:text-5xl text-charcoal leading-tight mb-6">
-              {c.h2a}
-              <br />
-              <span className="italic">{c.h2b}</span>
-            </h2>
-            <p className="text-warm-muted text-lg leading-relaxed mb-8 max-w-md">{c.p}</p>
-            <Link href="/cases" className="group inline-flex items-center gap-2 px-8 py-4 bg-gold text-charcoal font-semibold rounded-full hover:bg-gold-dark hover:text-cream transition-all duration-300">
-              {c.cta}
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </FadeIn>
-
-          <StaggerContainer className="grid grid-cols-2 gap-4" staggerDelay={0.1}>
-            {[
-              { metric: "+340%", labelDE: "ROAS Steigerung",  labelEN: "ROAS increase",   sector: "E-Commerce" },
-              { metric: "-45%",  labelDE: "Cost-per-Lead",    labelEN: "Cost-per-Lead",    sector: "Dienstleistung / Services" },
-              { metric: "+180%", labelDE: "Online-Umsatz",    labelEN: "Online Revenue",   sector: "Handel / Retail" },
-              { metric: "3.2×",  labelDE: "Conversion Rate",  labelEN: "Conversion Rate",  sector: "B2B" },
-            ].map((item) => (
-              <StaggerItem key={item.labelDE}>
-                <div className="bg-white border border-gold/15 rounded-2xl p-6">
-                  <div className="font-heading text-3xl text-gold font-bold mb-1">{item.metric}</div>
-                  <div className="text-charcoal text-sm font-medium mb-1">{t.cases.stats.find(s => s.value === item.metric)?.label ?? item.labelDE}</div>
-                  <div className="text-warm-muted text-xs">{item.sector}</div>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
       </div>
     </section>
   );
@@ -546,10 +495,9 @@ export default function HomePage() {
     <>
       <Hero />
       <ServicesSection />
-      <CertificationsSection />
       <MissionStrip />
-      <TeamTeaser />
-      <CasesTeaser />
+      <FoundersTeaser />
+      <CertificationsSection />
       <HomeCTA />
     </>
   );
