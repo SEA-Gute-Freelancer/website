@@ -74,11 +74,11 @@ const footer = {
     ctaLabel: "Bereit für mehr Wachstum?",
     ctaHeading: "Starte dein kostenloses Erstgespräch.",
     ctaButton: "Jetzt anfragen",
-    tagline: "Das führende Google Ads Kollektiv für den deutschen Mittelstand. Präzise Kampagnen, persönliche Betreuung, messbare Ergebnisse.",
+    tagline: "Das Google Ads Kollektiv für den deutschen Mittelstand. Präzise Kampagnen, persönliche Betreuung, messbare Ergebnisse.",
     navHeading: "Navigation",
     contactHeading: "Kontakt",
     partnerLabel: "Google Premier Partner",
-    partnerNote: "Zertifizierte Google Ads Spezialisten seit 2016.",
+    partnerNote: "Zertifizierte Google Ads Spezialisten.",
     copyright: "Alle Rechte vorbehalten.",
     links: {
       about: "Über uns",
@@ -99,7 +99,7 @@ const footer = {
     navHeading: "Navigation",
     contactHeading: "Contact",
     partnerLabel: "Google Premier Partner",
-    partnerNote: "Certified Google Ads specialists since 2016.",
+    partnerNote: "Certified Google Ads specialists.",
     copyright: "All rights reserved.",
     links: {
       about: "About us",
