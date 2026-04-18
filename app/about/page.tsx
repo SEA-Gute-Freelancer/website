@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { useRef, useEffect } from "react";
-import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { ArrowRight, Heart, Target, Users, Zap } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations/FadeIn";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -16,142 +15,40 @@ const AnimatedCharacters = dynamic(
 
 const valueIcons = [Target, Heart, Users, Zap];
 
-const STORY_PHOTOS = [
-  "/photos/0FEFF30E-DDE1-42AF-B6C2-C1A78EFA8089.jpg",
-  "/photos/21144700-17c5-42cb-ab01-6d92b3876343.jpg",
-  "/photos/765D8499-A463-414E-827E-E31593A67235.jpg",
-  "/photos/AC1F4A53-C9DD-4F9A-B35C-2FF69F9EFA0A.jpg",
-  "/photos/EB230C30-DAE4-4777-928C-90048BE6A7CC.jpg",
-  "/photos/IMG_0089.jpeg",
-  "/photos/IMG_0196.jpeg",
-  "/photos/IMG_0197.jpeg",
-  "/photos/IMG_0198.jpeg",
-  "/photos/IMG_0199.jpeg",
-  "/photos/IMG_0200.jpeg",
-  "/photos/IMG_0201.jpeg",
-  "/photos/IMG_0202.jpeg",
-  "/photos/IMG_0554.jpeg",
-  "/photos/IMG_0587.JPG",
-  "/photos/IMG_0628.jpeg",
-  "/photos/IMG_0673.jpeg",
-  "/photos/IMG_0722.jpeg",
-  "/photos/IMG_0723.jpeg",
-  "/photos/IMG_0724.jpeg",
-  "/photos/IMG_0725.jpeg",
-  "/photos/IMG_0726.jpeg",
-  "/photos/IMG_0730.jpeg",
-  "/photos/IMG_0736.jpeg",
-  "/photos/IMG_0738.jpeg",
-  "/photos/IMG_0744.jpeg",
-  "/photos/IMG_0786.jpeg",
-  "/photos/IMG_0879.jpeg",
-  "/photos/IMG_0932.jpeg",
-  "/photos/IMG_1003.jpeg",
-  "/photos/IMG_1038.jpeg",
-  "/photos/IMG_1043.jpeg",
-  "/photos/IMG_1058.jpeg",
-  "/photos/IMG_1063.jpeg",
-  "/photos/IMG_1090.jpeg",
-  "/photos/IMG_1112.jpeg",
-  "/photos/IMG_1152.jpeg",
-  "/photos/IMG_1194.JPG",
-  "/photos/IMG_1198.jpeg",
-  "/photos/IMG_1201.jpeg",
-  "/photos/IMG_1217.jpeg",
-  "/photos/IMG_1291.jpeg",
-  "/photos/IMG_1302.jpeg",
-  "/photos/IMG_1431.jpeg",
-  "/photos/IMG_1432.jpeg",
-  "/photos/IMG_1442.jpeg",
-  "/photos/IMG_1776.jpeg",
-  "/photos/IMG_2142.jpeg",
-  "/photos/IMG_2148.jpeg",
-  "/photos/IMG_2151.jpeg",
-  "/photos/IMG_2159.jpeg",
-  "/photos/IMG_2344.jpeg",
-  "/photos/IMG_2405.jpeg",
-  "/photos/IMG_2807.jpeg",
-  "/photos/IMG_2899.jpeg",
-  "/photos/IMG_2998.jpeg",
-  "/photos/IMG_2999.jpeg",
-  "/photos/IMG_3001.jpeg",
-  "/photos/IMG_3002.jpeg",
-  "/photos/IMG_3003.jpeg",
-  "/photos/IMG_3008.jpeg",
-  "/photos/IMG_3465.jpeg",
-  "/photos/IMG_3466.jpeg",
-  "/photos/IMG_3467.jpeg",
-  "/photos/IMG_3468.jpeg",
-  "/photos/IMG_3536.jpeg",
-  "/photos/IMG_3537.jpeg",
-  "/photos/IMG_3538.PNG",
-  "/photos/IMG_3539.PNG",
-  "/photos/IMG_3541.jpeg",
-  "/photos/IMG_3542.jpeg",
-  "/photos/IMG_3543.jpeg",
-  "/photos/IMG_3543_2.jpeg",
-  "/photos/IMG_3544.jpeg",
-  "/photos/IMG_3622.jpeg",
-  "/photos/IMG_3623.jpeg",
-  "/photos/IMG_3624.jpeg",
-  "/photos/IMG_3936.jpeg",
-  "/photos/IMG_3941.jpeg",
-  "/photos/IMG_3946.jpeg",
-  "/photos/IMG_3950.jpeg",
-  "/photos/IMG_3971.jpeg",
-  "/photos/IMG_4045.jpeg",
-  "/photos/IMG_4055.jpeg",
-  "/photos/IMG_4076.jpeg",
-  "/photos/IMG_4123.JPG",
-  "/photos/IMG_5894.jpeg",
-  "/photos/a7bd2838-735c-4db0-a866-e6a15e764730.jpg",
-  "/photos/camphoto_1804928587.jpg",
-  "/photos/camphoto_1932422408.jpg",
-  "/photos/camphoto_342241519.jpg",
-  "/photos/camphoto_684387517.jpg",
-  "/photos/f86505c7-3665-4e9d-b7c1-558588f2c79a.jpg",
-];
+function shuffle<T>(arr: T[]): T[] {
+  return [...arr].sort(() => Math.random() - 0.5);
+}
 
-function PhotoScrollStory() {
+function PhotoSlideshowStory() {
   const { t } = useLanguage();
   const a = t.about;
   const containerRef = useRef<HTMLDivElement>(null);
-  const imgRef = useRef<HTMLImageElement>(null);
-  const idxRef = useRef(0);
 
-  // Preload: first 15 immediately, rest after 1.5s
+  const [photos, setPhotos] = useState<string[]>([]);
+  const [idx, setIdx] = useState(0);
+
+  // Fetch photo list dynamically — just drop files in /public/photos/
   useEffect(() => {
-    STORY_PHOTOS.slice(0, 15).forEach((src) => {
-      const img = new window.Image();
-      img.src = src;
-    });
-    const t = setTimeout(() => {
-      STORY_PHOTOS.slice(15).forEach((src) => {
-        const img = new window.Image();
-        img.src = src;
-      });
-    }, 1500);
-    return () => clearTimeout(t);
+    fetch("/api/photos")
+      .then((r) => r.json())
+      .then((list: string[]) => setPhotos(shuffle(list)));
   }, []);
 
+  // Auto-cycle slideshow
+  useEffect(() => {
+    if (photos.length === 0) return;
+    const interval = setInterval(() => {
+      setIdx((i) => (i + 1) % photos.length);
+    }, 1500);
+    return () => clearInterval(interval);
+  }, [photos.length]);
+
+  // Scroll-driven text
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   });
 
-  // Direct DOM swap — no React re-render per frame
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    const idx = Math.min(
-      Math.floor(latest * STORY_PHOTOS.length),
-      STORY_PHOTOS.length - 1
-    );
-    if (idx !== idxRef.current && imgRef.current) {
-      idxRef.current = idx;
-      imgRef.current.src = STORY_PHOTOS[idx];
-    }
-  });
-
-  // Text blocks — scroll-driven, 3 moments
   const t1y = useTransform(scrollYProgress, [0, 0.08, 0.28, 0.38], ["60px", "0px", "0px", "-60px"]);
   const t1o = useTransform(scrollYProgress, [0, 0.08, 0.28, 0.38], [0, 1, 1, 0]);
 
@@ -167,7 +64,6 @@ function PhotoScrollStory() {
     { y: t3y, opacity: t3o, text: a.story.p3 },
   ];
 
-  // Progress dots
   const d1 = useTransform(scrollYProgress, [0, 0.33], [1, 0.3]);
   const d2 = useTransform(scrollYProgress, [0.28, 0.38, 0.62, 0.72], [0.3, 1, 1, 0.3]);
   const d3 = useTransform(scrollYProgress, [0.62, 0.72, 1], [0.3, 1, 1]);
@@ -176,29 +72,35 @@ function PhotoScrollStory() {
     <div ref={containerRef} className="relative h-[300vh]">
       <div className="sticky top-0 h-screen overflow-hidden">
 
-        {/* Single image — src swapped via ref for performance */}
-        <div className="absolute inset-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            ref={imgRef}
-            src={STORY_PHOTOS[0]}
-            alt=""
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ transition: "opacity 0.12s ease" }}
-          />
-          {/* Semi-transparent brand overlay — unifies all photos */}
+        {/* Auto slideshow background */}
+        <div className="absolute inset-0 bg-charcoal">
+          <AnimatePresence mode="sync">
+            {photos.length > 0 && (
+              <motion.img
+                key={idx}
+                src={photos[idx]}
+                alt=""
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.6 }}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            )}
+          </AnimatePresence>
+          {/* Brand overlay */}
           <div className="absolute inset-0 bg-charcoal/58" />
         </div>
 
-        {/* Text */}
+        {/* Scroll-driven text */}
         <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 lg:px-16">
           <p className="text-gold/70 text-[11px] font-medium tracking-widest uppercase mb-10 lg:mb-14">
             {a.story.h2}
           </p>
           <div className="relative w-full max-w-2xl mx-auto text-center" style={{ height: "16rem" }}>
-            {textBlocks.map((block, idx) => (
+            {textBlocks.map((block, i) => (
               <motion.div
-                key={idx}
+                key={i}
                 style={{ y: block.y, opacity: block.opacity }}
                 className="absolute inset-0 flex items-center justify-center"
               >
@@ -210,10 +112,10 @@ function PhotoScrollStory() {
           </div>
         </div>
 
-        {/* Progress dots */}
+        {/* Scroll progress dots */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-          {[d1, d2, d3].map((op, idx) => (
-            <motion.div key={idx} style={{ opacity: op }} className="w-1.5 h-1.5 rounded-full bg-cream" />
+          {[d1, d2, d3].map((op, i) => (
+            <motion.div key={i} style={{ opacity: op }} className="w-1.5 h-1.5 rounded-full bg-cream" />
           ))}
         </div>
 
@@ -267,8 +169,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Photo Scroll Story */}
-      <PhotoScrollStory />
+      {/* Photo Slideshow + Scroll Text */}
+      <PhotoSlideshowStory />
 
       {/* Values */}
       <section className="py-14 lg:py-28 bg-cream">
