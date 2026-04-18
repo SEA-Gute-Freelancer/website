@@ -39,7 +39,7 @@ function PhotoSlideshowStory() {
     if (photos.length === 0) return;
     const interval = setInterval(() => {
       setIdx((i) => (i + 1) % photos.length);
-    }, 1500);
+    }, 750);
     return () => clearInterval(interval);
   }, [photos.length]);
 
