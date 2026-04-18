@@ -3,7 +3,7 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useRef, useEffect, useState } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Heart, Target, Users, Zap } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations/FadeIn";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -72,22 +72,15 @@ function PhotoSlideshowStory() {
     <div ref={containerRef} className="relative h-[300vh]">
       <div className="sticky top-0 h-screen overflow-hidden">
 
-        {/* Auto slideshow background */}
+        {/* Auto slideshow background — hard cut */}
         <div className="absolute inset-0 bg-charcoal">
-          <AnimatePresence mode="sync">
-            {photos.length > 0 && (
-              <motion.img
-                key={idx}
-                src={photos[idx]}
-                alt=""
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.6 }}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            )}
-          </AnimatePresence>
+          {photos[idx] && (
+            <img
+              src={photos[idx]}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          )}
           {/* Brand overlay */}
           <div className="absolute inset-0 bg-charcoal/58" />
         </div>
