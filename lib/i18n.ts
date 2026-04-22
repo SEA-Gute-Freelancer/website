@@ -979,120 +979,40 @@ const blog = {
     minRead: "Min. Lesezeit",
     posts: [
       {
-        slug: "eisvogel-case-study-keyword-konsolidierung",
+        slug: "eisvogel-case-study",
         tag: "Case Study",
-        title: "Von 14 auf 113 Keywords: Wie wir Eisvogel Touren aus der Kannibalisierung befreit haben",
-        excerpt: "Zwei aktive Suchkampagnen, die sich gegenseitig die Auktionen wegschnappten. 14 Keywords ohne Strategie, ein GTM voller toter Tags. Wir haben einen Tag gebraucht – und den Account komplett neu strukturiert.",
+        title: "Eisvogel Touren: Kampagnen-Konsolidierung, sauberes Tracking und animierte Display-Banner",
+        excerpt: "Zwei Suchkampagnen, die sich gegenseitig kannibalisierten. Conversion-Tracking, das auf der falschen Seite feuerte. Wir haben alles in einem Tag neu aufgesetzt – inklusive animierter HTML5-Display-Banner fürs Remarketing.",
         author: "Robert Miler",
         date: "21. April 2026",
-        readTime: "7",
+        readTime: "4",
         img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80",
-        content: `<p>Eisvogel Touren GmbH vermietet Hausboote und Kanus auf der Mecklenburgischen Seenplatte. Der Account lief – aber er lief nicht gut. Zwei aktive Suchkampagnen boten auf dieselben Keywords, das Budget war gesplittet, und ein GTM-Container voller toter Tags sorgte dafür, dass kein einziges Conversion-Signal sauber ankam.</p>
+        content: `<p>Eisvogel Touren vermietet Hausboote und Kanus in der Mecklenburgischen Seenplatte. Der Google-Ads-Account war gewachsen wie ein Wildgarten – und zeigte die typischen Probleme eines organisch entstandenen Kontos.</p>
 
-<h2>Ausgangslage: Keyword-Kannibalisierung und totes Tracking</h2>
-<p>Als wir den Account übernahmen, sahen wir das klassische Bild eines organisch gewachsenen Google-Ads-Kontos: Kampagne "Alle Regionen" vs. Kampagne "Hauptkeyword [OPTI]" – beide aktiv, beide auf dasselbe Keyword-Set bietend. Das Ergebnis: eigene Keywords überboten, Budget durch Selbst-Konkurrenz verbrannt.</p>
-<p>Dazu 14 aktive Keywords ohne klare Match-Type-Strategie und ein Conversion-Tag, der eine Seite zu früh feuerte – auf dem Buchungsformular statt der Bestätigungsseite.</p>
+<h2>Was wir angetroffen haben</h2>
+<p>Zwei aktive Suchkampagnen boten auf identische Keywords und trieben sich gegenseitig die Preise hoch. Das Conversion-Tracking war zwar eingerichtet, feuerte aber zu früh – ein klassischer Fehler bei Buchungssystemen, die Bestätigungen dynamisch nachladen, ohne die URL zu wechseln. Und im Tag Manager hatten sich über Monate tote und doppelte Tags angesammelt.</p>
 
-<h2>Schritt 1: GTM aufräumen</h2>
-<p>Bevor wir auch nur ein Keyword anfassen, geht es in den Tag Manager. Container GTM-PPHXCXC: Version 5 als saubere Baseline wiederhergestellt, alle toten und doppelten Tags entfernt.</p>
-<p>Die Herausforderung: Das Buchungssystem ist ein Single-Page-App – das Bestätigungs-Div erscheint dynamisch ohne URL-Wechsel. Wir haben einen MutationObserver als Custom HTML Tag gebaut, der genau auf diesen DOM-Wechsel hört und einen DataLayer-Event auslöst. Darauf sitzt der Custom Event Trigger, der dann den Conversion-Tag feuert.</p>
+<h2>Was wir gemacht haben</h2>
+<p>Zuerst das Tracking saubergemacht: Tag Manager bereinigt, den Conversion-Tag korrekt auf die echte Buchungsbestätigung gelegt, Consent Mode v2 korrekt eingebunden. Dann die beiden Suchkampagnen zu einer einzigen konsolidiert – mit klar getrennten Match Types, damit jedes Keyword dort landet, wo es hingehört. Negative Keywords für alle Begriffe, auf die wir bewusst nicht erscheinen wollen.</p>
+<p>Abschließend eine Remarketing-Kampagne aufgesetzt, für die wir drei animierte HTML5-Banner produziert haben – in allen gängigen Display-Formaten.</p>
 
-<h2>Schritt 2: Conversion Action "Buchung2026RM"</h2>
-<p>Neue Conversion Action im Konto angelegt, verknüpft mit dem GTM-Event. Consent Mode v2 läuft bereits auf der Website – sobald der Nutzer zustimmt, kommt das Signal sauber an. Ein offener Punkt bleibt: Der genaue Trigger auf der Bestätigungsseite wird mit dem Entwickler des Buchungssystems koordiniert.</p>
+<h2>Die animierten Banner</h2>
+<p>Alle drei Formate laufen vollständig im Browser, ohne externe Abhängigkeiten. Das Bild zoomed sanft, die Textanimationen bauen nacheinander auf – genug Bewegung um Aufmerksamkeit zu gewinnen, ohne aufdringlich zu wirken.</p>
 
-<h2>Schritt 3: Von 14 auf 113 Keywords</h2>
-<p>Alle Keywords aus "Alle Regionen" in die OPTI-Kampagne migriert, bereinigt und nach Match-Type sortiert:</p>
-<ul>
-  <li><strong>108 Exact Match</strong> – volle Kostenkontrolle, null Streuverlust</li>
-  <li><strong>3 Phrase Match</strong> – historische Top-Converter: "hausboot mieten", "hausboote mieten deutschland", "hausboot mieten in der nähe"</li>
-  <li><strong>2 Broad Match</strong> – auf 14-Tage-Test: "wasserurlaub" und "urlaub ohne führerschein"</li>
-</ul>
-<p>Beide alten Kampagnen pausiert. Eine Kampagne, eine klare Struktur.</p>
-
-<h2>Schritt 4: 58 Negative Keywords</h2>
-<p>40 kampagnenweite Ausschlüsse in drei Kategorien: Mitbewerber-Marken, irrelevante Orte, falsche Produkttypen (Segelboot, Ruderboot, Tretboot). Dazu 18 Berlin-spezifische Negatives für Tagesausflüge und Fahrrad-Traffic.</p>
-<p>Bug gefunden und behoben: "hausboot mieten berlin" stand gleichzeitig als positives Keyword und als kampagnenweites Negativ im Account – der Konflikt hatte die Auslieferung blockiert.</p>
-
-<h2>Schritt 5: Remarketing – 545 User, sofort einsatzbereit</h2>
-<p>GA4 war bereits mit Google Ads verknüpft, die Audience hatte 545 User. Wir haben drei animierte HTML5-Banner produziert (300×250, 300×600, 728×90) und eine neue Display-Kampagne gestartet:</p>
-<ul>
-  <li>Budget: 8 €/Tag</li>
-  <li>AG1: Upload Ads mit den HTML5-Bannern</li>
-  <li>AG2: Responsive Display Ad mit echtem Eisvogel-Logo</li>
-</ul>
-
-<h2>Ergebnis</h2>
-<p>Ein Tag Arbeit. 113 Keywords mit sauberer Match-Type-Strategie, 58 Negative Keywords, funktionierendes Conversion-Tracking und eine laufende Remarketing-Kampagne. In zwei Wochen kommt der Search Term Report – dann entscheiden wir, welche Broad-Match-Begriffe als neue Targets übernommen werden und ob Performance-Max als Tofu-Kampagne sinnvoll ist.</p>
-<p>Das ist Google Ads, wie es sein sollte: strukturiert, messbar, ohne Selbst-Kannibalisierung.</p>`,
-      },
-      {
-        slug: "conversion-tracking-richtig-aufsetzen",
-        tag: "Tracking",
-        title: "Conversion Tracking richtig aufsetzen – der komplette Guide",
-        excerpt: "Falsches Tracking ist das #1 Problem in Google Ads Konten. Doppelte Conversions, fehlende Signale, falsche Attribution – wir erklären wie du es sauber aufsetzt.",
-        author: "Dave Moritz",
-        date: "14. April 2026",
-        readTime: "10",
-        img: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80",
-        content: `<p>Conversion Tracking ist die Grundlage jeder datengetriebenen Google-Ads-Kampagne. Ohne saubere Signale optimiert der Algorithmus ins Leere – und du bezahlst für Klicks, die nichts wert sind. Hier ist, wie man es richtig macht.</p>
-
-<h2>Das häufigste Problem: Doppelte Conversions</h2>
-<p>Hardcodierter gtag auf der Website und gleichzeitig ein GTM-Tag – das Ergebnis: jede Conversion wird doppelt gezählt. Google Ads sieht doppelt so viele Signale und optimiert auf Basis falscher Daten. Erster Schritt: immer nur eine Tracking-Methode verwenden. Wir empfehlen GTM als Single Source of Truth.</p>
-
-<h2>Consent Mode v2 richtig implementieren</h2>
-<p>Seit 2024 ist Consent Mode v2 in der EU Pflicht. Das bedeutet: ad_storage und analytics_storage müssen standardmäßig auf "denied" gesetzt sein, bevor der Google Tag lädt. Erst nach Nutzer-Zustimmung darf auf "granted" gewechselt werden. Ohne korrekte Implementierung verlierst du Conversion-Daten aus DSGVO-konformen Quellen.</p>
-
-<h2>React und SPAs: Warum FORM_SUBMISSION nicht funktioniert</h2>
-<p>In React-Apps und anderen Single-Page-Applications gibt es keine nativen HTML-Form-Submit-Events, auf die GTM hören kann. Die Lösung: DataLayer-Push mit einem Custom Event direkt im Submit-Handler, dazu ein Custom Event Trigger in GTM. Klingt aufwändiger, ist aber die einzig zuverlässige Methode.</p>
-
-<h2>Die richtige Conversion-Aktion wählen</h2>
-<p>Nicht jede Aktion sollte als primäre Conversion zählen. Telefon-Klicks und Scroll-Events sind wertvolle sekundäre Signale, aber als primäre Conversion-Aktion verzerren sie die Smart-Bidding-Optimierung. Lead-Formular-Absendungen oder Käufe gehören in die primäre Kategorie – alles andere als sekundär markieren.</p>`,
-      },
-      {
-        slug: "google-ads-qualitaetsfaktor",
-        tag: "Strategie",
-        title: "Qualitätsfaktor verstehen – und damit Kosten senken",
-        excerpt: "Der Qualitätsfaktor ist einer der wichtigsten Hebel in Google Ads. Wer ihn versteht, zahlt weniger pro Klick und rankt trotzdem höher. So funktioniert es.",
-        author: "Robert Miler",
-        date: "7. April 2026",
-        readTime: "6",
-        img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-        content: `<p>Der Qualitätsfaktor (QS) ist eine der mächtigsten – und am meisten missverstandenen – Metriken in Google Ads. Wer ihn optimiert, zahlt weniger pro Klick und rankt trotzdem höher als Wettbewerber mit größerem Budget.</p>
-
-<h2>Wie der Qualitätsfaktor berechnet wird</h2>
-<p>Google bewertet drei Komponenten: die erwartete Click-Through-Rate, die Anzeigenrelevanz und die Erfahrung auf der Zielseite. Jede Komponente wird als "unterdurchschnittlich", "durchschnittlich" oder "überdurchschnittlich" bewertet. Das Ergebnis: eine Zahl von 1 bis 10.</p>
-
-<h2>Ad Rank und der tatsächliche CPC</h2>
-<p>Der tatsächliche CPC, den du zahlst, ergibt sich aus: (Ad Rank des nächsten Wettbewerbers / dein Qualitätsfaktor) + 0,01 €. Ein QS von 8 statt 4 halbiert deinen CPC – bei gleichem Gebot. Das ist keine Theorie, das ist Mathematik.</p>
-
-<h2>Was wirklich den QS treibt</h2>
-<p>In der Praxis hat die Landingpage den größten Einfluss: Ladegeschwindigkeit, Mobile-Optimierung, Relevanz des Inhalts zum Suchbegriff. Danach kommt die Anzeigenrelevanz: Enthält dein Ad den Suchbegriff, ist die Botschaft konsistent? Erst dann spielt die historische CTR eine Rolle.</p>
-
-<h2>Schnelle Gewinne</h2>
-<p>Keywords mit QS unter 5 in eigene Anzeigengruppen auslagern (Single Keyword Ad Groups für Top-Keywords). Anzeigentexte mit dem exakten Keyword in Überschrift 1 versehen. Landingpage-Ladezeit unter 2 Sekunden bringen. Das sind die drei Hebel mit dem schnellsten ROI.</p>`,
-      },
-      {
-        slug: "smart-bidding-strategien",
-        tag: "Bidding",
-        title: "Smart Bidding: Wann es hilft – und wann es schadet",
-        excerpt: "Automatisches Bieten klingt verlockend. Aber ohne die richtigen Rahmenbedingungen verbrennt Smart Bidding mehr Budget als es spart. Wir zeigen die Dos & Don'ts.",
-        author: "Can Tumani",
-        date: "28. März 2026",
-        readTime: "8",
-        img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-        content: `<p>Smart Bidding verspricht viel: Google optimiert automatisch auf Conversions oder ROAS, in Echtzeit, für jeden Nutzer individuell. In der Praxis scheitert es häufig – nicht weil die Technologie schlecht ist, sondern weil die Voraussetzungen fehlen.</p>
-
-<h2>Das Datenproblem</h2>
-<p>Smart Bidding braucht Daten. Als Faustregel: mindestens 30–50 Conversions pro Monat pro Kampagne, besser 100+. Darunter lernt der Algorithmus zu langsam und "rät" mehr als er optimiert. Bei einem neuen Account oder nach einem Tracking-Problem: erst manuell bieten und Daten aufbauen, dann auf Smart Bidding wechseln.</p>
-
-<h2>Die Conversion-Qualität entscheidet</h2>
-<p>Smart Bidding optimiert auf das, was du ihm gibst. Wenn du Telefon-Klicks als primäre Conversion trackst, optimiert der Algorithmus auf Telefon-Klicks – nicht auf Umsatz. Garbage in, garbage out. Bevor Smart Bidding angeschaltet wird, muss das Conversion-Setup sauber sein.</p>
-
-<h2>Lernphasen nicht unterbrechen</h2>
-<p>Nach jeder Strategieänderung geht der Algorithmus in eine Lernphase (ca. 2 Wochen). In dieser Zeit können Performance-Schwankungen von ±20–30% normal sein. Wer nach drei Tagen panisch wechselt, verliert wertvolle Lernzeit. Geduld ist hier eine Strategie.</p>
-
-<h2>Wann manuelles Bieten besser ist</h2>
-<p>Bei kleinen Budgets (unter 500 €/Monat), bei wenigen Conversions, bei stark saisonalen Produkten oder bei sehr engem Keyword-Set kann manuelles Enhanced CPC oder sogar reines manuelles CPC die bessere Wahl sein. Smart Bidding ist kein Allheilmittel – es ist ein Werkzeug mit klaren Einsatzbedingungen.</p>`,
+<div class="banner-grid">
+  <div class="banner-item">
+    <p class="banner-label">300 × 250 – Medium Rectangle</p>
+    <iframe src="/banners/eisvogel_300x250.html" width="300" height="250" scrolling="no" frameborder="0"></iframe>
+  </div>
+  <div class="banner-item">
+    <p class="banner-label">728 × 90 – Leaderboard</p>
+    <iframe src="/banners/eisvogel_728x90.html" width="728" height="90" scrolling="no" frameborder="0"></iframe>
+  </div>
+  <div class="banner-item">
+    <p class="banner-label">300 × 600 – Half Page</p>
+    <iframe src="/banners/eisvogel_300x600.html" width="300" height="600" scrolling="no" frameborder="0"></iframe>
+  </div>
+</div>`,
       },
     ],
   },
@@ -1113,120 +1033,40 @@ const blog = {
     minRead: "min read",
     posts: [
       {
-        slug: "eisvogel-case-study-keyword-konsolidierung",
+        slug: "eisvogel-case-study",
         tag: "Case Study",
-        title: "From 14 to 113 Keywords: How we fixed Eisvogel Touren's keyword cannibalization",
-        excerpt: "Two active search campaigns undercutting each other. 14 keywords with no strategy, a GTM container full of dead tags. One day of work – a completely restructured account.",
+        title: "Eisvogel Touren: Campaign consolidation, clean tracking and animated display banners",
+        excerpt: "Two search campaigns undercutting each other. Conversion tracking firing on the wrong page. We rebuilt everything in a day – including animated HTML5 display banners for remarketing.",
         author: "Robert Miler",
         date: "April 21, 2026",
-        readTime: "7",
+        readTime: "4",
         img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80",
-        content: `<p>Eisvogel Touren GmbH rents houseboats and canoes on the Mecklenburg Lake District. The account was running – but not well. Two active search campaigns bidding on the same keywords, split budget, and a GTM container full of dead tags meant no conversion signal was coming through cleanly.</p>
+        content: `<p>Eisvogel Touren rents houseboats and canoes on the Mecklenburg Lake District in Germany. Their Google Ads account had grown organically over time – and showed all the classic symptoms of that.</p>
 
-<h2>Starting point: Keyword cannibalization and broken tracking</h2>
-<p>When we took over the account, we saw the classic picture of an organically grown Google Ads account: campaign "Alle Regionen" vs. campaign "Hauptkeyword [OPTI]" – both active, both bidding on the same keyword set. The result: self-competition, inflated CPCs, split signals.</p>
-<p>Plus 14 active keywords with no clear match type strategy and a conversion tag firing one step too early – on the booking form rather than the confirmation page.</p>
+<h2>What we found</h2>
+<p>Two active search campaigns were bidding on the same keywords, driving up their own costs. Conversion tracking was set up but fired too early – a common mistake with booking systems that load confirmation pages dynamically without a URL change. And the tag manager had accumulated months of dead and duplicate tags.</p>
 
-<h2>Step 1: Clean up GTM</h2>
-<p>Before touching a single keyword, we went into Tag Manager. Container GTM-PPHXCXC: restored version 5 as a clean baseline, removed all dead and duplicate tags.</p>
-<p>The challenge: the booking system is a single-page app – the confirmation div appears dynamically without any URL change. We built a MutationObserver as a Custom HTML Tag that listens for exactly this DOM change and fires a DataLayer event. The Custom Event Trigger then fires the conversion tag.</p>
+<h2>What we did</h2>
+<p>First we fixed the tracking: cleaned up the tag manager, placed the conversion tag correctly on the actual booking confirmation, and properly integrated Consent Mode v2. Then we consolidated the two search campaigns into one – with clearly separated match types so every keyword lands where it belongs. Negative keywords were added for everything we deliberately don't want to appear for.</p>
+<p>Finally, we set up a remarketing campaign with three animated HTML5 banners we produced in all standard display formats.</p>
 
-<h2>Step 2: Conversion action "Buchung2026RM"</h2>
-<p>New conversion action created in the account, linked to the GTM event. Consent Mode v2 is already running on the website – once the user consents, the signal arrives cleanly. One open item: the exact trigger on the confirmation page is being coordinated with the booking system developer.</p>
+<h2>The animated banners</h2>
+<p>All three formats run entirely in the browser with no external dependencies. The image zooms slowly, text animations build up one after another – enough motion to capture attention without being intrusive.</p>
 
-<h2>Step 3: From 14 to 113 keywords</h2>
-<p>All keywords from "Alle Regionen" migrated into the OPTI campaign, cleaned up and sorted by match type:</p>
-<ul>
-  <li><strong>108 Exact Match</strong> – full cost control, zero waste</li>
-  <li><strong>3 Phrase Match</strong> – historical top converters: "hausboot mieten", "hausboote mieten deutschland", "hausboot mieten in der nähe"</li>
-  <li><strong>2 Broad Match</strong> – 14-day test: "wasserurlaub" and "urlaub ohne führerschein"</li>
-</ul>
-<p>Both old campaigns paused. One campaign, one clear structure.</p>
-
-<h2>Step 4: 58 negative keywords</h2>
-<p>40 campaign-level negatives in three categories: competitor brands, irrelevant locations, wrong product types (sailboat, rowboat, pedal boat). Plus 18 Berlin-specific negatives for day trips and cycling traffic.</p>
-<p>Bug found and fixed: "hausboot mieten berlin" was simultaneously a positive keyword and a campaign-level negative – the conflict had been blocking delivery.</p>
-
-<h2>Step 5: Remarketing – 545 users, ready to go</h2>
-<p>GA4 was already linked to Google Ads, with 545 users in the remarketing audience. We produced three animated HTML5 banners (300×250, 300×600, 728×90) and launched a new display campaign:</p>
-<ul>
-  <li>Budget: €8/day</li>
-  <li>AG1: Upload ads with the HTML5 banners</li>
-  <li>AG2: Responsive display ad with the real Eisvogel logo</li>
-</ul>
-
-<h2>Result</h2>
-<p>One day of work. 113 keywords with a clean match type strategy, 58 negative keywords, working conversion tracking, and a running remarketing campaign. In two weeks the search term report will show which broad match terms to adopt as new targets – and whether Performance Max makes sense as a top-of-funnel campaign.</p>
-<p>This is Google Ads the way it should be: structured, measurable, without self-cannibalization.</p>`,
-      },
-      {
-        slug: "conversion-tracking-setup",
-        tag: "Tracking",
-        title: "Setting up Conversion Tracking correctly – the complete guide",
-        excerpt: "Bad tracking is the #1 problem in Google Ads accounts. Duplicate conversions, missing signals, wrong attribution – here's how to get it right.",
-        author: "Dave Moritz",
-        date: "April 14, 2026",
-        readTime: "10",
-        img: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80",
-        content: `<p>Conversion tracking is the foundation of every data-driven Google Ads campaign. Without clean signals, the algorithm optimises into the void – and you pay for clicks that generate nothing.</p>
-
-<h2>The most common problem: Duplicate conversions</h2>
-<p>Hardcoded gtag on the website plus a GTM tag at the same time – result: every conversion is counted twice. Google Ads sees double the signals and optimises on false data. First step: always use only one tracking method. We recommend GTM as the single source of truth.</p>
-
-<h2>Consent Mode v2: mandatory in the EU</h2>
-<p>Since 2024, Consent Mode v2 is required in the EU. This means ad_storage and analytics_storage must default to "denied" before the Google Tag loads. Only after user consent does it switch to "granted". Without correct implementation, you lose conversion data from privacy-compliant sources.</p>
-
-<h2>React and SPAs: why FORM_SUBMISSION doesn't work</h2>
-<p>In React apps and other single-page applications, there are no native HTML form submit events for GTM to listen to. The solution: a DataLayer push with a custom event directly in the submit handler, plus a Custom Event Trigger in GTM. It sounds more complex, but it's the only reliable method.</p>
-
-<h2>Choosing the right conversion action</h2>
-<p>Not every action should count as a primary conversion. Phone clicks and scroll events are valuable secondary signals, but as primary conversion actions they skew Smart Bidding optimisation. Lead form submissions or purchases belong in the primary category – everything else should be marked secondary.</p>`,
-      },
-      {
-        slug: "google-ads-qualitaetsfaktor",
-        tag: "Strategy",
-        title: "Understanding Quality Score – and using it to cut costs",
-        excerpt: "Quality Score is one of the most powerful levers in Google Ads. Master it and you pay less per click while ranking higher. Here's how it works.",
-        author: "Robert Miler",
-        date: "April 7, 2026",
-        readTime: "6",
-        img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-        content: `<p>Quality Score (QS) is one of the most powerful – and most misunderstood – metrics in Google Ads. Optimise it and you pay less per click while outranking competitors with bigger budgets.</p>
-
-<h2>How Quality Score is calculated</h2>
-<p>Google evaluates three components: expected click-through rate, ad relevance, and landing page experience. Each component is rated "below average", "average", or "above average". The result: a number from 1 to 10.</p>
-
-<h2>Ad Rank and your actual CPC</h2>
-<p>Your actual CPC works out as: (next competitor's Ad Rank / your Quality Score) + €0.01. A QS of 8 instead of 4 halves your CPC – at the same bid. That's not theory, that's mathematics.</p>
-
-<h2>What actually drives QS</h2>
-<p>In practice, the landing page has the biggest impact: load speed, mobile optimisation, content relevance to the search term. After that comes ad relevance: does your ad contain the search term, is the message consistent? Only then does historical CTR play a role.</p>
-
-<h2>Quick wins</h2>
-<p>Move keywords with QS below 5 into their own ad groups. Put the exact keyword in Headline 1. Get landing page load time under 2 seconds. These are the three levers with the fastest ROI.</p>`,
-      },
-      {
-        slug: "smart-bidding-strategien",
-        tag: "Bidding",
-        title: "Smart Bidding: When it helps – and when it hurts",
-        excerpt: "Automated bidding sounds great. But without the right conditions, Smart Bidding burns more budget than it saves. Here are the dos and don'ts.",
-        author: "Can Tumani",
-        date: "March 28, 2026",
-        readTime: "8",
-        img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-        content: `<p>Smart Bidding promises a lot: Google optimises automatically for conversions or ROAS, in real time, individually for every user. In practice it often fails – not because the technology is bad, but because the prerequisites are missing.</p>
-
-<h2>The data problem</h2>
-<p>Smart Bidding needs data. Rule of thumb: at least 30–50 conversions per month per campaign, ideally 100+. Below that, the algorithm learns too slowly and guesses more than it optimises. For a new account or after a tracking problem: bid manually first, build up data, then switch to Smart Bidding.</p>
-
-<h2>Conversion quality decides everything</h2>
-<p>Smart Bidding optimises for whatever you give it. If you track phone clicks as a primary conversion, the algorithm optimises for phone clicks – not revenue. Garbage in, garbage out. Before Smart Bidding is switched on, the conversion setup must be clean.</p>
-
-<h2>Don't interrupt learning phases</h2>
-<p>After every strategy change, the algorithm enters a learning phase (around 2 weeks). During this time, performance swings of ±20–30% are normal. Panic-switching after three days wastes valuable learning time. Patience is a strategy here.</p>
-
-<h2>When manual bidding is better</h2>
-<p>With small budgets (under €500/month), few conversions, highly seasonal products, or very tight keyword sets, manual Enhanced CPC or even pure manual CPC can be the better choice. Smart Bidding is not a silver bullet – it's a tool with clear conditions for use.</p>`,
+<div class="banner-grid">
+  <div class="banner-item">
+    <p class="banner-label">300 × 250 – Medium Rectangle</p>
+    <iframe src="/banners/eisvogel_300x250.html" width="300" height="250" scrolling="no" frameborder="0"></iframe>
+  </div>
+  <div class="banner-item">
+    <p class="banner-label">728 × 90 – Leaderboard</p>
+    <iframe src="/banners/eisvogel_728x90.html" width="728" height="90" scrolling="no" frameborder="0"></iframe>
+  </div>
+  <div class="banner-item">
+    <p class="banner-label">300 × 600 – Half Page</p>
+    <iframe src="/banners/eisvogel_300x600.html" width="300" height="600" scrolling="no" frameborder="0"></iframe>
+  </div>
+</div>`,
       },
     ],
   },

@@ -186,3 +186,31 @@
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+/* ── Banner grid (blog article) ─────────────────────────────────── */
+.banner-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem 0;
+  align-items: flex-start;
+}
+.banner-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.banner-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: oklch(0.72 0.10 78);
+  margin: 0 !important;
+}
+.banner-item iframe {
+  border: 1px solid oklch(0.72 0.10 78 / 0.2);
+  border-radius: 8px;
+  display: block;
+  max-width: 100%;
+}
