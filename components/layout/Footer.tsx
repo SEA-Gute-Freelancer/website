@@ -1,12 +1,20 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Mail, Phone, ArrowUpRight, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Footer() {
   const { t } = useLanguage();
   const f = t.footer;
+  const pathname = usePathname();
+
+  // Gleiche Begründung wie im Header: pMax-Builder hat einen eigenen
+  // produkt-spezifischen Footer; der globale SGF-Footer würde doppelt stehen.
+  if (pathname === "/pmax-builder" || pathname.startsWith("/pmax-builder/")) {
+    return null;
+  }
 
   return (
     <footer className="bg-charcoal text-cream">
@@ -70,7 +78,6 @@ export function Footer() {
                 { label: f.links.about,   href: "/about" },
                 { label: f.links.services, href: "/leistungen" },
                 { label: f.links.team,    href: "/team" },
-                { label: f.links.cases,   href: "/cases" },
                 { label: f.links.blog,    href: "/blog" },
                 { label: f.links.contact, href: "/kontakt" },
               ].map((link) => (
