@@ -994,10 +994,20 @@ const blog = {
 
 <h2>Was wir gemacht haben</h2>
 <p>Zuerst das Tracking saubergemacht: Tag Manager bereinigt, den Conversion-Tag korrekt auf die echte Buchungsbestätigung gelegt, Consent Mode v2 korrekt eingebunden. Dann die beiden Suchkampagnen zu einer einzigen konsolidiert – mit klar getrennten Match Types, damit jedes Keyword dort landet, wo es hingehört. Negative Keywords für alle Begriffe, auf die wir bewusst nicht erscheinen wollen.</p>
-<p>Abschließend eine Remarketing-Kampagne aufgesetzt, für die wir drei animierte HTML5-Banner produziert haben – in allen gängigen Display-Formaten.</p>
+<p>Abschließend eine Remarketing-Kampagne aufgesetzt. Für die Banner haben wir das Originalfoto des Hausboots genommen und mit modernen KI-Tools in ein stimmungsvolles Werbebild verwandelt – Sonnenuntergang, Spiegelung im Wasser, Atmosphäre statt Produktfoto.</p>
+
+<h2>Vom Produktfoto zum Werbebild</h2>
+<p>Das ist das echte Hausboot von Eisvogel Touren – fotografiert am Steg, nüchtern und informativ:</p>
+<div class="source-image-wrap">
+  <img src="/banners/eisvogel-real.jpg" alt="Eisvogel Touren Hausboot – Originalfoto" style="max-width:100%;border-radius:12px;margin:1rem 0;" />
+</div>
+<p>Daraus haben wir mit KI ein Werbebild generiert, das Emotion transportiert. Dasselbe Boot, eine andere Welt:</p>
+<div class="source-image-wrap">
+  <img src="/banners/eisvogel-boat.jpg" alt="Eisvogel Touren – KI-generiertes Werbebild" style="max-width:100%;border-radius:12px;margin:1rem 0;" />
+</div>
 
 <h2>Die animierten Banner</h2>
-<p>Alle drei Formate laufen vollständig im Browser, ohne externe Abhängigkeiten. Das Bild zoomed sanft, die Textanimationen bauen nacheinander auf – genug Bewegung um Aufmerksamkeit zu gewinnen, ohne aufdringlich zu wirken.</p>
+<p>Auf Basis des KI-Bilds haben wir drei animierte HTML5-Banner produziert – in allen gängigen Display-Formaten, ohne externe Abhängigkeiten, vollständig im Browser lauffähig.</p>
 
 <div class="banner-grid">
   <div class="banner-item">
