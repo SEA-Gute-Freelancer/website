@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" width="200" height="260">
+  <rect width="200" height="260" fill="#f5f0e8"/>
+  <!-- Head -->
+  <circle cx="100" cy="72" r="30" fill="none" stroke="#c9a96e" stroke-width="4" stroke-linecap="round"/>
+  <!-- Hair -->
+  <path d="M70 62 Q75 38 100 42 Q125 38 130 62" fill="none" stroke="#c9a96e" stroke-width="4" stroke-linecap="round"/>
+  <line x1="70" y1="62" x2="64" y2="82" stroke="#c9a96e" stroke-width="4" stroke-linecap="round"/>
+  <line x1="130" y1="62" x2="136" y2="82" stroke="#c9a96e" stroke-width="4" stroke-linecap="round"/>
+  <!-- Body / dress -->
+  <line x1="100" y1="102" x2="100" y2="145" stroke="#c9a96e" stroke-width="4" stroke-linecap="round"/>
+  <path d="M100 145 L72 210 M100 145 L128 210" fill="none" stroke="#c9a96e" stroke-width="4" stroke-linecap="round"/>
+  <path d="M78 155 Q100 165 122 155" fill="none" stroke="#c9a96e" stroke-width="3" stroke-linecap="round"/>
+  <!-- Arms -->
+  <line x1="100" y1="120" x2="58" y2="148" stroke="#c9a96e" stroke-width="4" stroke-linecap="round"/>
+  <line x1="100" y1="120" x2="142" y2="148" stroke="#c9a96e" stroke-width="4" stroke-linecap="round"/>
+  <!-- Label -->
+  <text x="100" y="248" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#c9a96e" letter-spacing="2" font-weight="600">FOTO FOLGT</text>
+</svg>

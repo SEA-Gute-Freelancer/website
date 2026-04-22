@@ -9,9 +9,9 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const memberImgs = [
   "/team/robert.jpg",
-  "/team/dave.jpg", // Dave
-  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=85", // Can
-  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=85", // Larrisa
+  "/team/dave.jpg",
+  "/team/placeholder-male.svg",   // Can – Foto folgt
+  "/team/placeholder-female.svg", // Larrisa – Foto folgt
 ];
 
 export default function TeamPage() {
