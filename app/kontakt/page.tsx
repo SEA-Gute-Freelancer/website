@@ -56,6 +56,20 @@ export default function KontaktPage() {
         const data = await res.json().catch(() => ({}));
         throw new Error(data.error ?? "Fehler beim Senden.");
       }
+      // Track lead conversion — pushes "form_submit" to dataLayer. GTM then fires:
+      //   - Tag "Google Ads – Conversion Lead-Formular" (AW-18110870993/0iWRCNugrqAcENHr97tD)
+      //   - Tag "GA4 – generate_lead" (custom event for GA4 lead tracking)
+      // Both are bound to the "Custom Event - form submit" trigger in GTM-KP6PDJM7.
+      if (typeof window !== "undefined") {
+        const dl = ((window as unknown as { dataLayer: Record<string, unknown>[] }).dataLayer =
+          (window as unknown as { dataLayer?: Record<string, unknown>[] }).dataLayer || []);
+        dl.push({
+          event: "form_submit",
+          form_name: "kontakt",
+          currency: "EUR",
+          value: 1,
+        });
+      }
       setSubmitted(true);
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Unbekannter Fehler.");
