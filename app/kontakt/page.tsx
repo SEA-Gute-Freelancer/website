@@ -65,8 +65,8 @@ export default function KontaktPage() {
   }
 
   const contactDetails = [
-    { icon: Mail,   label: k.info.h2,            value: "hallo@sea-gute-freelancer.de", link: "mailto:hallo@sea-gute-freelancer.de" },
-    { icon: Phone,  label: "Telefon / Phone",      value: "+49 30 000 000 00",            link: "tel:+4930000000" },
+    { icon: Mail,   label: k.info.h2,            value: "seoadsrm@gmail.com",           link: "mailto:seoadsrm@gmail.com" },
+    { icon: Phone,  label: "Telefon / Phone",      value: "+49 176 26144998",             link: "tel:+4917626144998" },
     { icon: Clock,  label: "Erreichbarkeit / Availability", value: k.info.availability,  link: null },
     { icon: MapPin, label: "Standort / Location",  value: k.info.location,               link: null },
   ];
