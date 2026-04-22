@@ -91,6 +91,15 @@ export default function RootLayout({
       className={`${playfair.variable} ${jakarta.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-charcoal">
+        {/* GTM noscript fallback */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KP6PDJM7"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         {/* Consent Mode v2 — must fire before Google tag */}
         <Script id="consent-mode-default" strategy="beforeInteractive">
           {`
@@ -106,17 +115,14 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Google Ads Tag */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17338599442"
-          strategy="afterInteractive"
-        />
-        <Script id="google-ads-config" strategy="afterInteractive">
+        {/* Google Tag Manager */}
+        <Script id="gtm-script" strategy="afterInteractive">
           {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-17338599442');
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-KP6PDJM7');
           `}
         </Script>
 
