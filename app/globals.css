@@ -141,3 +141,48 @@
 .marquee-right { animation: marquee-right 42s linear infinite; }
 .marquee-row:hover .marquee-left,
 .marquee-row:hover .marquee-right { animation-play-state: paused; }
+
+/* ── Blog article prose ─────────────────────────────────────────── */
+.prose-article {
+  color: oklch(0.35 0.025 80);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.prose-article p {
+  margin-bottom: 1.5rem;
+}
+.prose-article h2 {
+  font-family: var(--font-playfair), serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: oklch(0.22 0.025 80);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+.prose-article ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+.prose-article ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+.prose-article ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: oklch(0.72 0.10 78);
+  font-weight: 600;
+}
+.prose-article strong {
+  color: oklch(0.22 0.025 80);
+  font-weight: 600;
+}
+.prose-article a {
+  color: oklch(0.72 0.10 78);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
