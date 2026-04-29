@@ -8,9 +8,10 @@ export default function Icon() {
     (
       <div
         style={{
+          position: "relative",
           width: 32,
           height: 32,
-          background: "#C9A96E",
+          background: "#1a73e8",
           borderRadius: 4,
           display: "flex",
           alignItems: "center",
@@ -19,7 +20,7 @@ export default function Icon() {
       >
         <span
           style={{
-            color: "#1E1A16",
+            color: "#ffffff",
             fontSize: 11,
             fontWeight: 700,
             letterSpacing: "0.05em",
@@ -28,6 +29,17 @@ export default function Icon() {
         >
           SGF
         </span>
+        <div
+          style={{
+            position: "absolute",
+            bottom: 3,
+            right: 3,
+            width: 6,
+            height: 6,
+            background: "#fbbc04",
+            borderRadius: 999,
+          }}
+        />
       </div>
     ),
     { ...size }

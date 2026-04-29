@@ -49,7 +49,7 @@ const memberImgs = [
   "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
 ];
 
-/* ─── Hero  (DARK) ──────────────────────────────────────────────────────── */
+/* ─── Hero  (LIGHT) ─────────────────────────────────────────────────────── */
 function Hero() {
   const { t } = useLanguage();
   const h = t.home.hero;
@@ -61,10 +61,11 @@ function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen flex items-center overflow-hidden bg-charcoal border-b-2 border-gold/25"
+      className="relative min-h-screen flex items-center overflow-hidden bg-white border-b border-charcoal/8"
     >
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 right-[10%] -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-gold/5 blur-[120px]" />
+        <div className="absolute top-1/2 right-[10%] -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-gold/8 blur-[120px]" />
+        <div className="absolute top-[12%] left-[6%] w-[420px] h-[420px] rounded-full bg-yellow-soft blur-[100px]" />
       </div>
 
       <motion.div
@@ -74,10 +75,10 @@ function Hero() {
         className="hidden md:block absolute right-[6%] top-1/2 -translate-y-1/2 w-[42vw] max-w-[580px] pointer-events-auto"
         style={{ opacity: useTransform(scrollYProgress, [0, 0.5], [1, 0]) }}
       >
-        <RotatingEarth width={580} height={580} dotColor="#C9A96E" oceanColor="transparent" strokeColor="#C9A96E" />
+        <RotatingEarth width={580} height={580} dotColor="#1a73e8" oceanColor="transparent" strokeColor="#1a73e8" />
       </motion.div>
 
-      <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-charcoal via-charcoal/85 to-transparent pointer-events-none" />
+      <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-white via-white/85 to-transparent pointer-events-none" />
 
       <motion.div style={{ opacity, y: contentY }} className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pt-24 pb-20 lg:pt-32 lg:pb-28">
         <div className="max-w-2xl">
@@ -85,22 +86,25 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex items-center gap-2 px-4 py-2 border border-gold/35 rounded-full bg-gold/8 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 border border-gold/25 rounded-full bg-gold/8 mb-8"
           >
             <div className="w-1.5 h-1.5 bg-gold rounded-full animate-pulse" />
-            <span className="text-gold text-xs font-medium tracking-widest uppercase">{h.badge}</span>
+            <span className="text-gold-dark text-xs font-semibold tracking-widest uppercase">{h.badge}</span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35, duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-            className="font-heading text-4xl sm:text-5xl lg:text-[4.5rem] xl:text-[5.5rem] text-cream leading-[1.08] tracking-tight mb-5 lg:mb-6"
+            className="font-heading text-4xl sm:text-5xl lg:text-[4.5rem] xl:text-[5.5rem] text-charcoal leading-[1.08] tracking-tight mb-5 lg:mb-6"
           >
             {h.h1a}
             <br />
             {h.h1b}{" "}
-            <span className="italic text-gold">{h.h1c}</span>
+            <span className="italic relative inline-block">
+              <span aria-hidden className="absolute left-[-4px] right-[-4px] bottom-[6%] h-[36%] bg-yellow rounded-sm -z-10" />
+              {h.h1c}
+            </span>
             <br />
             {h.h1d}
           </motion.h1>
@@ -109,7 +113,7 @@ function Hero() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="text-cream/65 text-lg leading-relaxed max-w-md mb-10 font-sans font-light"
+            className="text-warm-muted text-lg leading-relaxed max-w-md mb-10 font-sans font-light"
           >
             {h.p}
           </motion.p>
@@ -120,11 +124,11 @@ function Hero() {
             transition={{ delay: 0.65, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-wrap gap-4"
           >
-            <Link href="/kontakt" className="group inline-flex items-center gap-2.5 px-7 py-4 bg-gold text-charcoal font-semibold rounded-full text-[15px] hover:bg-gold-light transition-all duration-300 hover:shadow-xl hover:shadow-gold/25 hover:-translate-y-0.5">
+            <Link href="/kontakt" className="group inline-flex items-center gap-2.5 px-7 py-4 bg-gold text-cream font-semibold rounded-full text-[15px] hover:bg-gold-dark transition-all duration-300 hover:shadow-xl hover:shadow-gold/25 hover:-translate-y-0.5">
               {h.cta1}
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link href="/leistungen" className="group inline-flex items-center gap-2.5 px-7 py-4 border border-cream/20 text-cream font-medium rounded-full text-[15px] hover:border-cream/50 hover:bg-cream/8 transition-all duration-300">
+            <Link href="/leistungen" className="group inline-flex items-center gap-2.5 px-7 py-4 border border-charcoal/15 text-charcoal font-medium rounded-full text-[15px] hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300">
               {h.cta2}
               <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
@@ -138,8 +142,8 @@ function Hero() {
         transition={{ delay: 1.4, duration: 0.6 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-cream/30 text-[10px] tracking-widest uppercase">{t.common.scroll}</span>
-        <motion.div animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }} className="w-px h-8 bg-gradient-to-b from-cream/30 to-transparent" />
+        <span className="text-charcoal/40 text-[10px] tracking-widest uppercase">{t.common.scroll}</span>
+        <motion.div animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }} className="w-px h-8 bg-gradient-to-b from-charcoal/30 to-transparent" />
       </motion.div>
     </section>
   );
@@ -213,11 +217,11 @@ function CertificationsSection() {
           {/* ── Claude Badge ── */}
           <FadeIn delay={0.2}>
             <motion.div
-              whileHover={{ y: -5, boxShadow: "0 24px 60px -10px rgba(201,169,110,0.18)" }}
+              whileHover={{ y: -5, boxShadow: "0 24px 60px -10px rgba(26,115,232,0.18)" }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="relative bg-charcoal border border-gold/20 rounded-2xl p-6 overflow-hidden group h-full"
+              className="relative bg-white border border-gold/15 rounded-2xl p-6 overflow-hidden group h-full"
             >
-              <div className="absolute -top-16 -right-16 w-48 h-48 bg-gold/8 rounded-full blur-3xl pointer-events-none group-hover:bg-gold/12 transition-colors duration-700" />
+              <div className="absolute -top-16 -right-16 w-48 h-48 bg-yellow-soft rounded-full blur-3xl pointer-events-none group-hover:bg-yellow/20 transition-colors duration-700" />
 
               <motion.div
                 initial={{ scaleX: 0 }}
@@ -236,15 +240,15 @@ function CertificationsSection() {
                 className="w-12 h-12 rounded-xl bg-gold/10 border border-gold/25 flex items-center justify-center mb-4"
               >
                 <svg viewBox="0 0 48 48" className="w-7 h-7" fill="none">
-                  <path d="M24 6L38 36H10L24 6Z" fill="#C9A96E" fillOpacity="0.9" />
-                  <path d="M24 14L33 36H15L24 14Z" fill="#1e1a16" />
-                  <circle cx="24" cy="28" r="4" fill="#C9A96E" />
+                  <path d="M24 6L38 36H10L24 6Z" fill="#1a73e8" fillOpacity="0.9" />
+                  <path d="M24 14L33 36H15L24 14Z" fill="#ffffff" />
+                  <circle cx="24" cy="28" r="4" fill="#fbbc04" />
                 </svg>
               </motion.div>
 
-              <p className="text-[10px] font-semibold tracking-widest uppercase text-gold/50 mb-1">Anthropic · Claude AI</p>
-              <h3 className="font-heading text-lg text-cream mb-2 leading-tight">Claude <span className="text-gold">Badge</span></h3>
-              <p className="text-cream/55 text-[13px] leading-relaxed mb-5">
+              <p className="text-[10px] font-semibold tracking-widest uppercase text-gold/70 mb-1">Anthropic · Claude AI</p>
+              <h3 className="font-heading text-lg text-charcoal mb-2 leading-tight">Claude <span className="text-gold">Badge</span></h3>
+              <p className="text-warm-muted text-[13px] leading-relaxed mb-5">
                 Prompt Engineering, Tool Use und KI-Einsatz in professionellen Workflows.
               </p>
 
@@ -253,7 +257,7 @@ function CertificationsSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.35, duration: 0.4 }}
-                className="inline-flex items-center gap-2 px-3 py-1.5 bg-gold/10 border border-gold/20 rounded-full"
+                className="inline-flex items-center gap-2 px-3 py-1.5 bg-gold/8 border border-gold/20 rounded-full"
               >
                 <motion.div animate={{ scale: [1, 1.3, 1] }} transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut", delay: 0.4 }} className="w-1.5 h-1.5 rounded-full bg-gold" />
                 <span className="text-gold text-[11px] font-semibold">Zertifiziert · Anthropic</span>
@@ -287,8 +291,8 @@ function CertificationsSection() {
                 className="w-12 h-12 rounded-xl bg-gold/8 border border-gold/20 flex items-center justify-center mb-4"
               >
                 <svg viewBox="0 0 48 48" className="w-7 h-7" fill="none">
-                  <path d="M24 4C13 4 4 13 4 24s9 20 20 20 20-9 20-20S35 4 24 4z" stroke="#C9A96E" strokeWidth="2" fill="none"/>
-                  <path d="M24 14c-3 4-8 6-8 12 0 4.4 3.6 8 8 8s8-3.6 8-8c0-6-5-8-8-12z" fill="#C9A96E" fillOpacity="0.7"/>
+                  <path d="M24 4C13 4 4 13 4 24s9 20 20 20 20-9 20-20S35 4 24 4z" stroke="#1a73e8" strokeWidth="2" fill="none"/>
+                  <path d="M24 14c-3 4-8 6-8 12 0 4.4 3.6 8 8 8s8-3.6 8-8c0-6-5-8-8-12z" fill="#1a73e8" fillOpacity="0.7"/>
                   <path d="M24 22v12M20 30h8" stroke="#f5f0e8" strokeWidth="1.5" strokeLinecap="round"/>
                 </svg>
               </motion.div>
@@ -348,7 +352,7 @@ function ServicesSection() {
 
 const MISSION_TRAIL_ID = "mission-trail"
 
-/* ─── Mission Strip  (DARK) ─────────────────────────────────────────────── */
+/* ─── Mission Strip  (LIGHT) ────────────────────────────────────────────── */
 function MissionStrip() {
   const { t } = useLanguage();
   const m = t.home.mission;
@@ -365,7 +369,7 @@ function MissionStrip() {
 
   return (
     <section
-      className="relative py-24 lg:py-40 bg-charcoal overflow-hidden"
+      className="relative py-24 lg:py-40 bg-cream-dark overflow-hidden"
       onMouseMove={handleMouseMove}
     >
       {/* Pixel trail */}
@@ -375,38 +379,41 @@ function MissionStrip() {
           pixelSize={pixelSize}
           fadeDuration={600}
           delay={0}
-          pixelClassName="bg-gold/50"
+          pixelClassName="bg-gold/35"
         />
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center">
         <FadeIn>
-          <p className="text-gold text-sm font-medium tracking-widest uppercase mb-5">
+          <p className="text-gold text-sm font-semibold tracking-widest uppercase mb-5">
             {m.label}
           </p>
-          <h2 className="font-heading text-4xl lg:text-6xl text-cream leading-tight mb-8">
+          <h2 className="font-heading text-4xl lg:text-6xl text-charcoal leading-tight mb-8">
             {m.h2a}
             <br />
-            <span className="italic text-gold">{m.h2b}</span>
+            <span className="italic relative inline-block">
+              <span aria-hidden className="absolute left-[-4px] right-[-4px] bottom-[6%] h-[36%] bg-yellow rounded-sm -z-10" />
+              {m.h2b}
+            </span>
           </h2>
-          <p className="text-cream/70 text-lg lg:text-xl leading-relaxed mb-4 max-w-2xl mx-auto">
+          <p className="text-warm-muted text-lg lg:text-xl leading-relaxed mb-4 max-w-2xl mx-auto">
             {m.p1}
           </p>
-          <p className="text-cream/60 text-[17px] leading-relaxed mb-10 max-w-2xl mx-auto">
+          <p className="text-warm-muted text-[17px] leading-relaxed mb-10 max-w-2xl mx-auto">
             {m.p2}
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
               href="/about"
-              className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gold text-charcoal font-semibold rounded-full text-[14px] hover:bg-gold-light transition-all duration-300"
+              className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gold text-cream font-semibold rounded-full text-[14px] hover:bg-gold-dark transition-all duration-300 shadow-md shadow-gold/20"
             >
               {m.cta1}
               <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/team"
-              className="group inline-flex items-center gap-2 px-7 py-3.5 border border-cream/20 text-cream font-medium rounded-full text-[14px] hover:border-cream/50 transition-all duration-300"
+              className="group inline-flex items-center gap-2 px-7 py-3.5 border border-charcoal/15 text-charcoal font-medium rounded-full text-[14px] hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300"
             >
               {m.cta2}
             </Link>
@@ -450,38 +457,45 @@ function FoundersTeaser() {
   );
 }
 
-/* ─── Final CTA  (DARK) ─────────────────────────────────────────────────── */
+/* ─── Final CTA  (LIGHT) ────────────────────────────────────────────────── */
 function HomeCTA() {
   const { t } = useLanguage();
   const c = t.home.cta;
   return (
-    <section className="py-16 lg:py-40 bg-charcoal border-t-2 border-gold/20">
-      <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+    <section className="relative py-16 lg:py-40 bg-white border-t border-charcoal/8 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-[-10%] right-[-5%] w-[520px] h-[520px] rounded-full bg-gold/8 blur-[120px]" />
+        <div className="absolute bottom-[-10%] left-[-5%] w-[420px] h-[420px] rounded-full bg-yellow-soft blur-[100px]" />
+      </div>
+      <div className="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center">
         <FadeIn>
-          <SectionDivider light />
+          <SectionDivider />
           <div className="mt-10 mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 border border-gold/30 rounded-full bg-gold/8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 border border-gold/25 rounded-full bg-gold/8">
               <Award size={14} className="text-gold" />
-              <span className="text-gold text-xs font-medium tracking-widest uppercase">{c.partnerLabel}</span>
+              <span className="text-gold-dark text-xs font-semibold tracking-widest uppercase">{c.partnerLabel}</span>
             </div>
           </div>
-          <h2 className="font-heading text-4xl lg:text-6xl text-cream leading-tight mb-6">
+          <h2 className="font-heading text-4xl lg:text-6xl text-charcoal leading-tight mb-6">
             {c.h2a}
             <br />
-            <span className="italic text-gold">{c.h2b}</span> {c.h2c}
+            <span className="italic relative inline-block">
+              <span aria-hidden className="absolute left-[-4px] right-[-4px] bottom-[6%] h-[36%] bg-yellow rounded-sm -z-10" />
+              {c.h2b}
+            </span> {c.h2c}
           </h2>
-          <p className="text-cream/60 text-lg leading-relaxed mb-10 max-w-xl mx-auto">{c.p}</p>
+          <p className="text-warm-muted text-lg leading-relaxed mb-10 max-w-xl mx-auto">{c.p}</p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/kontakt" className="group inline-flex items-center gap-2.5 px-9 py-5 bg-gold text-charcoal font-semibold rounded-full text-[16px] hover:bg-gold-light transition-all duration-300 hover:shadow-xl hover:shadow-gold/20 hover:-translate-y-0.5">
+            <Link href="/kontakt" className="group inline-flex items-center gap-2.5 px-9 py-5 bg-gold text-cream font-semibold rounded-full text-[16px] hover:bg-gold-dark transition-all duration-300 hover:shadow-xl hover:shadow-gold/25 hover:-translate-y-0.5">
               {c.cta1}
               <ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" />
             </Link>
-            <a href="tel:+4930000000" className="inline-flex items-center gap-2.5 px-9 py-5 border-2 border-cream/20 text-cream font-medium rounded-full text-[16px] hover:border-cream/50 transition-all duration-300">
+            <a href="tel:+4930000000" className="inline-flex items-center gap-2.5 px-9 py-5 border-2 border-charcoal/15 text-charcoal font-medium rounded-full text-[16px] hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300">
               {c.cta2}
             </a>
           </div>
           <div className="mt-16">
-            <SectionDivider light />
+            <SectionDivider />
           </div>
         </FadeIn>
       </div>
