@@ -153,7 +153,7 @@ export default function SeoGeoPage() {
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <Link
-                    href="/cases"
+                    href="/blog"
                     className="inline-flex items-center gap-2.5 px-7 py-4 border border-charcoal/20 text-charcoal font-medium rounded-full text-[15px] hover:border-charcoal/50 transition-all duration-300"
                   >
                     Ergebnisse ansehen

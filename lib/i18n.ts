@@ -986,7 +986,7 @@ const blog = {
         author: "Robert Miler",
         date: "21. April 2026",
         readTime: "4",
-        img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80",
+        img: "/blog/eisvogel-touren.png",
         content: `<p>Eisvogel Touren vermietet Hausboote und Kanus in der Mecklenburgischen Seenplatte. Der Google-Ads-Account war gewachsen wie ein Wildgarten – und zeigte die typischen Probleme eines organisch entstandenen Kontos.</p>
 
 <h2>Was wir angetroffen haben</h2>
@@ -1050,7 +1050,7 @@ const blog = {
         author: "Robert Miler",
         date: "April 21, 2026",
         readTime: "4",
-        img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80",
+        img: "/blog/eisvogel-touren.png",
         content: `<p>Eisvogel Touren rents houseboats and canoes on the Mecklenburg Lake District in Germany. Their Google Ads account had grown organically over time – and showed all the classic symptoms of that.</p>
 
 <h2>What we found</h2>
