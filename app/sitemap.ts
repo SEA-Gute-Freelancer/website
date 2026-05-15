@@ -4,26 +4,22 @@ const BASE_URL = "https://www.sea-gute-freelancer.de";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
+    // ── Core ──────────────────────────────────────────────────────────────
     {
       url: BASE_URL,
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
+      changeFrequency: "weekly",
+      priority: 1.0,
     },
+    // ── Leistungen (höchste Relevanz für Crawler & AI) ─────────────────
     {
-      url: `${BASE_URL}/about`,
+      url: `${BASE_URL}/leistungen`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
+      changeFrequency: "weekly",
+      priority: 0.95,
     },
     {
       url: `${BASE_URL}/leistungen/sea`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/leistungen/audit`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
@@ -35,17 +31,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/leistungen`,
+      url: `${BASE_URL}/leistungen/audit`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.9,
+      priority: 0.85,
+    },
+    // ── Vertrauen & Expertise ──────────────────────────────────────────
+    {
+      url: `${BASE_URL}/cases`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/about`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
     {
       url: `${BASE_URL}/team`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.75,
     },
+    // ── Blog & Kontakt ──────────────────────────────────────────────────
     {
       url: `${BASE_URL}/blog`,
       lastModified: new Date(),
@@ -58,6 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.6,
     },
+    // ── Legal (für Crawler de-priorisiert) ─────────────────────────────
     {
       url: `${BASE_URL}/impressum`,
       lastModified: new Date(),

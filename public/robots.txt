@@ -1,23 +1,90 @@
+# robots.txt — sea-gute-freelancer.de
+# Aktualisiert: 2026-05
+
+# ── Standard-Crawler ──────────────────────────────────────────────────────
 User-agent: *
 Allow: /
+Disallow: /pmax-builder
+Disallow: /api/
 
-# AI Crawlers — explicitly allowed
+# ── Google ─────────────────────────────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+Disallow: /pmax-builder
+Disallow: /api/
+
+User-agent: Googlebot-Image
+Allow: /
+
+# ── AI & LLM-Crawler (explizit erlaubt für GEO/AEO/LLMO) ─────────────────
+# OpenAI / ChatGPT
 User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic / Claude
+User-agent: Claude-Web
 Allow: /
 
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: Google-Extended
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
 User-agent: anthropic-ai
 Allow: /
 
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Google AI / Gemini / SGE
+User-agent: Google-Extended
+Allow: /
+
+# Microsoft / Bing / Copilot
+User-agent: bingbot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+# Meta / Llama
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Amazon
 User-agent: Amazonbot
 Allow: /
 
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# Common Crawl (Training-Daten für viele LLMs)
+User-agent: CCBot
+Allow: /
+
+# Diffbot
+User-agent: Diffbot
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# ── Sitemap ────────────────────────────────────────────────────────────────
 Sitemap: https://www.sea-gute-freelancer.de/sitemap.xml
