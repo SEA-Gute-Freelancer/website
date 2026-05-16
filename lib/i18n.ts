@@ -979,6 +979,91 @@ const blog = {
     minRead: "Min. Lesezeit",
     posts: [
       {
+        slug: "creative-performance-targeting",
+        tag: "SEA × Creative",
+        title: "Deine Texte sind das neue Targeting",
+        excerpt: "Warum Creative jetzt das Targeting ist – und nicht jede Zeile ein Kunstwerk sein muss. Ein Essay über Google AI, GA4 und die neue Königsdisziplin.",
+        author: "Robert Miler",
+        date: "16. Mai 2026",
+        readTime: "6",
+        img: "/blog/BlogMai2026.jpg",
+        content: `<p>Ich bin Texter. Ich gründe gerade ein SEA-Kollektiv. Und ich habe letzte Woche ein Dokument gelesen, das mich gezwungen hat, beides neu zu denken.</p>
+
+<p>Google hat eine Folie veröffentlicht, die eigentlich für Performance-Marketer gedacht ist. Drauf steht: „Creatives are the new targeting." Drei Wörter, die alles verschieben — wenn man versteht, warum sie stimmen.</p>
+
+<h2>Das Handwerk, das ich kannte</h2>
+
+<p>Texten war mal Handarbeit — egal ob Markenclaim oder Social Media Caption. Meine Karriere als Texter begann 2012 bei Kolle Rebbe. Damals habe ich pro Briefing hunderte Headlines geschrieben, bin zum CD, er oder sie hat mit einem Stift kleine Punkte vor drei, vier Zeilen gesetzt — eventuell noch was umgestellt — und diese Zeilen wurden dann gelayoutet. Keine Erklärung, keine Struktur, kein A/B-Testing. Pure Erfahrung. Vom ersten Tag an und in jeder Agentur war es immer die Königsdisziplin: herausragende Kreation zu erkennen. Welche Zeile ist gut, welche Idee trägt ganze Kampagnen, welches Layout ist am stärksten?</p>
+
+<p>Ich habe das geliebt. Schon immer.</p>
+
+<p>SEA war auch Handarbeit: Jeder Bid, jedes Keyword, jede Platzierung — manuell kalibriert, überwacht und angepasst, wenn die Daten nicht stimmten. Der gute SEA-Manager kannte seine Kampagnen auswendig und konnte ablesen, welches Creative funktioniert — und testete, warum das so war.</p>
+
+<p>Zwei Gewerke. Sauber getrennt. Erfahrung vs. Dateninterpretation.</p>
+
+<p>Das hat sich nicht graduell verändert. Es hat sich fundamental verändert.</p>
+
+<h2>Futter für den Algorithmus</h2>
+
+<p>Googles KI — AI Max, Performance Max, was auch immer als nächstes kommt — übernimmt die Steuerung. Nicht weil sie es besser kann. Sondern weil sie Zugriff auf Signale hat, die kein Mensch verarbeiten kann: Scroll-Tiefe, Verweildauer, Abbruchpunkte, Kaufwahrscheinlichkeit in den nächsten sieben Tagen. GA4 liefert zehnmal mehr Datenpunkte pro User als klassisches Conversion-Tracking. Die KI liest Absichten, keine Keywords mehr.</p>
+
+<p>Es geht nicht mehr darum zu wissen, welches Creative funktioniert oder nicht. Es geht um die Wahl des Futters für den Algorithmus. Klingt nach einer Ernährungsumstellung.</p>
+
+<p>Die KI kann nicht selbst entscheiden, wen sie ansprechen will. Früher war das ein Keyword — was bleibt, wenn Google mehr und mehr Richtung Keywordless-Technology steuert? Das Creative und die Datenqualität. Predictive Modeling und Negative Feeding.</p>
+
+<div class="banner-item" style="margin:2rem 0;">
+  <p class="banner-label">GA4-Daten als Leitplanken für die KI</p>
+  <iframe src="/blog/graphics/ga4-leitplanken.html" width="100%" height="472" scrolling="no" frameborder="0" style="border-radius:12px;border:0.5px solid #e4e4ee;display:block;"></iframe>
+</div>
+
+<p>Das ist keine Metapher. Das ist Technik. Und sie hat eine Konsequenz: Nicht jede Zeile muss ein Kunstwerk sein.</p>
+
+<h2>Das Volumenproblem — und warum Perfektion es schlimmer macht</h2>
+
+<p>Google misst aktiv, ob du genug Creative-Material ins System einspeist. Es nennt sich Creative Excellence Score. Sinkt er, läuft die KI-Engine auf Reserve — sie optimiert mit dem, was da ist, statt mit dem, was möglich wäre.</p>
+
+<p>Was das System braucht: Varianten. Nicht eine perfekte Headline, sondern zehn verschiedene Ansätze. Nicht ein finales Visual, sondern fünf, aus denen die Maschine den Gewinner zieht. Die KI testet. Du entscheidest, was getestet wird. Das ist kein Downgrade — das ist der eigentliche strategische Job.</p>
+
+<p>Wer jede Zeile auf Hochglanz poliert und dafür weniger liefert, verliert. Nicht weil Qualität egal wäre. Sondern weil Qualität ohne Volumen dem System nichts zu lernen gibt. Ein einziger genialer Text ist kein Datenpunkt. Er ist eine Meinung.</p>
+
+<div class="banner-item" style="margin:2rem 0;">
+  <p class="banner-label">Vom „Ob" zum „Wie viel" – Value-Based Bidding (VBB)</p>
+  <iframe src="/blog/graphics/vbb-evolution.html" width="100%" height="418" scrolling="no" frameborder="0" style="border-radius:12px;border:0.5px solid #e4e4ee;display:block;"></iframe>
+</div>
+
+<h2>Was ich damit mache</h2>
+
+<p>Ich gründe ein SEA-Kollektiv, weil ich glaube, dass genau diese Schnittstelle gerade neu besetzt wird — und dass Kreative dort fehlen.</p>
+
+<p>Die meisten Performance-Teams denken in Bids und Budgets. Die meisten Kreativteams denken in Briefings und Finalpräsentationen. Niemand denkt daran, welche Daten das Marketing bekommt — und was das mit dem Creative zu tun hat.</p>
+
+<p>Aber wenn GA4 zeigt, dass 60% der Nutzer auf der Versandseite abspringen, ist das kein Tracking-Problem. Es ist ein Copy-Problem. Die Daten zeigen, wo der Text aufhört zu funktionieren. Und wenn ein Audience-Segment nachweislich dreimal häufiger konvertiert als der Rest, braucht es nicht mehr Budget — es braucht einen Text, der genau für diesen Moment geschrieben ist.</p>
+
+<p>Data Storytelling nennt man das im SEA-Jargon. Und die neue Königsdisziplin wird sein, diese Geschichte effizient zu erzählen — mit einem Human Touch, ohne AI Slop.</p>
+
+<div class="banner-item" style="margin:2rem 0;">
+  <p class="banner-label">Der SGF-Spickzettel</p>
+  <iframe src="/blog/graphics/cheat-sheet.html" width="100%" height="370" scrolling="no" frameborder="0" style="border-radius:12px;border:0.5px solid #e4e4ee;display:block;"></iframe>
+</div>
+
+<h2>Data driven. Human touch.</h2>
+
+<blockquote style="border-left:3px solid #4055CC;padding:16px 24px;margin:2rem 0;background:#f6f8ff;border-radius:0 10px 10px 0;font-style:italic;line-height:1.65;">
+  „Your job isn't to outsmart the AI; it's to out-train it — by giving it better data, better creative, and clearer goals than your competitors."
+  <cite style="display:block;margin-top:10px;font-size:0.8rem;font-style:normal;color:#888;font-weight:500;">— Google, 2025</cite>
+</blockquote>
+
+<p>Für Kreative gelesen: Deine Stärke ist nicht mehr der eine goldene Satz. Deine Stärke ist, dass du weißt, welche Botschaft für welchen Menschen in welchem Moment wirkt — und dass du das in zwölf Varianten übersetzen kannst statt in eine.</p>
+
+<p>Das ist keine Schwächung des kreativen Anspruchs. Es ist seine Erweiterung.</p>
+
+<p style="font-family:var(--font-playfair),serif;font-size:1.4rem;line-height:1.45;color:#4055CC;text-align:center;padding:1.8em 1em;border-top:0.5px solid #d8deff;border-bottom:0.5px solid #d8deff;margin:2rem 0;">Gutes Copywriting war immer das Gespür für die richtige Botschaft zur richtigen Zeit für den richtigen Menschen.</p>
+
+<p>Nur dass „der richtige Mensch" jetzt von einem Algorithmus identifiziert wird.</p>
+
+<p>Und du entscheidest, womit du ihn trainierst.</p>`,
+      },
+      {
         slug: "eisvogel-case-study",
         tag: "Case Study",
         title: "Eisvogel Touren: Kampagnen-Konsolidierung, sauberes Tracking und animierte Display-Banner",
@@ -1042,6 +1127,91 @@ const blog = {
     readMore: "Read article",
     minRead: "min read",
     posts: [
+      {
+        slug: "creative-performance-targeting",
+        tag: "SEA × Creative",
+        title: "Your copy is the new targeting",
+        excerpt: "Why creative is now the targeting – and not every line needs to be a masterpiece. An essay on Google AI, GA4 and the new craft.",
+        author: "Robert Miler",
+        date: "May 16, 2026",
+        readTime: "6",
+        img: "/blog/BlogMai2026.jpg",
+        content: `<p>I'm a copywriter. I'm building a SEA collective. And last week I read a document that forced me to rethink both.</p>
+
+<p>Google published a slide deck aimed at performance marketers. On one slide it says: "Creatives are the new targeting." Three words that shift everything — if you understand why they're true.</p>
+
+<h2>The craft I knew</h2>
+
+<p>Copywriting used to be manual work. My career started in 2012 at Kolle Rebbe. Back then I'd write hundreds of headlines per brief, walk them to the CD, they'd put small dots next to three or four lines, maybe shuffle a word — and those lines went to layout. No explanation, no framework, no A/B testing. Pure experience. From day one, in every agency, the supreme discipline was always recognizing outstanding work. Which line is good? Which idea carries a whole campaign?</p>
+
+<p>I loved that. Always have.</p>
+
+<p>SEA was also manual: every bid, every keyword, every placement — calibrated by hand, monitored, adjusted when the data went wrong. The good SEA manager knew their campaigns cold and could read which creative was working — and tested why.</p>
+
+<p>Two crafts. Cleanly separated. Experience vs. data interpretation.</p>
+
+<p>That didn't change gradually. It changed fundamentally.</p>
+
+<h2>Fuel for the algorithm</h2>
+
+<p>Google's AI — AI Max, Performance Max, whatever comes next — takes over the controls. Not because it does it better. But because it has access to signals no human can process: scroll depth, time on page, drop-off points, purchase probability in the next seven days. GA4 delivers ten times more data points per user than classic conversion tracking. The AI reads intent, not keywords.</p>
+
+<p>It's no longer about knowing which creative works or doesn't. It's about choosing the right fuel for the algorithm. Sounds like a dietary change.</p>
+
+<p>The AI can't decide on its own who to target. It needs input. That used to be a keyword — what's left when Google moves further toward keywordless technology? The creative and data quality. Predictive modeling and negative feeding.</p>
+
+<div class="banner-item" style="margin:2rem 0;">
+  <p class="banner-label">GA4 data as guardrails for the AI</p>
+  <iframe src="/blog/graphics/ga4-leitplanken.html" width="100%" height="472" scrolling="no" frameborder="0" style="border-radius:12px;border:0.5px solid #e4e4ee;display:block;"></iframe>
+</div>
+
+<p>That's not a metaphor. That's technology. And it has a consequence: not every line needs to be a work of art.</p>
+
+<h2>The volume problem — and why perfection makes it worse</h2>
+
+<p>Google actively measures whether you're feeding enough creative material into the system. It's called the Creative Excellence Score. When it drops, the AI engine runs on reserve — optimizing with what's there, not what's possible.</p>
+
+<p>What the system needs: variations. Not one perfect headline, but ten different approaches. Not a final visual, but five for the machine to pick the winner from. The AI tests. You decide what gets tested. That's not a downgrade — that's the actual strategic job.</p>
+
+<p>Whoever polishes every line to perfection and delivers less, loses. Not because quality doesn't matter. But because quality without volume gives the system nothing to learn from. A single brilliant text isn't a data point. It's an opinion.</p>
+
+<div class="banner-item" style="margin:2rem 0;">
+  <p class="banner-label">From "if" to "how much" – Value-Based Bidding (VBB)</p>
+  <iframe src="/blog/graphics/vbb-evolution.html" width="100%" height="418" scrolling="no" frameborder="0" style="border-radius:12px;border:0.5px solid #e4e4ee;display:block;"></iframe>
+</div>
+
+<h2>What I'm doing about it</h2>
+
+<p>I'm building a SEA collective because I believe this intersection is being redefined right now — and creatives are missing from it.</p>
+
+<p>Most performance teams think in bids and budgets. Most creative teams think in briefs and final presentations. Nobody thinks about what data the marketing is getting — and what that has to do with the creative.</p>
+
+<p>But when GA4 shows that 60% of users drop off on the shipping page, that's not a tracking problem. It's a copy problem. The data shows where the text stops working. And when an audience segment converts three times more than the rest, it doesn't need more budget — it needs a text written exactly for that moment.</p>
+
+<p>They call it data storytelling in SEA jargon. The new supreme discipline will be telling that story efficiently — with a human touch, without AI slop.</p>
+
+<div class="banner-item" style="margin:2rem 0;">
+  <p class="banner-label">The SGF cheat sheet</p>
+  <iframe src="/blog/graphics/cheat-sheet.html" width="100%" height="370" scrolling="no" frameborder="0" style="border-radius:12px;border:0.5px solid #e4e4ee;display:block;"></iframe>
+</div>
+
+<h2>Data driven. Human touch.</h2>
+
+<blockquote style="border-left:3px solid #4055CC;padding:16px 24px;margin:2rem 0;background:#f6f8ff;border-radius:0 10px 10px 0;font-style:italic;line-height:1.65;">
+  "Your job isn't to outsmart the AI; it's to out-train it — by giving it better data, better creative, and clearer goals than your competitors."
+  <cite style="display:block;margin-top:10px;font-size:0.8rem;font-style:normal;color:#888;font-weight:500;">— Google, 2025</cite>
+</blockquote>
+
+<p>Read through a creative lens: your strength is no longer the one golden sentence. Your strength is knowing which message works for which person at which moment — and being able to translate that into twelve variations instead of one.</p>
+
+<p>That's not a weakening of creative ambition. It's an expansion of it.</p>
+
+<p style="font-family:var(--font-playfair),serif;font-size:1.4rem;line-height:1.45;color:#4055CC;text-align:center;padding:1.8em 1em;border-top:0.5px solid #d8deff;border-bottom:0.5px solid #d8deff;margin:2rem 0;">Good copywriting has always been the instinct for the right message at the right time for the right person.</p>
+
+<p>Except that "the right person" is now identified by an algorithm.</p>
+
+<p>And you decide what you train it with.</p>`,
+      },
       {
         slug: "eisvogel-case-study",
         tag: "Case Study",
