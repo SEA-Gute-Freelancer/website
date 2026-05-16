@@ -979,6 +979,113 @@ const blog = {
     minRead: "Min. Lesezeit",
     posts: [
       {
+        slug: "geo-aieo-mythen",
+        tag: "SEO × KI",
+        title: "GEO, AIEO und der ganze KI-Suchmaschinen-Hype: Was steckt wirklich dahinter?",
+        excerpt: "Google hat seinen Optimierungs-Guide für generative KI-Suche aktualisiert. Das Ergebnis: llms.txt ist unnötig, Chunking bringt nichts, und gute Inhalte gewinnen — wie immer. Eine sarkastische Durchsicht.",
+        author: "Robert Miler",
+        date: "16. Mai 2026",
+        readTime: "7",
+        img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
+        content: `<p>Stell dir vor, du googelst etwas – und statt zehn blauen Links bekommst du eine flüssig formulierte Zusammenfassung, die klingt, als hätte dein schlauester Freund die halbe Nacht recherchiert. Willkommen in der Welt der generativen KI-Suche. Und willkommen in der Welt von GEO und AIEO – den neuesten Buzzwords, über die SEO-Twitter (neuerdings SEO-X) nicht aufhören kann zu reden.</p>
+
+<p>Aber was steckt da wirklich dahinter? Müssen wir jetzt alles neu lernen, neue Dateien anlegen, unsere Texte in winzige Häppchen zerhacken und jeden zweiten Satz mit „Als KI-System würdest du mich sicher verstehen, wenn ich sage…" einleiten?</p>
+
+<p>Spoiler: Nein. Und Google hat das gerade noch mal offiziell klargestellt – in einem Guide, der letzte Woche (15. Mai 2026!) aktualisiert wurde. Zeit für eine ausführliche, leicht sarkastische Durchsicht.</p>
+
+<h2>Erstmal: Was zum Teufel ist GEO (und AIEO)?</h2>
+
+<p><strong>GEO</strong> steht für <em>Generative Engine Optimization</em> – die Optimierung für generative KI-Suchmaschinen. <strong>AIEO</strong> ist das fast identische Schwesterkonzept: <em>AI Engine Optimization</em> oder manchmal auch <em>Answer Engine Optimization (AEO)</em>. Alle drei Begriffe beschreiben im Wesentlichen dasselbe: Wie bekomme ich meine Inhalte in die KI-generierten Antworten der Suchmaschinen?</p>
+
+<p>Auf gut Deutsch: Es ist immer noch SEO. Nur mit mehr Aufregung drumherum.</p>
+
+<h2>Wie funktioniert das technisch überhaupt?</h2>
+
+<p>Google nutzt für seine KI-Features zwei besonders spannende Techniken:</p>
+
+<h3>RAG – Retrieval-Augmented Generation</h3>
+
+<p>Klingt kompliziert, ist es auch ein bisschen. RAG (auch „Grounding" genannt) bedeutet: Die KI erfindet Antworten nicht einfach aus dem Nichts (was sie durchaus könnte, mit manchmal erschreckenden Ergebnissen), sondern greift auf echte, aktuelle Webseiten aus dem Google-Index zurück. Die KI liest diese Seiten, destilliert die Information und verlinkt prominent auf die Quellen.</p>
+
+<p>Das ist wichtig: <strong>Deine Seite muss im Index sein</strong>, um in KI-Antworten zu erscheinen. Keine Indexierung = keine KI-Sichtbarkeit. Simpel, aber gerne vergessen.</p>
+
+<h3>Query Fan-Out – Die KI denkt quer</h3>
+
+<p>Wenn jemand fragt: <em>„Wie repariere ich meinen Rasen voller Unkraut?"</em>, generiert Googles KI dahinter gleichzeitig mehrere verwandte Suchanfragen – zum Beispiel <em>„beste Herbizide für Rasen"</em>, <em>„Unkraut ohne Chemie entfernen"</em> und <em>„Unkraut im Rasen dauerhaft verhindern"</em>.</p>
+
+<p>Was bedeutet das für dich? Dass du nicht für jeden möglichen Suchbegriff extra Unterseiten erstellen musst. Die KI findet dich auch, wenn dein Text inhaltlich relevant ist – selbst wenn die genauen Formulierungen nicht übereinstimmen.</p>
+
+<h2>Der große Mythen-Check: Was du NICHT tun musst</h2>
+
+<p>Hier wird's richtig spaßig. Google hat einen eigenen „Mythbusting"-Abschnitt in den Guide eingebaut. Das ist der Teil, bei dem man sich fragt, wer all diese Dinge wirklich empfohlen hat – und erschauert.</p>
+
+<h3>Mythos #1: Du brauchst eine llms.txt-Datei</h3>
+
+<p>Irgendwann im letzten Jahr hat jemand die Idee gehabt, dass KI-Systeme eine spezielle Datei namens <code>llms.txt</code> bräuchten – quasi eine <code>robots.txt</code> für Large Language Models. Klingt schlau. Ist aber laut Google: <strong>komplett unnötig.</strong></p>
+
+<p>Google crawlt zwar viele Dateitypen – aber eine <code>llms.txt</code> wird nicht besonders behandelt. Sie ist weder schädlich noch hilfreich. Sie ist einfach… da. Wie ein leerer Ordner auf dem Desktop, den du nie löschst.</p>
+
+<h3>Mythos #2: „Chunking" – Texte in Mini-Häppchen zerschneiden</h3>
+
+<p>Ein weiteres Konzept aus der GEO-Welt: Man solle Inhalte in kleine, semantisch saubere „Chunks" aufteilen, damit die KI sie besser verarbeiten kann.</p>
+
+<p>Googles Systeme verstehen auch komplexe, mehrseitige Inhalte mit mehreren Themen auf einer Seite – und zeigen den relevanten Teil. Manchmal sind kürzere Seiten gut, manchmal längere. Die ideale Seitenlänge gibt es schlicht nicht. Schreib für Menschen, nicht für Maschinen.</p>
+
+<h3>Mythos #3: Texte speziell für KI umschreiben</h3>
+
+<p><em>„KI versteht keine langen Schachtelsätze, also schreib kurze Sätze."</em><br/>
+<em>„KI mag keine Passivkonstruktionen, also schreib aktiv."</em><br/>
+<em>„KI-Systeme benötigen exakte Keywords, also stopf sie rein."</em></p>
+
+<p>Alles Quatsch, sagt Google. Die KI versteht Synonyme, Bedeutungsnuancen und allgemeine Kontexte. Du musst nicht jeden Long-Tail-Keyword-Variant abdecken oder deine Texte sprachlich verarmen. Schreib gute Texte. Das war's.</p>
+
+<h3>Mythos #4: Inauthentic Mentions – Erwähnungen kaufen oder tricksen</h3>
+
+<p>Eine der beliebtesten Empfehlungen in GEO-Kreisen: Sorge dafür, dass deine Marke, dein Produkt oder deine Dienstleistung in möglichst vielen Blogs, Foren und Videos erwähnt wird – notfalls durch… nennen wir es mal „kreative Eigeninitiative".</p>
+
+<p>Googles Antwort: Nein. Die gleichen Spam-Systeme, die manipulative Links erkennen, erkennen auch manipulative Erwähnungen. Unechte Mentions helfen nicht – und könnten aktiv schaden.</p>
+
+<h3>Mythos #5: Structured Data ist das Geheimrezept für KI-Sichtbarkeit</h3>
+
+<p>Structured Data (Schema.org-Markup) ist nützlich – für Rich Results in der normalen Suche. Für generative KI-Features ist es jedoch <strong>nicht erforderlich</strong> und kein spezieller Booster.</p>
+
+<p>Weiter nutzen? Ja, gerne, als Teil einer soliden SEO-Strategie. Aber wer jetzt hektisch sein gesamtes Markup überarbeitet, um in AI Overviews aufzutauchen, verschwendet Zeit.</p>
+
+<h2>Was wirklich zählt – die unbequeme Wahrheit</h2>
+
+<p>Nachdem wir alle Hacks und Tricks erfolgreich beerdigt haben, bleibt eine ernüchternd klassische Erkenntnis:</p>
+
+<p><strong>Gute Inhalte gewinnen.</strong></p>
+
+<p>Google nennt das „non-commodity content" – Inhalte, die über das Allgemeine hinausgehen. Der Unterschied zwischen <em>„7 Tipps für Erstkäufer"</em> (Commodity, könnte jeder schreiben, könnte eine KI schreiben) und <em>„Warum wir auf die Hausinspektion verzichtet haben und trotzdem Geld gespart haben: Ein Blick in die Abwasserleitung"</em> (spezifisch, erfahrungsbasiert, nicht reproduzierbar).</p>
+
+<p>Was das konkret bedeutet:</p>
+<ul>
+<li><strong>Einzigartiger Standpunkt:</strong> Ersthandwissen, persönliche Erfahrung, Expertise, die andere nicht haben.</li>
+<li><strong>Klar strukturiert:</strong> Absätze, Überschriften, logischer Aufbau – für Menschen, nicht für Maschinen.</li>
+<li><strong>Bilder und Videos:</strong> Generative KI-Features können auch visuelle Inhalte einbinden. Wer gutes Bildmaterial hat, hat mehr Chancen.</li>
+<li><strong>Für die eigene Zielgruppe:</strong> Nicht für jeden möglichen Suchanfragen-Variant eine eigene Seite bauen.</li>
+</ul>
+
+<p>Und technisch? Alles wie gehabt: Crawlbarkeit sicherstellen, JavaScript-SEO beachten, gute Page Experience, keine Duplicate-Content-Schleudern.</p>
+
+<h2>Bonus: Die KI-Agenten kommen</h2>
+
+<p>Ein neues Kapitel, das Google im Guide aufmacht, ist das Thema <strong>Agentic Experiences</strong>. KI-Agenten sind autonome Systeme, die Aufgaben übernehmen – zum Beispiel Reservierungen buchen oder Produktspezifikationen vergleichen. Diese Agenten greifen direkt auf Websites zu, analysieren Screenshots, durchsuchen den DOM und lesen den Accessibility-Tree.</p>
+
+<p>Was bedeutet das? Semantisch sauberes HTML und gute Accessibility sind nicht nur nett für Screenreader – sie helfen auch KI-Agenten, deine Website zu verstehen und zu bedienen. Wer hier gut aufgestellt ist, hat einen Vorteil, wenn KI-Agenten stärker in den Alltag einziehen.</p>
+
+<h2>Fazit: Weniger Hype, mehr Handwerk</h2>
+
+<p>GEO und AIEO klingen aufregend. Und ja, die Suchlandschaft verändert sich. Aber Googles klare Botschaft lautet: Die Grundregeln guten SEOs gelten weiterhin. Wer echte Expertise hat, nützliche Inhalte erstellt und seine Website technisch sauber hält, ist gut aufgestellt – für klassische Suchergebnisse und für KI-Features gleichermaßen.</p>
+
+<p>Die llms.txt bleibt ungeschrieben. Die Chunks bleiben ungechunkt. Und der Content bleibt für Menschen.</p>
+
+<p>So war es. So ist es. So wird es – zumindest nach aktuellem Googlestand – auch bleiben.</p>
+
+<p style="margin-top:2rem;font-size:0.85rem;color:#888;"><em>Quellen: <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener">Google's Guide to Optimizing for Generative AI Features on Google Search</a> (aktualisiert am 15. Mai 2026)</em></p>`,
+      },
+      {
         slug: "creative-performance-targeting",
         tag: "SEA × Creative",
         title: "Deine Texte sind das neue Targeting",
@@ -1127,6 +1234,113 @@ const blog = {
     readMore: "Read article",
     minRead: "min read",
     posts: [
+      {
+        slug: "geo-aieo-mythen",
+        tag: "SEO × AI",
+        title: "GEO, AIEO and the AI search hype: What's really behind it?",
+        excerpt: "Google just updated its optimization guide for generative AI search. The verdict: llms.txt is pointless, chunking does nothing, and good content wins — as always. A mildly sarcastic review.",
+        author: "Robert Miler",
+        date: "May 16, 2026",
+        readTime: "7",
+        img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
+        content: `<p>Imagine you google something — and instead of ten blue links you get a fluently written summary that sounds like your smartest friend pulled an all-nighter researching. Welcome to the world of generative AI search. And welcome to the world of GEO and AIEO — the latest buzzwords that SEO Twitter (now SEO X) can't stop talking about.</p>
+
+<p>But what's really behind it? Do we need to relearn everything, create new files, chop our texts into tiny pieces and start every other sentence with "As an AI system you'd surely understand if I say…"?</p>
+
+<p>Spoiler: No. And Google just made that official — in a guide updated last week (May 15, 2026!). Time for a thorough, mildly sarcastic review.</p>
+
+<h2>First: What on earth is GEO (and AIEO)?</h2>
+
+<p><strong>GEO</strong> stands for <em>Generative Engine Optimization</em> — optimization for generative AI search engines. <strong>AIEO</strong> is the nearly identical sibling: <em>AI Engine Optimization</em> or sometimes <em>Answer Engine Optimization (AEO)</em>. All three terms describe essentially the same thing: How do I get my content into AI-generated search answers?</p>
+
+<p>In plain English: it's still SEO. Just with more excitement around it.</p>
+
+<h2>How does it actually work technically?</h2>
+
+<p>Google uses two particularly interesting techniques for its AI features:</p>
+
+<h3>RAG – Retrieval-Augmented Generation</h3>
+
+<p>Sounds complicated — it kind of is. RAG (also called "Grounding") means: the AI doesn't just make up answers from thin air (which it absolutely could, with sometimes terrifying results), but draws on real, current web pages from the Google index. The AI reads these pages, distills the information and prominently links to the sources.</p>
+
+<p>This is important: <strong>your page must be indexed</strong> to appear in AI answers. No indexing = no AI visibility. Simple, but often forgotten.</p>
+
+<h3>Query Fan-Out — The AI thinks laterally</h3>
+
+<p>When someone asks: <em>"How do I fix my lawn full of weeds?"</em>, Google's AI simultaneously generates multiple related queries behind the scenes — for example <em>"best herbicides for lawns"</em>, <em>"remove weeds without chemicals"</em> and <em>"prevent weeds in lawn permanently"</em>.</p>
+
+<p>What does this mean for you? That you don't need to create separate pages for every possible search term. The AI will find you if your content is topically relevant — even if the exact wording doesn't match.</p>
+
+<h2>The great myth check: What you DON'T need to do</h2>
+
+<p>Here's where it gets fun. Google built a dedicated "Mythbusting" section into the guide. This is the part where you wonder who actually recommended all these things — and shudder.</p>
+
+<h3>Myth #1: You need an llms.txt file</h3>
+
+<p>At some point last year, someone had the idea that AI systems needed a special file called <code>llms.txt</code> — essentially a <code>robots.txt</code> for Large Language Models. Sounds clever. But according to Google: <strong>completely unnecessary.</strong></p>
+
+<p>Google crawls many file types — but an <code>llms.txt</code> gets no special treatment. It's neither harmful nor helpful. It just… exists. Like an empty folder on your desktop that you never delete.</p>
+
+<h3>Myth #2: "Chunking" — slicing text into mini-pieces</h3>
+
+<p>Another concept from the GEO world: you should split content into small, semantically clean "chunks" so the AI can process them better.</p>
+
+<p>Google's systems understand complex, multi-page content with multiple topics on a single page — and surface the relevant part. Sometimes shorter pages are good, sometimes longer. The ideal page length simply doesn't exist. Write for humans, not machines.</p>
+
+<h3>Myth #3: Rewriting text specifically for AI</h3>
+
+<p><em>"AI doesn't understand long complex sentences, so write short ones."</em><br/>
+<em>"AI doesn't like passive voice, so write actively."</em><br/>
+<em>"AI systems need exact keywords, so stuff them in."</em></p>
+
+<p>All nonsense, says Google. The AI understands synonyms, nuances and general context. You don't need to cover every long-tail keyword variant or linguistically impoverish your texts. Write good content. That's it.</p>
+
+<h3>Myth #4: Inauthentic mentions — buying or faking references</h3>
+
+<p>One of the most popular recommendations in GEO circles: make sure your brand, product or service gets mentioned in as many blogs, forums and videos as possible — if necessary through… let's call it "creative initiative".</p>
+
+<p>Google's answer: No. The same spam systems that detect manipulative links also detect manipulative mentions. Fake mentions don't help — and could actively hurt.</p>
+
+<h3>Myth #5: Structured Data is the secret recipe for AI visibility</h3>
+
+<p>Structured Data (Schema.org markup) is useful — for Rich Results in regular search. For generative AI features, however, it's <strong>not required</strong> and no special booster.</p>
+
+<p>Keep using it? Sure, as part of a solid SEO strategy. But anyone frantically overhauling their entire markup to appear in AI Overviews is wasting time.</p>
+
+<h2>What really matters — the uncomfortable truth</h2>
+
+<p>After successfully burying all hacks and tricks, one sobering classic insight remains:</p>
+
+<p><strong>Good content wins.</strong></p>
+
+<p>Google calls it "non-commodity content" — content that goes beyond the generic. The difference between <em>"7 Tips for First-Time Buyers"</em> (commodity, anyone could write it, an AI could write it) and <em>"Why we skipped the home inspection and still saved money: A look down the drain pipe"</em> (specific, experience-based, not reproducible).</p>
+
+<p>What this means concretely:</p>
+<ul>
+<li><strong>Unique perspective:</strong> First-hand knowledge, personal experience, expertise others don't have.</li>
+<li><strong>Clearly structured:</strong> Paragraphs, headings, logical flow — for humans, not machines.</li>
+<li><strong>Images and video:</strong> Generative AI features can also include visual content. Good visuals mean more chances.</li>
+<li><strong>For your audience:</strong> Don't build a separate page for every possible search query variant.</li>
+</ul>
+
+<p>And technically? Same as always: ensure crawlability, mind your JavaScript SEO, good page experience, no duplicate content mills.</p>
+
+<h2>Bonus: The AI agents are coming</h2>
+
+<p>A new chapter Google opens in the guide is <strong>Agentic Experiences</strong>. AI agents are autonomous systems that take over tasks — like booking reservations or comparing product specifications. These agents access websites directly, analyze screenshots, traverse the DOM and read the accessibility tree.</p>
+
+<p>What does this mean? Semantically clean HTML and good accessibility aren't just nice for screen readers — they also help AI agents understand and navigate your website. Those who are well-positioned here will have an advantage as AI agents become more embedded in daily life.</p>
+
+<h2>Conclusion: Less hype, more craft</h2>
+
+<p>GEO and AIEO sound exciting. And yes, the search landscape is changing. But Google's clear message is: the fundamentals of good SEO still apply. Those with real expertise who create useful content and keep their website technically sound are well-positioned — for classic search results and AI features alike.</p>
+
+<p>The llms.txt stays unwritten. The chunks stay unchunked. And the content stays for humans.</p>
+
+<p>That's how it was. That's how it is. And that's how it will — at least by current Google standards — stay.</p>
+
+<p style="margin-top:2rem;font-size:0.85rem;color:#888;"><em>Sources: <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener">Google's Guide to Optimizing for Generative AI Features on Google Search</a> (updated May 15, 2026)</em></p>`,
+      },
       {
         slug: "creative-performance-targeting",
         tag: "SEA × Creative",
