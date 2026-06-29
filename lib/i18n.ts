@@ -1659,7 +1659,6 @@ const blog = {
 <p style="margin-top:2rem;font-size:0.85rem;color:#888;"><em>Sources: <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener">Google's Guide to Optimizing for Generative AI Features on Google Search</a> (updated May 15, 2026)</em></p>`,
       },
       {
->>>>>>> 23eb5886336e41c05730b74b4d7fc7d927df6517
         slug: "eisvogel-case-study",
         tag: "Case Study",
         title: "Eisvogel Touren: Campaign consolidation, clean tracking and animated display banners",
