@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deine Texte sind das neue Targeting – SEA Gute Freelancer</title>
+  <meta name="description" content="Warum Creative jetzt das Targeting ist – und nicht jede Zeile ein Kunstwerk sein muss. Ein Essay über Google AI, GA4 und die neue Königsdisziplin.">
+  <meta property="og:title" content="Deine Texte sind das neue Targeting">
+  <meta property="og:description" content="Warum Creative jetzt das Targeting ist – und nicht jede Zeile ein Kunstwerk sein muss.">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="SEA Gute Freelancer">
+  <meta name="author" content="Robert Miler">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.78;
+      color: #1e1f2e;
+      background: #ffffff;
+    }
+
+    .blog-container {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 0 24px 100px;
+    }
+
+    /* ── Header ── */
+    .blog-header {
+      padding: 52px 0 40px;
+      border-bottom: 0.5px solid #e8e8ee;
+      margin-bottom: 52px;
+    }
+
+    .blog-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #4055CC;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 22px;
+    }
+
+    .blog-tag::before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #4055CC;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 44px;
+      font-weight: 400;
+      line-height: 1.18;
+      color: #0d0e1a;
+      margin-bottom: 22px;
+      letter-spacing: -0.01em;
+    }
+
+    .blog-meta {
+      font-size: 13px;
+      color: #999;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .blog-meta .author {
+      font-weight: 500;
+      color: #555;
+    }
+
+    /* ── Body text ── */
+    p {
+      margin-bottom: 1.6em;
+      color: #2a2b3d;
+    }
+
+    h2 {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 23px;
+      font-weight: 600;
+      color: #0d0e1a;
+      margin: 3.2em 0 0.7em;
+      line-height: 1.3;
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    /* ── Blockquote ── */
+    blockquote {
+      border-left: 3px solid #4055CC;
+      padding: 16px 24px;
+      margin: 2.4em 0;
+      background: #f6f8ff;
+      border-radius: 0 10px 10px 0;
+      font-size: 16px;
+      color: #2a2b3d;
+      font-style: italic;
+      line-height: 1.65;
+    }
+
+    blockquote cite {
+      display: block;
+      margin-top: 10px;
+      font-size: 12.5px;
+      font-style: normal;
+      color: #888;
+      font-weight: 500;
+    }
+
+    /* ── Pull quote ── */
+    .pull-quote {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 1.45;
+      color: #4055CC;
+      text-align: center;
+      padding: 2.2em 1.5em;
+      margin: 2.4em 0;
+      border-top: 0.5px solid #d8deff;
+      border-bottom: 0.5px solid #d8deff;
+    }
+
+    /* ── Graphics ── */
+    .graphic {
+      margin: 2.8em 0;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 0.5px solid #e4e4ee;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+    }
+
+    .graphic svg {
+      display: block;
+      width: 100%;
+    }
+
+    .graphic-caption {
+      font-size: 12px;
+      color: #999;
+      text-align: center;
+      padding: 9px 16px 12px;
+      background: #fafafa;
+      border-top: 0.5px solid #eee;
+      line-height: 1.5;
+    }
+
+    /* ── CTA box ── */
+    .sgf-cta {
+      background: #f6f8ff;
+      border: 0.5px solid #ccd4f8;
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-top: 4em;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .sgf-badge-box {
+      background: #4055CC;
+      color: white;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      letter-spacing: 0.02em;
+    }
+
+    .sgf-cta-text {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .sgf-cta-text a {
+      color: #4055CC;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .sgf-cta-text a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      h1 { font-size: 30px; }
+      h2 { font-size: 20px; }
+      .blog-container { padding: 0 18px 60px; }
+      .blog-header { padding: 36px 0 28px; }
+      .pull-quote { font-size: 20px; padding: 1.8em 1em; }
+      .sgf-cta { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="blog-container">
+
+  <header class="blog-header">
+    <div class="blog-tag">SEA × Creative</div>
+    <h1>Deine Texte sind das neue Targeting</h1>
+    <div class="blog-meta">
+      <span class="author">Robert Miler</span>
+      <span>·</span>
+      <span>Mai 2026</span>
+      <span>·</span>
+      <span>6 min Lesezeit</span>
+    </div>
+  </header>
+
+  <p>Ich bin Texter. Ich gründe gerade ein SEA-Kollektiv. Und ich habe letzte Woche ein Dokument gelesen, das mich gezwungen hat, beides neu zu denken.</p>
+
+  <p>Google hat eine Folie veröffentlicht, die eigentlich für Performance-Marketer gedacht ist. Drauf steht: „Creatives are the new targeting." Drei Wörter, die alles verschieben — wenn man versteht, warum sie stimmen.</p>
+
+  <h2>Das Handwerk, das ich kannte</h2>
+
+  <p>Texten war mal Handarbeit — egal ob Markenclaim oder Social Media Caption. Meine Karriere als Texter begann 2012 bei Kolle Rebbe. Damals habe ich pro Briefing hunderte Headlines geschrieben, bin zum CD, er oder sie hat mit einem Stift kleine Punkte vor drei, vier Zeilen gesetzt — eventuell noch was umgestellt — und diese Zeilen wurden dann gelayoutet. Keine Erklärung, keine Struktur, kein A/B-Testing. Pure Erfahrung. Vom ersten Tag an und in jeder Agentur war es immer die Königsdisziplin: herausragende Kreation zu erkennen. Welche Zeile ist gut, welche Idee trägt ganze Kampagnen, welches Layout ist am stärksten?</p>
+
+  <p>Ich habe das geliebt. Schon immer.</p>
+
+  <p>SEA war auch Handarbeit: Jeder Bid, jedes Keyword, jede Platzierung — manuell kalibriert, überwacht und angepasst, wenn die Daten nicht stimmten. Der gute SEA-Manager kannte seine Kampagnen auswendig und konnte ablesen, welches Creative funktioniert — und testete, warum das so war.</p>
+
+  <p>Zwei Gewerke. Sauber getrennt. Erfahrung vs. Dateninterpretation.</p>
+
+  <p>Das hat sich nicht graduell verändert. Es hat sich fundamental verändert.</p>
+
+  <h2>Futter für den Algorithmus</h2>
+
+  <p>Googles KI — AI Max, Performance Max, was auch immer als nächstes kommt — übernimmt die Steuerung. Nicht weil sie es besser kann. Sondern weil sie Zugriff auf Signale hat, die kein Mensch verarbeiten kann: Scroll-Tiefe, Verweildauer, Abbruchpunkte, Kaufwahrscheinlichkeit in den nächsten sieben Tagen. GA4 liefert zehnmal mehr Datenpunkte pro User als klassisches Conversion-Tracking. Die KI liest Absichten, keine Keywords mehr.</p>
+
+  <p>Es geht nicht mehr darum zu wissen, welches Creative funktioniert oder nicht. Es geht um die Wahl des Futters für den Algorithmus. Klingt nach einer Ernährungsumstellung.</p>
+
+  <p>Die KI kann nicht selbst entscheiden, wen sie ansprechen will. Früher war das ein Keyword — was bleibt, wenn Google mehr und mehr Richtung Keywordless-Technology steuert? Das Creative und die Datenqualität. Predictive Modeling und Negative Feeding.</p>
+
+  <!-- GA4 LEITPLANKEN GRAPHIC -->
+  <div class="graphic">
+    <svg width="100%" viewBox="0 0 680 472" role="img" style="display:block;background:white">
+      <title>GA4-Daten als Leitplanken für die KI</title>
+      <desc>Drei Datensäulen – Prädiktive Analyse, Prädiktive Zielgruppen und Negatives Feeding – speisen die KI-Engine</desc>
+      <defs>
+        <marker id="arr-lp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+      <rect width="680" height="472" fill="white"/>
+      <rect x="20" y="13" width="38" height="26" rx="6" fill="#4055CC"/>
+      <text x="39" y="31" text-anchor="middle" fill="white" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;font-weight:600">SGF</text>
+      <text x="340" y="33" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:15px;font-weight:600;fill:#0d0e1a">GA4-Daten als Leitplanken für die KI</text>
+      <line x1="20" y1="50" x2="660" y2="50" stroke="#e8e8ee" stroke-width="0.5"/>
+      <polygon points="340,68 390,118 340,168 290,118" fill="white" stroke="#d0d0e0" stroke-width="1"/>
+      <polygon points="340,68 290,118 340,118" fill="#eeeeff" stroke="none"/>
+      <polygon points="340,68 390,118 340,118" fill="#e0e8ff" stroke="none"/>
+      <polygon points="290,118 340,168 340,118" fill="#d8e2f8" stroke="none"/>
+      <polygon points="390,118 340,168 340,118" fill="#cdd9f5" stroke="none"/>
+      <line x1="290" y1="118" x2="390" y2="118" stroke="white" stroke-width="0.5"/>
+      <line x1="340" y1="68" x2="340" y2="168" stroke="white" stroke-width="0.5"/>
+      <text x="340" y="112" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;font-weight:600;fill:#2a3a90">KI-</text>
+      <text x="340" y="127" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;font-weight:600;fill:#2a3a90">Engine</text>
+      <path d="M 113,278 C 113,195 235,158 290,118" stroke="#4055CC" stroke-width="42" fill="none" stroke-linecap="round"/>
+      <path d="M 340,278 L 340,168" stroke="#E8B830" stroke-width="42" fill="none" stroke-linecap="round"/>
+      <path d="M 567,278 C 567,195 445,158 390,118" stroke="#C93B2A" stroke-width="42" fill="none" stroke-linecap="round"/>
+      <line x1="227" y1="290" x2="227" y2="418" stroke="#eeeeee" stroke-width="0.5"/>
+      <line x1="453" y1="290" x2="453" y2="418" stroke="#eeeeee" stroke-width="0.5"/>
+      <text x="113" y="306" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:12.5px;font-weight:600;fill:#4055CC">1. Prädiktive Analyse – ROI</text>
+      <text x="113" y="322" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;fill:#777">(Expansion)</text>
+      <text x="113" y="347" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;fill:#444">Kaufwahrsch. in GA4 prüfen.</text>
+      <text x="113" y="363" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;fill:#444">Bidding auf Conversion Value</text>
+      <text x="113" y="379" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;fill:#444">stellen → KI priorisiert</text>
+      <text x="113" y="395" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;fill:#444">hochwertige Nutzer.</text>
+      <text x="340" y="306" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:12.5px;font-weight:600;fill:#9A7800">2. Prädiktive Zielgruppen</text>
+      <text x="340" y="322" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;fill:#777">(Priorisierung)</text>
+      <text x="340" y="347" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;fill:#444">„7-Tage-Käufer" aus GA4</text>
+      <text x="340" y="363" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;fill:#444">exportieren. Der KI sagen:</text>
+      <text x="340" y="379" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;fill:#444">„Finde jenseits der Keywords</text>
+      <text x="340" y="395" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;fill:#444">genau solche Nutzer."</text>
+      <text x="567" y="306" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:12.5px;font-weight:600;fill:#C93B2A">3. Negatives Feeding</text>
+      <text x="567" y="322" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;fill:#777">(Schutz)</text>
+      <text x="567" y="347" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;fill:#444">Low-Value-Nutzer erkennen</text>
+      <text x="567" y="363" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;fill:#444">(z.B. &lt;5 Sek. auf der Seite).</text>
+      <text x="567" y="379" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;fill:#444">Als Ausschlussliste einspielen –</text>
+      <text x="567" y="395" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;fill:#444">stoppt Broad-Match-Drift.</text>
+      <rect x="0" y="425" width="680" height="47" fill="#f4f4fa"/>
+      <line x1="0" y1="425" x2="680" y2="425" stroke="#e0e0ee" stroke-width="0.5"/>
+      <rect x="20" y="436" width="32" height="22" rx="5" fill="#4055CC"/>
+      <text x="36" y="451" text-anchor="middle" fill="white" style="font-family:'Plus Jakarta Sans',system-ui;font-size:10px;font-weight:600">SGF</text>
+      <text x="63" y="450" text-anchor="start" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;fill:#666">sea-gute-freelancer.de · Google Ads &amp; KI-Kollektiv für den Mittelstand</text>
+    </svg>
+    <div class="graphic-caption">GA4-Daten als Leitplanken für die KI: Drei Hebel, die du kontrollierst — und die den Unterschied zwischen blindem Algorithmus und gezielter Maschine machen.</div>
+  </div>
+
+  <p>Das ist keine Metapher. Das ist Technik. Und sie hat eine Konsequenz: Nicht jede Zeile muss ein Kunstwerk sein.</p>
+
+  <h2>Das Volumenproblem — und warum Perfektion es schlimmer macht</h2>
+
+  <p>Google misst aktiv, ob du genug Creative-Material ins System einspeist. Es nennt sich Creative Excellence Score. Sinkt er, läuft die KI-Engine auf Reserve — sie optimiert mit dem, was da ist, statt mit dem, was möglich wäre.</p>
+
+  <p>Was das System braucht: Varianten. Nicht eine perfekte Headline, sondern zehn verschiedene Ansätze. Nicht ein finales Visual, sondern fünf, aus denen die Maschine den Gewinner zieht. Die KI testet. Du entscheidest, was getestet wird. Das ist kein Downgrade — das ist der eigentliche strategische Job.</p>
+
+  <p>Wer jede Zeile auf Hochglanz poliert und dafür weniger liefert, verliert. Nicht weil Qualität egal wäre. Sondern weil Qualität ohne Volumen dem System nichts zu lernen gibt. Ein einziger genialer Text ist kein Datenpunkt. Er ist eine Meinung.</p>
+
+  <!-- VBB EVOLUTION GRAPHIC -->
+  <div class="graphic">
+    <svg width="100%" viewBox="0 0 680 418" role="img" style="display:block;background:white">
+      <title>Vom Ob zum Wie viel – VBB-Evolution</title>
+      <desc>Links: Standard-Ansatz mit identischen grauen Figuren auf Fließband. Rechts: VBB-Evolution mit blauen Figuren und unterschiedlich großen Geldboxen.</desc>
+      <defs>
+        <pattern id="hatch-gray" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+          <rect width="10" height="10" fill="#e2e2e2"/>
+          <line x1="0" y1="5" x2="10" y2="5" stroke="#ccc" stroke-width="1.5"/>
+        </pattern>
+        <pattern id="hatch-blue" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+          <rect width="10" height="10" fill="#c5d8f5"/>
+          <line x1="0" y1="5" x2="10" y2="5" stroke="#9ab8e8" stroke-width="1.5"/>
+        </pattern>
+        <clipPath id="clip-belt-l"><rect x="68" y="258" width="238" height="30"/></clipPath>
+        <clipPath id="clip-belt-r"><rect x="378" y="258" width="268" height="30"/></clipPath>
+      </defs>
+      <rect width="680" height="418" fill="white"/>
+      <rect x="20" y="13" width="38" height="26" rx="6" fill="#4055CC"/>
+      <text x="39" y="31" text-anchor="middle" fill="white" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;font-weight:600">SGF</text>
+      <text x="340" y="31" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:15px;font-weight:600;fill:#0d0e1a">Vom „Ob" ein Nutzer konvertiert —</text>
+      <text x="340" y="52" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:15px;font-weight:600;fill:#0d0e1a">zum „Wie viel" er wert ist.</text>
+      <line x1="20" y1="64" x2="660" y2="64" stroke="#e8e8ee" stroke-width="0.5"/>
+      <line x1="340" y1="70" x2="340" y2="385" stroke="#e4e4e4" stroke-width="0.5"/>
+      <text x="183" y="92" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:13.5px;font-weight:600;fill:#1a1a1a">Standard-Ansatz</text>
+      <circle cx="68" cy="273" r="19" fill="#d0d0d0" stroke="#b8b8b8" stroke-width="0.5"/>
+      <circle cx="68" cy="273" r="9" fill="#bcbcbc"/>
+      <circle cx="306" cy="273" r="19" fill="#d0d0d0" stroke="#b8b8b8" stroke-width="0.5"/>
+      <circle cx="306" cy="273" r="9" fill="#bcbcbc"/>
+      <rect x="68" y="258" width="238" height="30" fill="url(#hatch-gray)" clip-path="url(#clip-belt-l)"/>
+      <line x1="68" y1="258" x2="306" y2="258" stroke="#aaa" stroke-width="1"/>
+      <line x1="68" y1="288" x2="306" y2="288" stroke="#aaa" stroke-width="1"/>
+      <g style="fill:#b0b0b0">
+        <circle cx="98" cy="229" r="11"/><rect x="86" y="240" width="24" height="18" rx="3"/>
+        <circle cx="142" cy="229" r="11"/><rect x="130" y="240" width="24" height="18" rx="3"/>
+        <circle cx="186" cy="229" r="11"/><rect x="174" y="240" width="24" height="18" rx="3"/>
+        <circle cx="230" cy="229" r="11"/><rect x="218" y="240" width="24" height="18" rx="3"/>
+        <circle cx="272" cy="229" r="11"/><rect x="260" y="240" width="24" height="18" rx="3"/>
+      </g>
+      <text x="183" y="320" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11.5px;fill:#555">Conversion-Volumen maximieren.</text>
+      <text x="183" y="338" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11.5px;fill:#555">Jeden Lead gleich behandeln.</text>
+      <text x="508" y="92" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:13.5px;font-weight:600;fill:#4055CC">Die VBB-Evolution</text>
+      <circle cx="378" cy="273" r="19" fill="#7aaad5" stroke="#4055CC" stroke-width="0.5"/>
+      <circle cx="378" cy="273" r="9" fill="#5890c5"/>
+      <circle cx="646" cy="273" r="19" fill="#7aaad5" stroke="#4055CC" stroke-width="0.5"/>
+      <circle cx="646" cy="273" r="9" fill="#5890c5"/>
+      <rect x="378" y="258" width="268" height="30" fill="url(#hatch-blue)" clip-path="url(#clip-belt-r)"/>
+      <line x1="378" y1="258" x2="646" y2="258" stroke="#4055CC" stroke-width="1"/>
+      <line x1="378" y1="288" x2="646" y2="288" stroke="#4055CC" stroke-width="1"/>
+      <rect x="403" y="240" width="24" height="18" rx="2" fill="#28904A" stroke="#1a7038" stroke-width="0.5"/>
+      <text x="415" y="253" text-anchor="middle" fill="white" style="font-size:9px;font-weight:700">$</text>
+      <circle cx="415" cy="229" r="11" fill="#4055CC"/>
+      <rect x="449" y="224" width="28" height="34" rx="2" fill="#28904A" stroke="#1a7038" stroke-width="0.5"/>
+      <text x="463" y="244" text-anchor="middle" fill="white" style="font-size:10px;font-weight:700">$</text>
+      <circle cx="463" cy="229" r="11" fill="#4055CC"/>
+      <rect x="518" y="188" width="38" height="70" rx="3" fill="#30A855" stroke="#1e8040" stroke-width="0.5"/>
+      <line x1="526" y1="200" x2="548" y2="200" stroke="#1a6830" stroke-width="0.5"/>
+      <line x1="526" y1="208" x2="542" y2="208" stroke="#1a6830" stroke-width="0.5"/>
+      <line x1="526" y1="216" x2="548" y2="216" stroke="#1a6830" stroke-width="0.5"/>
+      <circle cx="546" cy="208" r="3" fill="#1a6830"/>
+      <circle cx="530" cy="200" r="2" fill="#1a6830"/>
+      <text x="537" y="238" text-anchor="middle" fill="white" style="font-size:14px;font-weight:700">$</text>
+      <circle cx="534" cy="229" r="11" fill="#4055CC"/>
+      <rect x="596" y="232" width="28" height="26" rx="2" fill="#28904A" stroke="#1a7038" stroke-width="0.5"/>
+      <text x="610" y="249" text-anchor="middle" fill="white" style="font-size:9px;font-weight:700">$</text>
+      <circle cx="610" cy="229" r="11" fill="#4055CC"/>
+      <text x="508" y="320" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11.5px;fill:#555">Conversion Value maximieren.</text>
+      <text x="508" y="338" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11.5px;fill:#555">Auktionssignale nutzen, um die</text>
+      <text x="508" y="356" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11.5px;fill:#555">wertvollsten Nutzer zu priorisieren.</text>
+      <rect x="0" y="378" width="680" height="40" fill="#f4f4fa"/>
+      <line x1="0" y1="378" x2="680" y2="378" stroke="#e0e0ee" stroke-width="0.5"/>
+      <rect x="20" y="389" width="32" height="20" rx="4" fill="#4055CC"/>
+      <text x="36" y="403" text-anchor="middle" fill="white" style="font-family:'Plus Jakarta Sans',system-ui;font-size:10px;font-weight:600">SGF</text>
+      <text x="62" y="403" text-anchor="start" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;fill:#666">sea-gute-freelancer.de · VBB = Value-Based Bidding</text>
+    </svg>
+    <div class="graphic-caption">Value-Based Bidding (VBB): Die KI fragt nicht mehr „Ob" jemand kauft — sondern „Wie viel" dieser Mensch wert ist. Das ändert alles am Creative-Brief.</div>
+  </div>
+
+  <h2>Was ich damit mache</h2>
+
+  <p>Ich gründe ein SEA-Kollektiv, weil ich glaube, dass genau diese Schnittstelle gerade neu besetzt wird — und dass Kreative dort fehlen.</p>
+
+  <p>Die meisten Performance-Teams denken in Bids und Budgets. Die meisten Kreativteams denken in Briefings und Finalpräsentationen. Niemand denkt daran, welche Daten das Marketing bekommt — und was das mit dem Creative zu tun hat.</p>
+
+  <p>Aber wenn GA4 zeigt, dass 60% der Nutzer auf der Versandseite abspringen, ist das kein Tracking-Problem. Es ist ein Copy-Problem. Die Daten zeigen, wo der Text aufhört zu funktionieren. Und wenn ein Audience-Segment nachweislich dreimal häufiger konvertiert als der Rest, braucht es nicht mehr Budget — es braucht einen Text, der genau für diesen Moment geschrieben ist.</p>
+
+  <p>Data Storytelling nennt man das im SEA-Jargon. Und die neue Königsdisziplin wird sein, diese Geschichte effizient zu erzählen — mit einem Human Touch, ohne AI Slop.</p>
+
+  <!-- CHEAT SHEET GRAPHIC -->
+  <div class="graphic">
+    <svg width="100%" viewBox="0 0 680 370" role="img" style="display:block;background:white">
+      <title>Der SGF-Spickzettel</title>
+      <desc>Drei Prinzipien für datengetriebenes Marketing mit Creative-Ansatz</desc>
+      <rect width="680" height="370" fill="white"/>
+      <rect x="20" y="13" width="38" height="26" rx="6" fill="#4055CC"/>
+      <text x="39" y="31" text-anchor="middle" fill="white" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11px;font-weight:600">SGF</text>
+      <text x="340" y="33" text-anchor="middle" style="font-family:'Plus Jakarta Sans',system-ui;font-size:17px;font-weight:600;fill:#0d0e1a">Der SGF-Spickzettel</text>
+      <line x1="20" y1="48" x2="660" y2="48" stroke="#e8e8ee" stroke-width="0.5"/>
+      <!-- Card 1 -->
+      <rect x="20" y="58" width="640" height="82" rx="10" fill="white" stroke="#e4e4e4" stroke-width="0.5"/>
+      <circle cx="62" cy="99" r="20" fill="#28A745"/>
+      <polyline points="53,99 60,107 73,90" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="95" y="87" style="font-family:'Plus Jakarta Sans',system-ui;font-size:13.5px;font-weight:600;fill:#0d0e1a">Verkauf die Rennstrecke — nicht nur die Ziellinie</text>
+      <text x="95" y="106" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11.5px;fill:#444">GA4 ist kein Reporting-Dashboard. Es ist der 10x-Datentreibstoff, den</text>
+      <text x="95" y="123" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11.5px;fill:#444">KI-Kampagnen brauchen, um effizient zu funktionieren.</text>
+      <!-- Card 2 -->
+      <rect x="20" y="152" width="640" height="82" rx="10" fill="white" stroke="#e4e4e4" stroke-width="0.5"/>
+      <circle cx="62" cy="193" r="20" fill="#28A745"/>
+      <polyline points="53,193 60,201 73,184" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="95" y="181" style="font-family:'Plus Jakarta Sans',system-ui;font-size:13.5px;font-weight:600;fill:#0d0e1a">Prädiktive Metriken nutzen</text>
+      <text x="95" y="200" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11.5px;fill:#444">Kaufwahrscheinlichkeit &amp; Predicted Revenue in GA4 prüfen —</text>
+      <rect x="95" y="210" width="188" height="15" rx="3" fill="#E8B830" opacity="0.4"/>
+      <text x="98" y="222" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11.5px;font-weight:600;fill:#7a5a00">Value-Based Bidding (VBB)</text>
+      <text x="290" y="222" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11.5px;fill:#444"> als Grundlage pitchen.</text>
+      <!-- Card 3 -->
+      <rect x="20" y="246" width="640" height="82" rx="10" fill="white" stroke="#e4e4e4" stroke-width="0.5"/>
+      <circle cx="62" cy="287" r="20" fill="#28A745"/>
+      <polyline points="53,287 60,295 73,278" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="95" y="275" style="font-family:'Plus Jakarta Sans',system-ui;font-size:13.5px;font-weight:600;fill:#0d0e1a">Daten in Investitions-Roadmaps verwandeln</text>
+      <text x="95" y="294" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11.5px;fill:#444">Kein „Mal ausprobieren" mit Budgets. Geo-, Zielgruppen- und</text>
+      <text x="95" y="311" style="font-family:'Plus Jakarta Sans',system-ui;font-size:11.5px;fill:#444">Funnel-Lücken datenbasiert identifizieren — strukturiert pitchen.</text>
+      <!-- Footer -->
+      <rect x="0" y="340" width="680" height="30" fill="#f4f4fa"/>
+      <line x1="0" y1="340" x2="680" y2="340" stroke="#e0e0ee" stroke-width="0.5"/>
+      <rect x="20" y="349" width="28" height="18" rx="4" fill="#4055CC"/>
+      <text x="34" y="362" text-anchor="middle" fill="white" style="font-family:'Plus Jakarta Sans',system-ui;font-size:9px;font-weight:600">SGF</text>
+      <text x="58" y="362" text-anchor="start" style="font-family:'Plus Jakarta Sans',system-ui;font-size:10.5px;fill:#666">sea-gute-freelancer.de · Google Ads &amp; KI-Kollektiv für den Mittelstand</text>
+    </svg>
+    <div class="graphic-caption">Der SGF-Spickzettel: Drei Prinzipien — für alle, die aufgehört haben zu experimentieren und angefangen haben, datenbasiert zu pitchen.</div>
+  </div>
+
+  <h2>Data driven. Human touch.</h2>
+
+  <blockquote>
+    „Your job isn't to outsmart the AI; it's to out-train it — by giving it better data, better creative, and clearer goals than your competitors."
+    <cite>— Google, 2025</cite>
+  </blockquote>
+
+  <p>Für Kreative gelesen: Deine Stärke ist nicht mehr der eine goldene Satz. Deine Stärke ist, dass du weißt, welche Botschaft für welchen Menschen in welchem Moment wirkt — und dass du das in zwölf Varianten übersetzen kannst statt in eine.</p>
+
+  <p>Das ist keine Schwächung des kreativen Anspruchs. Es ist seine Erweiterung.</p>
+
+  <div class="pull-quote">Gutes Copywriting war immer das Gespür für die richtige Botschaft zur richtigen Zeit für den richtigen Menschen.</div>
+
+  <p>Nur dass „der richtige Mensch" jetzt von einem Algorithmus identifiziert wird.</p>
+
+  <p>Und du entscheidest, womit du ihn trainierst.</p>
+
+  <div class="sgf-cta">
+    <div class="sgf-badge-box">SGF</div>
+    <div class="sgf-cta-text">
+      SEA-Kollektiv für Kreative und Performance-Denker.<br>
+      <a href="https://sea-gute-freelancer.de">sea-gute-freelancer.de</a> — Erstgespräch kostenlos.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

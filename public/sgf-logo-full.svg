@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Plus+Jakarta+Sans:wght@600&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Background: warm cream -->
+  <rect width="900" height="300" fill="#FAF8F3"/>
+
+  <!-- Blue square icon -->
+  <rect x="75" y="75" width="150" height="150" rx="6" ry="6" fill="#3974f2"/>
+
+  <!-- "SGF" text inside square -->
+  <text
+    x="150"
+    y="160"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-family="'Playfair Display', Georgia, serif"
+    font-weight="700"
+    font-size="46"
+    letter-spacing="5"
+    fill="#ffffff"
+  >SGF</text>
+
+  <!-- Small dark-blue dot -->
+  <circle cx="228" cy="228" r="9" fill="#204fb5"/>
+
+  <!-- Wordmark: "SEA GUTE FREELANCER" -->
+  <text
+    x="268"
+    y="155"
+    dominant-baseline="middle"
+    font-family="'Plus Jakarta Sans', 'Inter', system-ui, sans-serif"
+    font-weight="600"
+    font-size="28"
+    letter-spacing="5.5"
+    fill="#111a2d"
+  >SEA GUTE FREELANCER</text>
+</svg>

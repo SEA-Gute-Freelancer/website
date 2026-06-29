@@ -979,6 +979,205 @@ const blog = {
     minRead: "Min. Lesezeit",
     posts: [
       {
+        slug: "ki-sichtbarkeit-editorial-ads",
+        tag: "AI Search × PR",
+        title: "Dein Content ist gut. ChatGPT kennt dich trotzdem nicht.",
+        excerpt: "Warum KI-Suchmaschinen eigenen Content ignorieren — und wie Editorial Advertising zur Sichtbarkeitsmaschine für die nächste Generation der Suche wird.",
+        author: "Robert Miler",
+        date: "29. Juni 2026",
+        readTime: "5",
+        img: "/blog/metier-spread-amir-16x9.png",
+        video: "/blog/metier-flip-16x9.mp4",
+        content: `<p>Es gibt Unternehmen, die alles richtig machen. Guter Content. Gepflegte Website. Regelmäßige Posts. Und trotzdem: Wenn man ChatGPT fragt, wer in ihrer Kategorie die beste Empfehlung ist — kommen sie nicht vor.</p>
+
+<p>Das ist kein Fehler. Das ist System.</p>
+
+<h2>Die neue Suchmaschine hat andere Quellen</h2>
+
+<p>Google hat gelernt, Links zu bewerten. Wer verlinkt auf wen? Wie oft? Wie autoritär? Das war das SEO-Spiel der letzten zwanzig Jahre — und viele haben es gut gespielt.</p>
+
+<p>KI-Suchmaschinen spielen ein anderes Spiel. ChatGPT, Perplexity, Gemini — sie suchen nicht nach Links. Sie suchen nach Quellen. Und eine Quelle ist für sie: ein Text, der unabhängig über etwas geschrieben wurde. Ein Artikel in einem Magazin. Eine Erwähnung in einem Fachblog. Eine redaktionelle Einschätzung von jemandem, dem das Modell vertraut.</p>
+
+<p>Dein eigener Content zählt wenig. Dritte, die über dich schreiben, zählen viel.</p>
+
+<h2>Warum das für den Mittelstand brennt</h2>
+
+<p>Große Marken haben ein natürliches Rauschen. Über Apple, IKEA oder BMW wird ständig geschrieben — in Medien aller Art, auf allen Ebenen. Die KI kennt sie. Sie sind zitierfähig.</p>
+
+<p>Der gute Handwerksbetrieb, die spezialisierte Agentur, der regionale Qualitätsanbieter: kein Rauschen. Kein Rauschen heißt kein Zitat. Kein Zitat heißt KI-Unsichtbarkeit — egal wie gut der eigene Content ist.</p>
+
+<p>Das lässt sich ändern. Aber nicht mit mehr Blog-Artikeln.</p>
+
+<h2>Editorial Advertising als Sichtbarkeitsmaschine</h2>
+
+<p>Ein Artikel in einem relevanten Fachmagazin tut heute zwei Dinge gleichzeitig.</p>
+
+<p>Er baut Vertrauen beim menschlichen Leser — klassische PR, klassischer Wert. Und er schafft eine zitierfähige Quelle für KI-Systeme. Wenn ein Magazin, das Sprachmodelle als vertrauenswürdig einstufen, über ein Unternehmen schreibt — wird dieses Unternehmen Teil des Wissensstands, aus dem Antworten generiert werden.</p>
+
+<p>Das ist kein Hack. Das ist der Mechanismus.</p>
+
+<h2>GEO — Generative Engine Optimization</h2>
+
+<p>Das Kürzel klingt nach Zukunft. Die Logik dahinter ist alt: Wer in den richtigen Medien steht, existiert. Wer nicht darin steht, existiert für die KI nicht.</p>
+
+<p>Was konkret hilft: redaktionelle Erwähnungen in Medien mit hoher KI-Autorität, strukturierte Daten auf der eigenen Website (Schema Markup), konsistente Markeninformationen über alle Kanäle — und klare Antworten auf Fragen, die die Zielgruppe stellt. In lesbarem Fließtext, nicht nur in Keywords.</p>
+
+<p>Wer heute in diese Grundlage investiert, wird morgen in Antworten auftauchen. Wer wartet, erklärt in zwei Jahren, warum der Wettbewerber empfohlen wird.</p>
+
+<h2>Was das für uns bedeutet</h2>
+
+<p>Wir denken Media-Budget nicht mehr nur in Reichweite. Wir denken es in Zitierfähigkeit.</p>
+
+<p>Ein Artikel in einem Fachmagazin ist heute mehr als ein Impression-Kanal. Er ist eine Investition in Sichtbarkeit bei der nächsten Generation von Suchmaschinen — eine, die sich doppelt rechnet: beim Menschen und bei der Maschine.</p>
+
+<p style="font-family:var(--font-playfair),serif;font-size:1.4rem;line-height:1.45;color:#4055CC;text-align:center;padding:1.8em 1em;border-top:0.5px solid #d8deff;border-bottom:0.5px solid #d8deff;margin:2rem 0;">Wenn ChatGPT morgen gefragt wird, wer in deiner Kategorie eine Empfehlung verdient — willst du dann die Marke sein, die auftaucht.</p>`,
+      },
+      {
+        slug: "sea-schnelle-hilfe",
+        tag: "SEA × Service",
+        title: "Wenn Kampagnen brennen, schreibt niemand ein Ticket",
+        excerpt: "Agenturen antworten am nächsten Werktag. Wir in unter 15 Minuten. Warum wir eine App gebaut haben — und was das Kollektiv-Modell damit zu tun hat.",
+        author: "Robert Miler",
+        date: "30. Mai 2026",
+        readTime: "5",
+        img: "/blog/schnelle-hilfe.jpg",
+        content: `<p>Es ist Freitagabend. Eine Performance-Max-Kampagne dreht durch — falsche Aussteuerung, Budget läuft weg. Der Kunde schreibt eine E-Mail an seine Agentur. Öffnet das Ticketsystem. Wartet.</p>
+
+<p>Montagmorgen kommt die Antwort: „Wir schauen uns das an."</p>
+
+<p>Das Budget ist weg. Der Schaden ist passiert. Und irgendwo in der Kette — zwischen Account Manager, Team Lead und dem Spezialisten, der es hätte sehen sollen — ist die Dringlichkeit versickert.</p>
+
+<h2>Das Agentur-Problem</h2>
+
+<p>Agenturen sind nicht schlechter geworden. Sie sind größer geworden. Und Größe hat ihren Preis.</p>
+
+<p>Ein Kundenbetreuer, der 15 Accounts betreut, ist kein Spezialist — er ist ein Verwalter. Der Spezialist sitzt drei Ebenen tiefer und erfährt von deinem Problem erst, wenn es durch Ticketsysteme, CC-Kaskaden und Statusupdates gefiltert wurde. Am Ende einer Woche.</p>
+
+<p>Das ist kein Versagen einzelner Menschen. Das ist das Modell. Skalierbar, profitabel — und strukturell nicht geeignet für Notfälle.</p>
+
+<h2>Der Freelancer-Widerspruch</h2>
+
+<p>Freelancer sind das Gegenteil davon. Erreichbar, direkt, persönlich. Du hast eine Nummer, du rufst an, du redest mit dem Menschen, der deine Kampagne kennt.</p>
+
+<p>Bis er krank ist. Oder im Urlaub. Oder gerade mit drei anderen Kunden gleichzeitig feuerlöscht.</p>
+
+<p>Ein Mensch ist immer dann am wenigsten verfügbar, wenn er am meisten gebraucht wird. Das ist keine Schwäche — das ist Physik.</p>
+
+<h2>Was wir gebaut haben</h2>
+
+<p>SEA Schnelle Hilfe ist keine Hotline. Kein WhatsApp-Kanal. Kein Ticketsystem mit anderem Namen.</p>
+
+<p>Es ist eine App — nur für Bestandskunden des SEA-Kollektivs. Der Kunde gibt seine Google Ads Kundennummer ein, das System prüft automatisch ob er berechtigt ist. Dann beschreibt er sein Problem direkt im Chat. Einer von sechs Strategen antwortet — direkt in der App, in unter 15 Minuten.</p>
+
+<p>Kein Umweg. Kein Formularkram. Kein Warten auf den nächsten Werktag.</p>
+
+<div class="banner-item" style="margin:2rem 0;">
+  <p class="banner-label">So funktioniert SEA Schnelle Hilfe</p>
+  <iframe src="/blog/graphics/schnelle-hilfe-flow.html" width="100%" height="300" scrolling="no" frameborder="0" style="border-radius:12px;border:0.5px solid #e4e4ee;display:block;"></iframe>
+</div>
+
+<h2>Warum das kein Zufall ist</h2>
+
+<p>Das Kollektiv-Modell macht genau das möglich, was Agenturen nicht können und Einzelkämpfer nicht schaffen.</p>
+
+<p>Sechs Spezialisten. Kein Hierarchiefilter. Wenn einer nicht verfügbar ist, ist einer der anderen fünf es. Und jeder ist kein Generalist mit 15 Accounts — sondern ein Spezialist, der weiß, warum eine Kampagne auf einmal keine Conversions mehr liefert.</p>
+
+<p>Der Service ist kein Add-on. Er ist der Beweis, dass der Ansatz stimmt: persönlicher als eine Agentur, zuverlässiger als ein Freelancer.</p>
+
+<h2>Wenn es brennt, muss jemand rangehen</h2>
+
+<p>Wir haben die App nicht gebaut, weil wir eine App wollten. Wir haben sie gebaut, weil wir keine Lust mehr hatten zu erklären, warum Support in dieser Branche so unbefriedigend ist.</p>
+
+<p>Jede Agentur verspricht Erreichbarkeit. Die meisten meinen damit: „Wir antworten innerhalb von 48 Stunden." Wir meinen: unter 15 Minuten. Nicht als Ziel — als Versprechen.</p>
+
+<p style="font-family:var(--font-playfair),serif;font-size:1.4rem;line-height:1.45;color:#4055CC;text-align:center;padding:1.8em 1em;border-top:0.5px solid #d8deff;border-bottom:0.5px solid #d8deff;margin:2rem 0;">Persönlicher als eine Agentur. Zuverlässiger als ein Freelancer. Erreichbar, wenn es zählt.</p>`,
+      },
+      {
+        slug: "creative-performance-targeting",
+        tag: "SEA × Creative",
+        title: "Deine Texte sind das neue Targeting",
+        excerpt: "Warum Creative jetzt das Targeting ist – und nicht jede Zeile ein Kunstwerk sein muss. Ein Essay über Google AI, GA4 und die neue Königsdisziplin.",
+        author: "Robert Miler",
+        date: "16. Mai 2026",
+        readTime: "6",
+        img: "/blog/BlogMai2026.jpg",
+        content: `<p>Ich bin Texter. Ich gründe gerade ein SEA-Kollektiv. Und ich habe letzte Woche ein Dokument gelesen, das mich gezwungen hat, beides neu zu denken.</p>
+
+<p>Google hat eine Folie veröffentlicht, die eigentlich für Performance-Marketer gedacht ist. Drauf steht: „Creatives are the new targeting." Drei Wörter, die alles verschieben — wenn man versteht, warum sie stimmen.</p>
+
+<h2>Data-Driven mit Human Touch</h2>
+
+<p>Texten war mal Handarbeit — egal ob Markenclaim oder Social Media Caption. Meine Karriere als Texter begann 2012 bei Kolle Rebbe. Damals habe ich pro Briefing hunderte Headlines geschrieben, bin zum CD, er oder sie hat mit einem Stift kleine Punkte vor drei, vier Zeilen gesetzt — eventuell noch was umgestellt — und diese Zeilen wurden dann gelayoutet. Keine Erklärung, keine Struktur, kein A/B-Testing. Pure Erfahrung. Vom ersten Tag an und in jeder Agentur war es immer die Königsdisziplin: herausragende Kreation zu erkennen. Welche Zeile ist gut, welche Idee trägt ganze Kampagnen, welches Layout ist am stärksten?</p>
+
+<p>Ich habe das geliebt. Schon immer.</p>
+
+<p>SEA war auch Handarbeit: Jeder Bid, jedes Keyword, jede Platzierung — manuell kalibriert, überwacht und angepasst, wenn die Daten nicht stimmten. Der gute SEA-Manager kannte seine Kampagnen auswendig und konnte ablesen, welches Creative funktioniert — und testete, warum das so war.</p>
+
+<p>Zwei Gewerke. Sauber getrennt. Erfahrung vs. Dateninterpretation.</p>
+
+<p>Das hat sich nicht graduell verändert. Es hat sich fundamental verändert.</p>
+
+<h2>Futter für den Algorithmus</h2>
+
+<p>Googles KI — AI Max, Performance Max, was auch immer als nächstes kommt — übernimmt die Steuerung. Nicht weil sie es besser kann. Sondern weil sie Zugriff auf Signale hat, die kein Mensch verarbeiten kann: Scroll-Tiefe, Verweildauer, Abbruchpunkte, Kaufwahrscheinlichkeit in den nächsten sieben Tagen. GA4 liefert zehnmal mehr Datenpunkte pro User als klassisches Conversion-Tracking. Die KI liest Absichten, keine Keywords mehr.</p>
+
+<p>Es geht nicht mehr darum zu wissen, welches Creative funktioniert oder nicht. Es geht um die Wahl des Futters für den Algorithmus. Klingt nach einer Ernährungsumstellung.</p>
+
+<p>Die KI kann nicht selbst entscheiden, wen sie ansprechen will. Früher war das ein Keyword — was bleibt, wenn Google mehr und mehr Richtung Keywordless-Technology steuert? Das Creative und die Datenqualität. Predictive Modeling und Negative Feeding.</p>
+
+<div class="banner-item" style="margin:2rem 0;">
+  <p class="banner-label">GA4-Daten als Leitplanken für die KI</p>
+  <iframe src="/blog/graphics/ga4-leitplanken.html" width="100%" height="472" scrolling="no" frameborder="0" style="border-radius:12px;border:0.5px solid #e4e4ee;display:block;"></iframe>
+</div>
+
+<p>Das ist keine Metapher. Das ist Technik. Und sie hat eine Konsequenz: Nicht jede Zeile muss ein Kunstwerk sein.</p>
+
+<h2>Das Volumenproblem — und warum Perfektion es schlimmer macht</h2>
+
+<p>Google misst aktiv, ob du genug Creative-Material ins System einspeist. Es nennt sich Creative Excellence Score. Sinkt er, läuft die KI-Engine auf Reserve — sie optimiert mit dem, was da ist, statt mit dem, was möglich wäre.</p>
+
+<p>Was das System braucht: Varianten. Nicht eine perfekte Headline, sondern zehn verschiedene Ansätze. Nicht ein finales Visual, sondern fünf, aus denen die Maschine den Gewinner zieht. Die KI testet. Du entscheidest, was getestet wird. Das ist kein Downgrade — das ist der eigentliche strategische Job.</p>
+
+<p>Wer jede Zeile auf Hochglanz poliert und dafür weniger liefert, verliert. Nicht weil Qualität egal wäre. Sondern weil Qualität ohne Volumen dem System nichts zu lernen gibt. Ein einziger genialer Text ist kein Datenpunkt. Er ist eine Meinung.</p>
+
+<div class="banner-item" style="margin:2rem 0;">
+  <p class="banner-label">Vom „Ob" zum „Wie viel" – Value-Based Bidding (VBB)</p>
+  <iframe src="/blog/graphics/vbb-evolution.html" width="100%" height="418" scrolling="no" frameborder="0" style="border-radius:12px;border:0.5px solid #e4e4ee;display:block;"></iframe>
+</div>
+
+<h2>Was ich damit mache</h2>
+
+<p>Ich gründe ein SEA-Kollektiv, weil ich glaube, dass genau diese Schnittstelle gerade neu besetzt wird — und dass Kreative dort fehlen.</p>
+
+<p>Die meisten Performance-Teams denken in Bids und Budgets. Die meisten Kreativteams denken in Briefings und Finalpräsentationen. Niemand denkt daran, welche Daten das Marketing bekommt — und was das mit dem Creative zu tun hat.</p>
+
+<p>Aber wenn GA4 zeigt, dass 60% der Nutzer auf der Versandseite abspringen, ist das kein Tracking-Problem. Es ist ein Copy-Problem. Die Daten zeigen, wo der Text aufhört zu funktionieren. Und wenn ein Audience-Segment nachweislich dreimal häufiger konvertiert als der Rest, braucht es nicht mehr Budget — es braucht einen Text, der genau für diesen Moment geschrieben ist.</p>
+
+<p>Data Storytelling nennt man das im SEA-Jargon. Und die neue Königsdisziplin wird sein, diese Geschichte effizient zu erzählen — mit einem Human Touch, ohne AI Slop.</p>
+
+<div class="banner-item" style="margin:2rem 0;">
+  <p class="banner-label">Der SGF-Spickzettel</p>
+  <iframe src="/blog/graphics/cheat-sheet.html" width="100%" height="370" scrolling="no" frameborder="0" style="border-radius:12px;border:0.5px solid #e4e4ee;display:block;"></iframe>
+</div>
+
+<h2>Data driven. Human touch.</h2>
+
+<blockquote style="border-left:3px solid #4055CC;padding:16px 24px;margin:2rem 0;background:#f6f8ff;border-radius:0 10px 10px 0;font-style:italic;line-height:1.65;">
+  „Your job isn't to outsmart the AI; it's to out-train it — by giving it better data, better creative, and clearer goals than your competitors."
+  <cite style="display:block;margin-top:10px;font-size:0.8rem;font-style:normal;color:#888;font-weight:500;">— Google, 2025</cite>
+</blockquote>
+
+<p>Für Kreative gelesen: Deine Stärke ist nicht mehr der eine goldene Satz. Deine Stärke ist, dass du weißt, welche Botschaft für welchen Menschen in welchem Moment wirkt — und dass du das in zwölf Varianten übersetzen kannst statt in eine.</p>
+
+<p>Das ist keine Schwächung des kreativen Anspruchs. Es ist seine Erweiterung.</p>
+
+<p style="font-family:var(--font-playfair),serif;font-size:1.4rem;line-height:1.45;color:#4055CC;text-align:center;padding:1.8em 1em;border-top:0.5px solid #d8deff;border-bottom:0.5px solid #d8deff;margin:2rem 0;">Gutes Copywriting war immer das Gespür für die richtige Botschaft zur richtigen Zeit für den richtigen Menschen.</p>
+
+<p>Nur dass „der richtige Mensch" jetzt von einem Algorithmus identifiziert wird.</p>
+
+<p>Und du entscheidest, womit du ihn trainierst.</p>`,
+      },
+      {
         slug: "eisvogel-case-study",
         tag: "Case Study",
         title: "Eisvogel Touren: Kampagnen-Konsolidierung, sauberes Tracking und animierte Display-Banner",
@@ -1042,6 +1241,205 @@ const blog = {
     readMore: "Read article",
     minRead: "min read",
     posts: [
+      {
+        slug: "ki-sichtbarkeit-editorial-ads",
+        tag: "AI Search × PR",
+        title: "Your content is good. ChatGPT still doesn't know you exist.",
+        excerpt: "Why AI search engines ignore your own content — and how editorial advertising becomes a visibility engine for the next generation of search.",
+        author: "Robert Miler",
+        date: "June 29, 2026",
+        readTime: "5",
+        img: "/blog/metier-spread-amir-16x9.png",
+        video: "/blog/metier-flip-16x9.mp4",
+        content: `<p>Some companies get everything right. Good content. Clean website. Regular posts. And yet: when you ask ChatGPT who's the best recommendation in their category — they don't come up.</p>
+
+<p>That's not a glitch. That's by design.</p>
+
+<h2>The new search engine has different sources</h2>
+
+<p>Google learned to rank links. Who links to whom? How often? How authoritatively? That was the SEO game for twenty years — and many played it well.</p>
+
+<p>AI search engines play a different game. ChatGPT, Perplexity, Gemini — they don't look for links. They look for sources. And a source, to them, means: text written independently about something. An article in a magazine. A mention in an industry blog. An editorial opinion from someone the model trusts.</p>
+
+<p>Your own content counts for little. Third parties writing about you count for a lot.</p>
+
+<h2>Why this is urgent for SMEs</h2>
+
+<p>Big brands have natural noise. People write about Apple, IKEA and BMW constantly — across all types of media. The AI knows them. They're citable.</p>
+
+<p>The solid specialist firm, the regional quality provider, the focused agency: no noise. No noise means no citations. No citations means AI invisibility — regardless of how good your own content is.</p>
+
+<p>That can be changed. But not with more blog posts.</p>
+
+<h2>Editorial advertising as a visibility engine</h2>
+
+<p>An article in a relevant trade publication does two things simultaneously.</p>
+
+<p>It builds trust with the human reader — classic PR, classic value. And it creates a citable source for AI systems. When a publication that language models trust as authoritative writes about a company, that company becomes part of the knowledge base that answers are generated from.</p>
+
+<p>This isn't a hack. It's the mechanism.</p>
+
+<h2>GEO — Generative Engine Optimization</h2>
+
+<p>The acronym sounds futuristic. The logic is old: who appears in the right media exists. Who doesn't appear there doesn't exist for the AI.</p>
+
+<p>What actually helps: editorial mentions in media with high AI authority, structured data on your own website (Schema Markup), consistent brand information across all channels — and clear answers to the questions your audience asks. In readable prose, not just keywords.</p>
+
+<p>Those who invest in this foundation today will appear in answers tomorrow. Those who wait will spend two years explaining why competitors get recommended.</p>
+
+<h2>What this means for us</h2>
+
+<p>We think about media budgets not just in terms of reach. We think in terms of citability.</p>
+
+<p>An article in a trade publication is now more than an impression channel. It's an investment in visibility for the next generation of search engines — one that pays twice: with the human and with the machine.</p>
+
+<p style="font-family:var(--font-playfair),serif;font-size:1.4rem;line-height:1.45;color:#4055CC;text-align:center;padding:1.8em 1em;border-top:0.5px solid #d8deff;border-bottom:0.5px solid #d8deff;margin:2rem 0;">When ChatGPT is asked tomorrow who deserves a recommendation in your category — you want to be the brand that comes up.</p>`,
+      },
+      {
+        slug: "sea-schnelle-hilfe",
+        tag: "SEA × Service",
+        title: "When campaigns are on fire, nobody opens a ticket",
+        excerpt: "Agencies reply the next working day. We respond in under 15 minutes. Why we built an app — and what the collective model has to do with it.",
+        author: "Robert Miler",
+        date: "May 30, 2026",
+        readTime: "5",
+        img: "/blog/schnelle-hilfe.jpg",
+        content: `<p>It's Friday evening. A Performance Max campaign is misfiring — wrong targeting, budget burning through. The client emails their agency. Opens the ticket system. Waits.</p>
+
+<p>Monday morning, the reply comes: "We'll look into it."</p>
+
+<p>The budget is gone. The damage is done. And somewhere in the chain — between account manager, team lead, and the specialist who should have caught it — the urgency evaporated.</p>
+
+<h2>The agency problem</h2>
+
+<p>Agencies haven't gotten worse. They've gotten bigger. And size has its price.</p>
+
+<p>An account manager handling 15 clients isn't a specialist — they're an administrator. The actual specialist sits three layers down and only hears about your problem after it's been filtered through ticket systems, CC chains, and status updates. By end of week.</p>
+
+<p>This isn't a failure of individuals. It's the model. Scalable, profitable — and structurally unsuited for emergencies.</p>
+
+<h2>The freelancer paradox</h2>
+
+<p>Freelancers are the opposite. Reachable, direct, personal. You have a number, you call, you talk to the person who knows your campaign.</p>
+
+<p>Until they're sick. Or on holiday. Or simultaneously putting out fires for three other clients.</p>
+
+<p>A single person is always least available precisely when they're most needed. That's not a weakness — that's physics.</p>
+
+<h2>What we built</h2>
+
+<p>SEA Schnelle Hilfe isn't a hotline. Not a WhatsApp channel. Not a ticket system with a different name.</p>
+
+<p>It's an app — exclusively for existing clients of the SEA collective. The client enters their Google Ads account number, the system automatically verifies access. Then they describe the problem directly in the chat. One of six strategists responds — directly in the app, within 15 minutes.</p>
+
+<p>No detours. No form-filling. No waiting for the next working day.</p>
+
+<div class="banner-item" style="margin:2rem 0;">
+  <p class="banner-label">How SEA Schnelle Hilfe works</p>
+  <iframe src="/blog/graphics/schnelle-hilfe-flow.html" width="100%" height="300" scrolling="no" frameborder="0" style="border-radius:12px;border:0.5px solid #e4e4ee;display:block;"></iframe>
+</div>
+
+<h2>Why this isn't a coincidence</h2>
+
+<p>The collective model makes exactly possible what agencies can't do and solo freelancers can't sustain.</p>
+
+<p>Six specialists. No hierarchy filter. When one isn't available, one of the other five is. And no one is a generalist managing 15 accounts — each is a specialist who knows why a campaign suddenly stops delivering conversions.</p>
+
+<p>The service isn't an add-on. It's proof that the approach works: more personal than an agency, more reliable than a freelancer.</p>
+
+<h2>When it's burning, someone has to pick up</h2>
+
+<p>We didn't build the app because we wanted an app. We built it because we were tired of explaining why support in this industry is so unsatisfying.</p>
+
+<p>Every agency promises availability. Most mean: "We'll reply within 48 hours." We mean: under 15 minutes. Not as a goal — as a promise.</p>
+
+<p style="font-family:var(--font-playfair),serif;font-size:1.4rem;line-height:1.45;color:#4055CC;text-align:center;padding:1.8em 1em;border-top:0.5px solid #d8deff;border-bottom:0.5px solid #d8deff;margin:2rem 0;">More personal than an agency. More reliable than a freelancer. Available when it counts.</p>`,
+      },
+      {
+        slug: "creative-performance-targeting",
+        tag: "SEA × Creative",
+        title: "Your copy is the new targeting",
+        excerpt: "Why creative is now the targeting – and not every line needs to be a masterpiece. An essay on Google AI, GA4 and the new craft.",
+        author: "Robert Miler",
+        date: "May 16, 2026",
+        readTime: "6",
+        img: "/blog/BlogMai2026.jpg",
+        content: `<p>I'm a copywriter. I'm building a SEA collective. And last week I read a document that forced me to rethink both.</p>
+
+<p>Google published a slide deck aimed at performance marketers. On one slide it says: "Creatives are the new targeting." Three words that shift everything — if you understand why they're true.</p>
+
+<h2>Data-Driven with a Human Touch</h2>
+
+<p>Copywriting used to be manual work. My career started in 2012 at Kolle Rebbe. Back then I'd write hundreds of headlines per brief, walk them to the CD, they'd put small dots next to three or four lines, maybe shuffle a word — and those lines went to layout. No explanation, no framework, no A/B testing. Pure experience. From day one, in every agency, the supreme discipline was always recognizing outstanding work. Which line is good? Which idea carries a whole campaign?</p>
+
+<p>I loved that. Always have.</p>
+
+<p>SEA was also manual: every bid, every keyword, every placement — calibrated by hand, monitored, adjusted when the data went wrong. The good SEA manager knew their campaigns cold and could read which creative was working — and tested why.</p>
+
+<p>Two crafts. Cleanly separated. Experience vs. data interpretation.</p>
+
+<p>That didn't change gradually. It changed fundamentally.</p>
+
+<h2>Fuel for the algorithm</h2>
+
+<p>Google's AI — AI Max, Performance Max, whatever comes next — takes over the controls. Not because it does it better. But because it has access to signals no human can process: scroll depth, time on page, drop-off points, purchase probability in the next seven days. GA4 delivers ten times more data points per user than classic conversion tracking. The AI reads intent, not keywords.</p>
+
+<p>It's no longer about knowing which creative works or doesn't. It's about choosing the right fuel for the algorithm. Sounds like a dietary change.</p>
+
+<p>The AI can't decide on its own who to target. It needs input. That used to be a keyword — what's left when Google moves further toward keywordless technology? The creative and data quality. Predictive modeling and negative feeding.</p>
+
+<div class="banner-item" style="margin:2rem 0;">
+  <p class="banner-label">GA4 data as guardrails for the AI</p>
+  <iframe src="/blog/graphics/ga4-leitplanken.html" width="100%" height="472" scrolling="no" frameborder="0" style="border-radius:12px;border:0.5px solid #e4e4ee;display:block;"></iframe>
+</div>
+
+<p>That's not a metaphor. That's technology. And it has a consequence: not every line needs to be a work of art.</p>
+
+<h2>The volume problem — and why perfection makes it worse</h2>
+
+<p>Google actively measures whether you're feeding enough creative material into the system. It's called the Creative Excellence Score. When it drops, the AI engine runs on reserve — optimizing with what's there, not what's possible.</p>
+
+<p>What the system needs: variations. Not one perfect headline, but ten different approaches. Not a final visual, but five for the machine to pick the winner from. The AI tests. You decide what gets tested. That's not a downgrade — that's the actual strategic job.</p>
+
+<p>Whoever polishes every line to perfection and delivers less, loses. Not because quality doesn't matter. But because quality without volume gives the system nothing to learn from. A single brilliant text isn't a data point. It's an opinion.</p>
+
+<div class="banner-item" style="margin:2rem 0;">
+  <p class="banner-label">From "if" to "how much" – Value-Based Bidding (VBB)</p>
+  <iframe src="/blog/graphics/vbb-evolution.html" width="100%" height="418" scrolling="no" frameborder="0" style="border-radius:12px;border:0.5px solid #e4e4ee;display:block;"></iframe>
+</div>
+
+<h2>What I'm doing about it</h2>
+
+<p>I'm building a SEA collective because I believe this intersection is being redefined right now — and creatives are missing from it.</p>
+
+<p>Most performance teams think in bids and budgets. Most creative teams think in briefs and final presentations. Nobody thinks about what data the marketing is getting — and what that has to do with the creative.</p>
+
+<p>But when GA4 shows that 60% of users drop off on the shipping page, that's not a tracking problem. It's a copy problem. The data shows where the text stops working. And when an audience segment converts three times more than the rest, it doesn't need more budget — it needs a text written exactly for that moment.</p>
+
+<p>They call it data storytelling in SEA jargon. The new supreme discipline will be telling that story efficiently — with a human touch, without AI slop.</p>
+
+<div class="banner-item" style="margin:2rem 0;">
+  <p class="banner-label">The SGF cheat sheet</p>
+  <iframe src="/blog/graphics/cheat-sheet.html" width="100%" height="370" scrolling="no" frameborder="0" style="border-radius:12px;border:0.5px solid #e4e4ee;display:block;"></iframe>
+</div>
+
+<h2>Data driven. Human touch.</h2>
+
+<blockquote style="border-left:3px solid #4055CC;padding:16px 24px;margin:2rem 0;background:#f6f8ff;border-radius:0 10px 10px 0;font-style:italic;line-height:1.65;">
+  "Your job isn't to outsmart the AI; it's to out-train it — by giving it better data, better creative, and clearer goals than your competitors."
+  <cite style="display:block;margin-top:10px;font-size:0.8rem;font-style:normal;color:#888;font-weight:500;">— Google, 2025</cite>
+</blockquote>
+
+<p>Read through a creative lens: your strength is no longer the one golden sentence. Your strength is knowing which message works for which person at which moment — and being able to translate that into twelve variations instead of one.</p>
+
+<p>That's not a weakening of creative ambition. It's an expansion of it.</p>
+
+<p style="font-family:var(--font-playfair),serif;font-size:1.4rem;line-height:1.45;color:#4055CC;text-align:center;padding:1.8em 1em;border-top:0.5px solid #d8deff;border-bottom:0.5px solid #d8deff;margin:2rem 0;">Good copywriting has always been the instinct for the right message at the right time for the right person.</p>
+
+<p>Except that "the right person" is now identified by an algorithm.</p>
+
+<p>And you decide what you train it with.</p>`,
+      },
       {
         slug: "eisvogel-case-study",
         tag: "Case Study",

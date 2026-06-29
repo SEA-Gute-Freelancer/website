@@ -12,7 +12,7 @@ export default function BlogPostPage() {
   const { t } = useLanguage();
   const b = t.blog;
 
-  const post = b.posts.find((p) => p.slug === slug) as (typeof b.posts[0] & { content?: string }) | undefined;
+  const post = b.posts.find((p) => p.slug === slug) as (typeof b.posts[0] & { content?: string; video?: string }) | undefined;
 
   if (!post) {
     return (
@@ -82,18 +82,31 @@ export default function BlogPostPage() {
           </FadeIn>
         </div>
 
-        {/* Hero Image */}
+        {/* Hero Image / Video */}
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <FadeIn>
             <div className="relative w-full aspect-[16/7] rounded-3xl overflow-hidden">
-              <Image
-                src={post.img}
-                alt={post.title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 1024px"
-                priority
-              />
+              {post.video ? (
+                <video
+                  autoPlay
+                  muted
+                  playsInline
+                  preload="metadata"
+                  poster={post.img}
+                  className="w-full h-full object-cover"
+                >
+                  <source src={post.video} type="video/mp4" />
+                </video>
+              ) : (
+                <Image
+                  src={post.img}
+                  alt={post.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 1024px"
+                  priority
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 to-transparent" />
             </div>
           </FadeIn>

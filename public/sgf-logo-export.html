@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>SGF Logo Export</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background: #eef0f4;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 56px 24px;
+      gap: 16px;
+    }
+    h1 {
+      color: #111a2d;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .versions {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      max-width: 1000px;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+      flex: 1;
+      min-width: 300px;
+      max-width: 440px;
+    }
+    .version-label {
+      font-size: 11px;
+      color: #a1a5ab;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .card h2 {
+      font-size: 16px;
+      color: #111a2d;
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.4;
+    }
+    canvas {
+      border-radius: 10px;
+      width: 220px;
+      height: 220px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    }
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+    button {
+      background: #3974f2;
+      color: white;
+      border: none;
+      border-radius: 99px;
+      padding: 12px 24px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.2s;
+      width: 100%;
+    }
+    button:hover { background: #204fb5; }
+    button.secondary {
+      background: transparent;
+      color: #3974f2;
+      border: 1.5px solid #3974f2;
+    }
+    button.secondary:hover { background: #3974f210; }
+    .note { font-size: 11px; color: #a1a5ab; text-align: center; line-height: 1.5; }
+    .divider {
+      width: 100%;
+      max-width: 1000px;
+      border: none;
+      border-top: 1px solid #dde0e6;
+      margin: 24px 0 8px;
+    }
+    .full-section {
+      width: 100%;
+      max-width: 1000px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .full-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+    }
+    .full-card canvas {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+  </style>
+</head>
+<body>
+
+<h1>SGF Logo — PNG Export</h1>
+
+<div class="versions">
+
+  <!-- ── Version A ─────────────────────────────── -->
+  <div class="card">
+    <span class="version-label">Version A</span>
+    <h2>Bereinigt &amp; optimiert</h2>
+    <canvas id="iconA" width="400" height="400"></canvas>
+    <div class="buttons">
+      <button onclick="downloadCanvas('iconA', 'sgf-logo-icon-A.png')">⬇ Icon PNG (400×400)</button>
+      <button class="secondary" onclick="downloadCanvas('fullA', 'sgf-logo-full-A.png')">⬇ Full-Logo PNG (900×300)</button>
+      <button class="secondary" onclick="downloadCanvas('iconA_trans', 'sgf-logo-icon-A-transparent.png')">⬇ Icon PNG transparent</button>
+    </div>
+    <span class="note">Engeres Tracking, Dot am Quadrant-Eck gesetzt</span>
+  </div>
+
+  <!-- ── Version B ─────────────────────────────── -->
+  <div class="card">
+    <span class="version-label">Version B</span>
+    <h2>Mit goldenem Pinselstrich</h2>
+    <canvas id="iconB" width="400" height="400"></canvas>
+    <div class="buttons">
+      <button onclick="downloadCanvas('iconB', 'sgf-logo-icon-B.png')">⬇ Icon PNG (400×400)</button>
+      <button class="secondary" onclick="downloadCanvas('fullB', 'sgf-logo-full-B.png')">⬇ Full-Logo PNG (900×300)</button>
+      <button class="secondary" onclick="downloadCanvas('iconB_trans', 'sgf-logo-icon-B-transparent.png')">⬇ Icon PNG transparent</button>
+    </div>
+    <span class="note">Goldener Pinsel-Daub als Signatur-Akzent</span>
+  </div>
+
+</div>
+
+<!-- Full-Logo Previews (hidden canvases for download) -->
+<canvas id="fullA" width="900" height="300" style="display:none"></canvas>
+<canvas id="fullB" width="900" height="300" style="display:none"></canvas>
+<!-- Transparent versions (hidden) -->
+<canvas id="iconA_trans" width="400" height="400" style="display:none"></canvas>
+<canvas id="iconB_trans" width="400" height="400" style="display:none"></canvas>
+
+<script>
+document.fonts.ready.then(() => {
+  drawIconA();
+  drawIconB();
+  drawFullA();
+  drawFullB();
+  drawIconTransparent('iconA_trans', false);
+  drawIconTransparent('iconB_trans', true);
+});
+
+/* ─── Shared helpers ─────────────────────────────────── */
+
+function roundRect(ctx, x, y, w, h, r, color) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+  ctx.lineTo(x + w, y + h - r);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  ctx.lineTo(x + r, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+  ctx.lineTo(x, y + r);
+  ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.closePath();
+  ctx.fillStyle = color;
+  ctx.fill();
+}
+
+/* Blue circle dot (Version A) */
+function drawDotA(ctx, cx, cy, r) {
+  ctx.beginPath();
+  ctx.arc(cx, cy, r, 0, Math.PI * 2);
+  ctx.fillStyle = '#204fb5';
+  ctx.fill();
+}
+
+/* Brush daub / paint stroke (Version B)
+   Feels like a round brush was pressed onto the canvas once —
+   slightly asymmetric blob with a small lifted tail top-left */
+function drawBrushDot(ctx, cx, cy, scale, color) {
+  ctx.save();
+  ctx.translate(cx, cy);
+  ctx.scale(scale, scale);
+  ctx.fillStyle = color;
+
+  /* Main blob — irregular bezier loop */
+  ctx.beginPath();
+  ctx.moveTo(-2, -17);
+  ctx.bezierCurveTo(7, -22,  21, -13,  20,  -1);
+  ctx.bezierCurveTo(19,  11,  10,  19,  -2,  18);
+  ctx.bezierCurveTo(-13, 17, -20,   9, -19,  -2);
+  ctx.bezierCurveTo(-18,-11, -10, -13,  -2, -17);
+  ctx.closePath();
+  ctx.fill();
+
+  /* Small tail — where the brush lifted, upper-left */
+  ctx.beginPath();
+  ctx.moveTo(-19, -2);
+  ctx.bezierCurveTo(-24, -10, -27, -21, -20, -28);
+  ctx.bezierCurveTo(-17, -25, -16, -17, -15,  -8);
+  ctx.bezierCurveTo(-16,  -5, -18,  -4, -19,  -2);
+  ctx.closePath();
+  ctx.fill();
+
+  ctx.restore();
+}
+
+/* ─── Version A ─────────────────────────────────────── */
+
+function drawIconA() {
+  const ctx = document.getElementById('iconA').getContext('2d');
+  ctx.fillStyle = '#FAF8F3';
+  ctx.fillRect(0, 0, 400, 400);
+
+  roundRect(ctx, 100, 100, 200, 200, 8, '#3974f2');
+
+  ctx.fillStyle = '#ffffff';
+  ctx.font = "bold 62px 'Playfair Display', Georgia, serif";
+  ctx.letterSpacing = '2px';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('SGF', 199, 205);
+
+  /* Dot: flush with the bottom-right corner, half-overlapping */
+  drawDotA(ctx, 300, 300, 13);
+}
+
+function drawFullA() {
+  const ctx = document.getElementById('fullA').getContext('2d');
+  ctx.fillStyle = '#FAF8F3';
+  ctx.fillRect(0, 0, 900, 300);
+
+  roundRect(ctx, 70, 75, 150, 150, 6, '#3974f2');
+
+  ctx.fillStyle = '#ffffff';
+  ctx.font = "bold 46px 'Playfair Display', Georgia, serif";
+  ctx.letterSpacing = '2px';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('SGF', 144, 152);
+
+  drawDotA(ctx, 220, 225, 9);
+
+  ctx.fillStyle = '#111a2d';
+  ctx.font = "600 25px 'Plus Jakarta Sans', system-ui, sans-serif";
+  ctx.letterSpacing = '5px';
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('SEA GUTE FREELANCER', 256, 152);
+}
+
+/* ─── Version B ─────────────────────────────────────── */
+
+/* Warm gold — feels premium, handmade */
+const GOLD = '#C9A043';
+
+function drawIconB() {
+  const ctx = document.getElementById('iconB').getContext('2d');
+  ctx.fillStyle = '#FAF8F3';
+  ctx.fillRect(0, 0, 400, 400);
+
+  roundRect(ctx, 100, 100, 200, 200, 8, '#3974f2');
+
+  ctx.fillStyle = '#ffffff';
+  ctx.font = "bold 62px 'Playfair Display', Georgia, serif";
+  ctx.letterSpacing = '2px';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('SGF', 199, 205);
+
+  /* Brush daub: 70 % size, random-ish spot in lower-right quarter of square */
+  drawBrushDot(ctx, 258, 264, 0.875, GOLD);
+}
+
+function drawFullB() {
+  const ctx = document.getElementById('fullB').getContext('2d');
+  ctx.fillStyle = '#FAF8F3';
+  ctx.fillRect(0, 0, 900, 300);
+
+  roundRect(ctx, 70, 75, 150, 150, 6, '#3974f2');
+
+  ctx.fillStyle = '#ffffff';
+  ctx.font = "bold 46px 'Playfair Display', Georgia, serif";
+  ctx.letterSpacing = '2px';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('SGF', 144, 152);
+
+  drawBrushDot(ctx, 183, 190, 0.616, GOLD);
+
+  ctx.fillStyle = '#111a2d';
+  ctx.font = "600 25px 'Plus Jakarta Sans', system-ui, sans-serif";
+  ctx.letterSpacing = '5px';
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('SEA GUTE FREELANCER', 256, 152);
+}
+
+/* ─── Transparent versions ───────────────────────────── */
+
+function drawIconTransparent(canvasId, brushDot) {
+  const ctx = document.getElementById(canvasId).getContext('2d');
+  /* No background — canvas stays transparent */
+
+  roundRect(ctx, 100, 100, 200, 200, 8, '#3974f2');
+
+  ctx.fillStyle = '#ffffff';
+  ctx.font = "bold 62px 'Playfair Display', Georgia, serif";
+  ctx.letterSpacing = '2px';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('SGF', 199, 205);
+
+  if (brushDot) {
+    drawBrushDot(ctx, 258, 264, 0.875, GOLD);
+  } else {
+    drawDotA(ctx, 300, 300, 13);
+  }
+}
+
+/* ─── Download ───────────────────────────────────────── */
+
+function downloadCanvas(id, filename) {
+  const canvas = document.getElementById(id);
+  const link = document.createElement('a');
+  link.download = filename;
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+}
+</script>
+</body>
+</html>

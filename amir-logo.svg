@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" width="600" height="260">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Allura&amp;display=swap');
+      .amir-text {
+        font-family: 'Allura', 'Apple Chancery', 'Snell Roundhand', cursive;
+        font-size: 220px;
+        fill: #000000;
+      }
+    </style>
+  </defs>
+
+  <!-- Wordmark -->
+  <text x="50" y="190" class="amir-text">Amir</text>
+
+  <!-- Decorative underline swash -->
+  <path d="M 470 215
+           C 430 235, 330 240, 230 225
+           C 150 213, 90 205, 60 215"
+        stroke="#000000"
+        stroke-width="4"
+        stroke-linecap="round"
+        fill="none"/>
+</svg>

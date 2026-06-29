@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>SGF LinkedIn Banner Export</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      padding: 48px 24px;
+      font-family: 'JetBrains Mono', monospace;
+      color: #e0e0e0;
+    }
+    .label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+    }
+    canvas {
+      max-width: 100%;
+      border-radius: 4px;
+      box-shadow: 0 8px 64px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06);
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+    }
+    button {
+      background: #3974f2;
+      color: white;
+      border: none;
+      border-radius: 99px;
+      padding: 12px 28px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: 'JetBrains Mono', monospace;
+      transition: background 0.2s;
+    }
+    button:hover { background: #204fb5; }
+    .note {
+      font-size: 10px;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <span class="label">LinkedIn Banner · 1584 × 396 px</span>
+  <canvas id="banner" width="1584" height="396"></canvas>
+  <div class="actions">
+    <button onclick="dl()">⬇ PNG herunterladen</button>
+  </div>
+  <span class="note">Profil-Foto überlappt unten links — wichtiger Content ist rechts davon positioniert</span>
+
+<script>
+document.fonts.ready.then(() => {
+  draw();
+});
+
+const W = 1584, H = 396;
+const BLUE  = '#3974f2';
+const GOLD  = '#C9A043';
+
+function draw() {
+  const canvas = document.getElementById('banner');
+  const ctx = canvas.getContext('2d');
+
+  /* ── Background ───────────────────────────────────────── */
+  ctx.fillStyle = '#0d0d12';
+  ctx.fillRect(0, 0, W, H);
+
+  /* Subtle blue atmospheric glow, upper right */
+  const glow = ctx.createRadialGradient(W * 0.78, -40, 0, W * 0.78, -40, 520);
+  glow.addColorStop(0, 'rgba(57, 116, 242, 0.13)');
+  glow.addColorStop(1, 'rgba(57, 116, 242, 0)');
+  ctx.fillStyle = glow;
+  ctx.fillRect(0, 0, W, H);
+
+  /* Thin horizontal rule, top */
+  ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(0, 0);
+  ctx.lineTo(W, 0);
+  ctx.stroke();
+
+  /* Thin horizontal rule, bottom */
+  ctx.beginPath();
+  ctx.moveTo(0, H - 1);
+  ctx.lineTo(W, H - 1);
+  ctx.stroke();
+
+  const PX = 88;
+
+  /* ── "Creative" — Playfair Display Italic Bold ─────────── */
+  ctx.save();
+  ctx.font = "italic bold 108px 'Playfair Display', Georgia, serif";
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.93)';
+  ctx.letterSpacing = '-1px';
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'alphabetic';
+  ctx.fillText('Creative', PX, 178);
+  ctx.restore();
+
+  /* ── Gold brush mark — sits after "Creative", acts as accent ── */
+  drawBrushDot(ctx, PX + 640, 163, 1.55, GOLD);
+
+  /* ── "Performance" — JetBrains Mono Bold ───────────────── */
+  ctx.save();
+  ctx.font = "bold 108px 'JetBrains Mono', 'Courier New', monospace";
+  ctx.fillStyle = BLUE;
+  ctx.letterSpacing = '-3px';
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'alphabetic';
+  ctx.fillText('Performance', PX, 300);
+  ctx.restore();
+
+  /* ── Services bar — JetBrains Mono, ghosted ────────────── */
+  ctx.save();
+  ctx.font = "400 11px 'JetBrains Mono', monospace";
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.22)';
+  ctx.letterSpacing = '1.5px';
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'alphabetic';
+  ctx.fillText('// SEA · SEO · GEO · AEO · LLMO · AI Search · PPC · Creative Performance · Strategie · Brand-Building', PX, 349);
+  ctx.restore();
+
+  /* ── SGF logo mark — right side ────────────────────────── */
+  const LX = W - 212, LY = 56, LS = 114;
+  roundRect(ctx, LX, LY, LS, LS, 7, BLUE);
+
+  ctx.save();
+  ctx.font = "bold 40px 'Playfair Display', Georgia, serif";
+  ctx.fillStyle = 'rgba(255,255,255,0.96)';
+  ctx.letterSpacing = '2px';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('SGF', LX + LS / 2, LY + LS / 2 + 2);
+  ctx.restore();
+
+  /* Small brush dot on SGF logo */
+  drawBrushDot(ctx, LX + LS * 0.76, LY + LS * 0.76, 0.68, GOLD);
+
+  /* ── Bottom-right URLs ──────────────────────────────────── */
+  ctx.save();
+  ctx.font = "400 10px 'JetBrains Mono', monospace";
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.16)';
+  ctx.letterSpacing = '1px';
+  ctx.textAlign = 'right';
+  ctx.textBaseline = 'alphabetic';
+  ctx.fillText('robertmiler.com // sea-gute-freelancer.de', W - 64, H - 28);
+  ctx.restore();
+}
+
+/* ── Helpers ──────────────────────────────────────────────── */
+
+function roundRect(ctx, x, y, w, h, r, color) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+  ctx.lineTo(x + w, y + h - r);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  ctx.lineTo(x + r, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+  ctx.lineTo(x, y + r);
+  ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.closePath();
+  ctx.fillStyle = color;
+  ctx.fill();
+}
+
+function drawBrushDot(ctx, cx, cy, scale, color) {
+  ctx.save();
+  ctx.translate(cx, cy);
+  ctx.scale(scale, scale);
+  ctx.fillStyle = color;
+
+  /* Main blob */
+  ctx.beginPath();
+  ctx.moveTo(-2, -17);
+  ctx.bezierCurveTo( 7, -22,  21, -13,  20,  -1);
+  ctx.bezierCurveTo(19,  11,  10,  19,  -2,  18);
+  ctx.bezierCurveTo(-13, 17, -20,   9, -19,  -2);
+  ctx.bezierCurveTo(-18,-11, -10, -13,  -2, -17);
+  ctx.closePath();
+  ctx.fill();
+
+  /* Tail — brush lift mark, upper-left */
+  ctx.beginPath();
+  ctx.moveTo(-19, -2);
+  ctx.bezierCurveTo(-24,-10, -27,-21, -20,-28);
+  ctx.bezierCurveTo(-17,-25, -16,-17, -15, -8);
+  ctx.bezierCurveTo(-16, -5, -18, -4, -19, -2);
+  ctx.closePath();
+  ctx.fill();
+
+  ctx.restore();
+}
+
+function dl() {
+  const canvas = document.getElementById('banner');
+  const a = document.createElement('a');
+  a.download = 'sgf-linkedin-banner.png';
+  a.href = canvas.toDataURL('image/png');
+  a.click();
+}
+</script>
+</body>
+</html>
